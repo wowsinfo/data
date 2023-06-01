@@ -44,6 +44,10 @@
             <Type>MAP_BORDER</Type>
             <Flags>ALL_CLIENTS</Flags>
         </mapBorder>
+        <battleResult>
+            <Type>BATTLE_RESULT</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </battleResult>
     </Properties>
     <ClientMethods>
         <onPlayWorldEffect>

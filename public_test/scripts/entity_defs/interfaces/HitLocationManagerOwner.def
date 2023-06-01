@@ -54,6 +54,12 @@
 				<projSpeed>     FLOAT32         </projSpeed>
 			</Args>
 		</dev_receiveHit>
+
+		<dev_switchInvulnerability>
+			<Exposed/>
+			<Flags> OWN_CLIENT </Flags>
+		</dev_switchInvulnerability>
+
 	</CellMethods>
 	
 	<ClientMethods>
