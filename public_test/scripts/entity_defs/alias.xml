@@ -1911,7 +1911,6 @@
 			<winnerTeamId> <Type> TEAM_ID </Type> </winnerTeamId>
 			<finishReason> <Type> UINT8 </Type> </finishReason>
 		</Properties>
-		<AllowNone> true </AllowNone>
 	</BATTLE_RESULT>
 
 </root>
