@@ -463,6 +463,14 @@
             <Exposed></Exposed>
             <Flags>OWN_CLIENT</Flags>
         </dev_flight>
+        <dev_updatePhysics>
+            <Exposed></Exposed>
+            <Args>
+                <needRecreate>BOOL</needRecreate>
+                <timeScale>NULLABLE_FLOAT</timeScale>
+                <replaceParams>PICKLED_BLOB</replaceParams>
+            </Args>
+        </dev_updatePhysics>
     </CellMethods>
     <BaseMethods></BaseMethods>
     <shouldBackup>false</shouldBackup>

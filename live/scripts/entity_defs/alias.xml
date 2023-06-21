@@ -48,7 +48,7 @@
 		USER_TYPE
 		<implementedBy>GameParams.converter</implementedBy>
 	</GAMEPARAMS>
-	
+
 	<FLAT_VECTOR>
 		USER_TYPE
 		<Type>VECTOR2</Type>
@@ -1904,4 +1904,13 @@
 		</Properties>
 		<AllowNone>false</AllowNone>
 	</BARGE_BANNER>
+
+	<BATTLE_RESULT>
+		FIXED_DICT
+		<Properties>
+			<winnerTeamId> <Type> TEAM_ID </Type> </winnerTeamId>
+			<finishReason> <Type> UINT8 </Type> </finishReason>
+		</Properties>
+	</BATTLE_RESULT>
+
 </root>

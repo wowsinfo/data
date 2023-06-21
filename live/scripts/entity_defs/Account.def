@@ -201,7 +201,7 @@
         <setTrace>
             <Arg>BOOL</Arg>
         </setTrace>
-        <curVersion_12_4_0_7062104></curVersion_12_4_0_7062104>
+        <curVersion_12_5_0_7163377></curVersion_12_5_0_7163377>
         <updateSSEProgress>
             <Arg>STRING</Arg>
             <VariableLengthHeaderSize>
@@ -406,6 +406,19 @@
         </onLeaveBattleTransactionsCompleted>
         <onDockDeferredCallsFlushed></onDockDeferredCallsFlushed>
         <setFirstLoginCharged></setFirstLoginCharged>
+        <updateReferralRewardsData>
+            <Args>
+                <referralRewardsData>MSGPACK_BLOB</referralRewardsData>
+            </Args>
+        </updateReferralRewardsData>
+        <onChangeAccountLevelingState>
+            <Args>
+                <newPoints>UINT32</newPoints>
+                <newTier>UINT32</newTier>
+                <newAccSeen>UINT32</newAccSeen>
+                <newSeenFeat>UINT32</newSeenFeat>
+            </Args>
+        </onChangeAccountLevelingState>
     </ClientMethods>
     <CellMethods></CellMethods>
     <BaseMethods>
