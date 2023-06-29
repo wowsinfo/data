@@ -468,7 +468,7 @@
             <Args>
                 <needRecreate>BOOL</needRecreate>
                 <timeScale>NULLABLE_FLOAT</timeScale>
-                <replaceParams>PICKLED_BLOB</replaceParams>
+                <replacedParams>PICKLED_BLOB</replacedParams>
             </Args>
         </dev_updatePhysics>
     </CellMethods>

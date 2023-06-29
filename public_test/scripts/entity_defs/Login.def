@@ -2,7 +2,6 @@
 
 <root>
     <Implements>
-        <Interface>EntityHelperAPI</Interface>
         <Interface>GiveClientHelper</Interface>
     </Implements>
     <Properties></Properties>

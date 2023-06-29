@@ -2,7 +2,6 @@
 
 <root>
     <Implements>
-        <Interface>AccountReady</Interface>
         <Interface>GiveClientHelper</Interface>
     </Implements>
     <Properties>

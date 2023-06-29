@@ -19,4 +19,8 @@
 	<NewbieQuestComponent/>
 	<KeyTargetComponent/>
 	<LootboxComponent/>
+	<ControllerToAccountConnector/>
+	<AccountReviverComponent/>
+	<SuperEntityAPIComponent/>
+	<MasterEntityAPIComponent/>
 </root>
