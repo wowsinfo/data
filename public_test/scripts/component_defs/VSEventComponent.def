@@ -58,6 +58,7 @@
 		<_VSEventComponent__notSyncFinalStats/>
 		<_VSEventComponent__shouldReSyncOnStageChanged/>
 		<_VSEventComponent__shouldSyncTasksProgressOnPrimeChanged/>
+		<_VSEventComponent__isSubscribed/>
 	</TempProperties>
 
 	<ofEntity>

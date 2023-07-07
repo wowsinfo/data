@@ -1953,7 +1953,7 @@
 		FIXED_DICT
 		<Properties>
 			<battleDef> <Type>BATTLE_DEF</Type> </battleDef>
-			<entityID> <Type>ENTITY_ID</Type> </entityID>
+			<uniqueCreationID> <Type>ENTITY_ID</Type> </uniqueCreationID>
 		</Properties>
 	</CREATE_BATTLE_SESSION_PARAMS>
 
