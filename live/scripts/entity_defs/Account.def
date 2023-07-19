@@ -4,11 +4,9 @@
     <ExplicitDatabaseID>true</ExplicitDatabaseID>
     <Implements>
         <Interface>AccountCMDs</Interface>
-        <Interface>AccountEditor</Interface>
         <Interface>BattleStarterClient</Interface>
-        <Interface>WalletOwner</Interface>
         <Interface>AccountPData</Interface>
-        <Interface>EntityHelperAPI</Interface>
+        <Interface>WalletOwner</Interface>
         <Interface>VoiceChatClient</Interface>
         <Interface>StatsPublisher</Interface>
         <Interface>GiveClientHelper</Interface>
@@ -201,7 +199,7 @@
         <setTrace>
             <Arg>BOOL</Arg>
         </setTrace>
-        <curVersion_12_5_0_7163377></curVersion_12_5_0_7163377>
+        <curVersion_12_6_0_7266701></curVersion_12_6_0_7266701>
         <updateSSEProgress>
             <Arg>STRING</Arg>
             <VariableLengthHeaderSize>

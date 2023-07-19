@@ -21,6 +21,7 @@
 	<PLANE_ID>INT64</PLANE_ID>
 	<TARGET_ID>INT64</TARGET_ID>			<!-- place in which we can use PLANE_ID or ENTITY_ID -->
 	<MASTER_ID>UINT32</MASTER_ID>
+	<CLUSTER_ID>UINT32</CLUSTER_ID>
 	<AVATAR_ID>INT64</AVATAR_ID>
 	<CAMPAIGN_TASK_ID>UINT32</CAMPAIGN_TASK_ID>
 	<ARENA_UNIQUE_ID>UINT64</ARENA_UNIQUE_ID>
@@ -37,6 +38,7 @@
 	<AI_CATEGORY>UINT8</AI_CATEGORY>
 	<RIBBON_ID>INT8</RIBBON_ID>
 	<STATE>UINT8</STATE>
+	<FIELD_ID>UINT16</FIELD_ID>
 
 	<ZIPPED_BLOB>
 		USER_TYPE
@@ -227,6 +229,7 @@
 			<extraInfo><Type>PYTHON</Type></extraInfo>
 			<realm><Type>STRING</Type><AllowNone> true </AllowNone></realm>
 			<isMercenary><Type>BOOL</Type></isMercenary>
+			<isInReferralSquad><Type>BOOL</Type></isInReferralSquad>
 		</Properties>
 		<implementedBy>PlayerDef.converter</implementedBy>
 		<AllowNone> true </AllowNone>
@@ -611,6 +614,7 @@
 			<currentStateId>	<Type>	UINT8 		</Type> </currentStateId>
 			<hasProjectiles>	<Type>  BOOL		</Type> </hasProjectiles>
 			<isSpawned>			<Type>	BOOL		</Type> </isSpawned>
+			<consumablesStates>	<Type>	UINT8 		</Type> </consumablesStates>
 		</Properties>
 		<implementedBy>AirPlanes.AirplaneUtils.squadronStateConverter</implementedBy>
 	</SQUADRON_STATE>
@@ -977,7 +981,6 @@
 		<AllowNone>true</AllowNone>
 	</TASKS_STATE>
 
-
 	<ENTITY_STATE_STATE>
 		FIXED_DICT
 		<Properties>
@@ -989,15 +992,30 @@
 		<AllowNone>true</AllowNone>
 	</ENTITY_STATE_STATE>
 
+	<FIELD_LAYER_PACK>
+		FIXED_DICT
+		<Properties>
+			<layerId><Type>UINT8</Type></layerId>
+			<objects><Type>ARRAY<of>VECTOR2</of></Type></objects>
+		</Properties>
+	</FIELD_LAYER_PACK>
+
+	<FIELD_PACK>
+		FIXED_DICT
+		<Properties>
+			<fieldId><Type>FIELD_ID</Type></fieldId>
+			<layers><Type>ARRAY<of>FIELD_LAYER_PACK</of></Type></layers>
+		</Properties>
+	</FIELD_PACK>
+
 	<MINEFIELD_INFO>
 		FIXED_DICT
 		<Properties>
 			<id><Type>UINT16</Type></id>
-			<mineType><Type>GAMEPARAMS_ID</Type></mineType>
-			<ownerID><Type>ENTITY_ID</Type></ownerID>
-			<minBounds><Type>VECTOR3</Type></minBounds>
-			<maxBounds><Type>VECTOR3</Type></maxBounds>
-			<depth><Type>FLOAT</Type></depth>
+			<ownerId><Type>ENTITY_ID</Type></ownerId>
+			<paramsId><Type>GAMEPARAMS_ID</Type></paramsId>
+			<position><Type>VECTOR3</Type></position>
+			<spawnTime><Type>FLOAT</Type></spawnTime>
 		</Properties>
 	</MINEFIELD_INFO>
 
@@ -1221,7 +1239,6 @@
 			<keyObjects><Type>ARRAY<of>KEY_OBJECT_STATE</of></Type></keyObjects>
 			<missions><Type>MISSIONS_STATE</Type></missions>
 			<resources><Type>ARRAY<of>RESOURCE_STATE</of></Type></resources>
-			<minefields><Type>ARRAY<of>MINEFIELD_INFO</of></Type></minefields>
 			<successStoryProgress><Type>ARRAY<of>SUCCESS_STORY_PROGRESS_STATE</of></Type></successStoryProgress>
 			<tasks><Type>ARRAY<of>TASKS_STATE</of></Type></tasks>
 			<entities><Type>ARRAY<of>BATTLE_LOGIC_ENTITY_STATE</of></Type></entities>
@@ -1277,6 +1294,7 @@
 			<diplomacyTickets> <Type> DIPLOMACY_TICKETS_STATE </Type> </diplomacyTickets>
 			<leveling><Type> BATTLE_LEVELING_STATE </Type></leveling>
 			<missions><Type> PRIVATE_MISSIONS_STATE </Type></missions>
+			<minefields><Type>ARRAY<of>MINEFIELD_INFO</of></Type></minefields>
 		</Properties>
 	</PRIVATE_BATTLE_LOGIC_STATE>
 
@@ -1703,11 +1721,9 @@
 		FIXED_DICT
 		<Properties>
 			<loadReason><Type>UINT8</Type></loadReason>
-			<loadMode><Type>UINT8</Type></loadMode>
-			<requester><Type>MAILBOX</Type></requester>
-			<requestID><Type>UINT64</Type></requestID>
-			<removeAccount><Type>BOOL</Type></removeAccount>
 			<ignoreMasterShutdown><Type>BOOL</Type></ignoreMasterShutdown>
+			<loadMode><Type>UINT8</Type></loadMode>
+			<additionalArgs><Type>PICKLED_BLOB</Type></additionalArgs>
 		</Properties>
 		<implementedBy>AccountLoadArgsDef.converter</implementedBy>
 	</ACCOUNT_LOAD_ARGS>
@@ -1912,5 +1928,50 @@
 			<finishReason> <Type> UINT8 </Type> </finishReason>
 		</Properties>
 	</BATTLE_RESULT>
+
+	<MINEFIELD_HEAT_MAP_EVENT_DATA>
+		FIXED_DICT
+		<Properties>
+			<fieldId><Type>FIELD_ID</Type></fieldId>
+			<ownerId><Type>ENTITY_ID</Type></ownerId>
+			<position><Type>VECTOR3</Type></position>
+			<spawnTime><Type>FLOAT</Type></spawnTime>
+			<isDefused><Type>BOOL</Type></isDefused>
+			<lifeTime><Type>FLOAT</Type></lifeTime>
+			<spawnedMines><Type>UINT16</Type></spawnedMines>
+			<despawnedMines><Type>UINT16</Type></despawnedMines>
+			<destroyedMines><Type>UINT16</Type></destroyedMines>
+			<minesHits><Type>UINT16</Type></minesHits>
+			<hitsBeforeActivationToEnemy><Type>UINT16</Type></hitsBeforeActivationToEnemy>
+			<hitsAfterActivationWithNoDamage><Type>UINT16</Type></hitsAfterActivationWithNoDamage>
+		</Properties>
+		<AllowNone>false</AllowNone>
+		<implementedBy>MinefieldStatistics.converter</implementedBy>
+	</MINEFIELD_HEAT_MAP_EVENT_DATA>
+
+	<CREATE_BATTLE_SESSION_PARAMS>
+		FIXED_DICT
+		<Properties>
+			<battleDef> <Type>BATTLE_DEF</Type> </battleDef>
+			<uniqueCreationID> <Type>ENTITY_ID</Type> </uniqueCreationID>
+		</Properties>
+	</CREATE_BATTLE_SESSION_PARAMS>
+
+	<CREATE_PRE_BATTLE_PARAMS>
+		FIXED_DICT
+		<Properties>
+			<preBattleDef> <Type>PRE_BATTLE_DEF</Type> </preBattleDef>
+			<ownerDef> <Type>PLAYER_DEF</Type> </ownerDef>
+		</Properties>
+	</CREATE_PRE_BATTLE_PARAMS>
+
+	<CREATE_TRAINING_ROOM_PARAMS>
+		FIXED_DICT
+		<Properties>
+			<trainingRoomDef> <Type>TRAINING_ROOM_DEF</Type> </trainingRoomDef>
+			<ownerDef> <Type>PLAYER_DEF</Type> </ownerDef>
+			<password> <Type>UNICODE_STRING</Type> </password>
+		</Properties>
+	</CREATE_TRAINING_ROOM_PARAMS>
 
 </root>

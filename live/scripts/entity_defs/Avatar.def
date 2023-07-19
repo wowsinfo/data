@@ -103,6 +103,11 @@
             <Type>VISION</Type>
             <Flags>OWN_CLIENT</Flags>
         </spottedEntities>
+        <isInMinefield>
+            <Type>BOOL</Type>
+            <Flags>OWN_CLIENT</Flags>
+            <Default>0</Default>
+        </isInMinefield>
     </Properties>
     <ClientMethods>
         <torpedoParamsUpdate>
@@ -271,18 +276,18 @@
         </receiveTorpedoManeuverEnd>
         <receiveMines>
             <Args>
-                <mines>ARRAY
-                    <of>VECTOR2</of>
-                </mines>
-                <fieldID>UINT8</fieldID>
+                <fieldPacks>ARRAY
+                    <of>FIELD_PACK</of>
+                </fieldPacks>
             </Args>
         </receiveMines>
-        <killMine>
+        <receiveMineKills>
             <Args>
-                <fieldID>UINT8</fieldID>
-                <mineID>VECTOR2</mineID>
+                <fieldPacks>ARRAY
+                    <of>FIELD_PACK</of>
+                </fieldPacks>
             </Args>
-        </killMine>
+        </receiveMineKills>
         <receiveProjectileTrace>
             <Arg>INT32</Arg>
             <Arg>BLOB</Arg>
@@ -408,8 +413,10 @@
             <Arg>UINT16</Arg>
         </receive_squadronVisibilityChanged>
         <squadronConsumableUsed>
-            <Arg>PLANE_ID</Arg>
-            <Arg>UINT8</Arg>
+            <Args>
+                <squadronID>PLANE_ID</squadronID>
+                <consType>UINT8</consType>
+            </Args>
         </squadronConsumableUsed>
         <squadronConsumableEnabled>
             <Arg>PLANE_ID</Arg>
@@ -417,9 +424,17 @@
             <Arg>BOOL</Arg>
         </squadronConsumableEnabled>
         <squadronConsumableInterrupted>
-            <Arg>PLANE_ID</Arg>
-            <Arg>UINT8</Arg>
+            <Args>
+                <squadronID>PLANE_ID</squadronID>
+                <consType>UINT8</consType>
+            </Args>
         </squadronConsumableInterrupted>
+        <squadronConsumableStopWorking>
+            <Args>
+                <squadronID>PLANE_ID</squadronID>
+                <consType>UINT8</consType>
+            </Args>
+        </squadronConsumableStopWorking>
         <receive_squadronInsideEnemyAura>
             <Arg>PLANE_ID</Arg>
             <Arg>BOOL</Arg>
@@ -794,6 +809,13 @@
             <Arg>UINT8</Arg>
             <Arg>FLOAT</Arg>
         </onOilLeakStateChanged>
+        <onDrawMinefieldPrediction>
+            <Args>
+                <position>VECTOR3</position>
+                <radius>FLOAT</radius>
+                <drawTime>FLOAT</drawTime>
+            </Args>
+        </onDrawMinefieldPrediction>
     </ClientMethods>
     <CellMethods>
         <useConsumable>

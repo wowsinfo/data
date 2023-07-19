@@ -129,10 +129,10 @@
 			<Default> 0 </Default>
 		</ttkStatus>
 
-		<_destroyReason>
+		<_destroyResponseCode>
 			<Type> UINT8 </Type>
 			<Flags> BASE </Flags>
-		</_destroyReason>
+		</_destroyResponseCode>
 
 		<suspended>
 			<Type> UINT8 </Type>
