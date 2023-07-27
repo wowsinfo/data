@@ -26,7 +26,7 @@
 				<queueType> QUEUE_TYPE </queueType>
 				<mapID> INT16 </mapID>  <!-- MAP_ID (UINT8) or -1 -->
 				<gameMode> INT32 </gameMode>  <!-- GAME_MODE (UINT16) or -1 -->
-				<eventID> GAMEPARAMS_ID </eventID>
+				<operationID> GAMEPARAMS_ID </operationID>
 			</Args>
 		</enter>
 		
@@ -75,7 +75,7 @@
 		
 		<onQueueInfoReceived>
 			<Args>
-				<queueType> GAMEPARAMS_ID </queueType>  <!-- QUEUE_TYPE (UINT16) or EVENT_ID (GAMEPARAMS_ID/UINT32) -->
+				<queueType> GAMEPARAMS_ID </queueType>  <!-- QUEUE_TYPE (UINT16) or OPERATION_ID (GAMEPARAMS_ID/UINT32) -->
 				<queueInfo> PICKLED_BLOB </queueInfo>
 			</Args>
 		</onQueueInfoReceived>

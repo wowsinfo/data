@@ -39,12 +39,19 @@
 	<RIBBON_ID>INT8</RIBBON_ID>
 	<STATE>UINT8</STATE>
 	<FIELD_ID>UINT16</FIELD_ID>
+	<HIT_TYPE>UINT8</HIT_TYPE>
 
 	<ZIPPED_BLOB>
 		USER_TYPE
 		<Type>BLOB</Type>
 		<implementedBy>ZippedBlobConverter.converter</implementedBy>
 	</ZIPPED_BLOB>
+
+	<CACHED_ZIPPED_BLOB>
+		USER_TYPE
+		<Type>BLOB</Type>
+		<implementedBy>BoundServiceUtils.CachedZippedBlobConverter.CachedZippedBlobConverter</implementedBy>
+	</CACHED_ZIPPED_BLOB>
 
 	<GAMEPARAMS>
 		USER_TYPE
@@ -138,10 +145,9 @@
 			<level><Type>INT8</Type></level>
 			<teamBuildType><Type>UINT8</Type></teamBuildType>
 			<sseInfo><Type>STRING</Type></sseInfo>
-			<pveInfo><Type>UINT64</Type></pveInfo>
 			<realms><Type>ARRAY<of>STRING</of></Type></realms>
-			<eventInfo><Type>GAMEPARAMS_ID</Type></eventInfo>
 			<holderTeams><Type>ARRAY<of>TEAM_ID</of></Type></holderTeams>
+			<operationID><Type>GAMEPARAMS_ID</Type></operationID>
 		</Properties>
 		<implementedBy>BattleDef.converter</implementedBy>
 	</BATTLE_DEF>
@@ -302,7 +308,8 @@
 			<selectedQueueType><Type>INT32</Type></selectedQueueType>
 			<nonClanMembersCount><Type>INT8</Type></nonClanMembersCount>
 			<clanSquadId><Type>INT8</Type></clanSquadId>
-			<extraInfo><Type>PYTHON</Type></extraInfo>
+			<selectedOperationID><Type>GAMEPARAMS_ID</Type></selectedOperationID>
+			<enterMatchmaker><Type>BOOL</Type></enterMatchmaker>
 		</Properties>
 		<AllowNone>true</AllowNone>
 		<implementedBy>PreBattleDef.converter</implementedBy>
@@ -462,19 +469,32 @@
 			<depthCharges>		<Type>	ARRAY 	<of> DEPTH_CHARGE </of> </Type>	</depthCharges>
 		</Properties>
 	</DEPTH_CHARGES_PACK>
-	
+
+	<TERMINAL_BALLISTICS_INFO>
+		FIXED_DICT
+		<Properties>
+			<position> 				<Type> VECTOR3 	</Type> </position>
+			<velocity> 				<Type> VECTOR3 	</Type> </velocity>
+			<detonatorActivated> 	<Type> BOOL 	</Type> </detonatorActivated>
+			<materialAngle> 		<Type> FLOAT 	</Type> </materialAngle>
+		</Properties>
+		<AllowNone> true </AllowNone>
+	</TERMINAL_BALLISTICS_INFO>
+
 	<SHOTKILL>
 		FIXED_DICT
 		<Properties>
 			<pos>		<Type>	VECTOR3	</Type> </pos>
-			<shotID>	<Type>	SHOT_ID	</Type>	</shotID>		</Properties>
+			<shotID>	<Type>	SHOT_ID	</Type>	</shotID>
+			<terminalBallisticsInfo> <Type> TERMINAL_BALLISTICS_INFO </Type> </terminalBallisticsInfo>
+		</Properties>
 	</SHOTKILL>
 
 	<SHOTKILLS_PACK>
 		FIXED_DICT
 		<Properties>
 			<ownerID>	<Type>	PLAYER_ID				</Type>	</ownerID>
-			<hitType>	<Type>	UINT8					</Type>	</hitType>
+			<hitType>	<Type>	HIT_TYPE				</Type>	</hitType>
 			<kills>		<Type>	ARRAY<of>SHOTKILL</of>	</Type>	</kills>
 		</Properties>
 	</SHOTKILLS_PACK>
@@ -484,7 +504,7 @@
 		<Properties>
 			<pos>        <Type>	VECTOR3	</Type> </pos>
 			<paramsID>   <Type>	GAMEPARAMS_ID	</Type>	</paramsID>
-			<hitType>    <Type>	UINT8	</Type>	</hitType>
+			<hitType>    <Type>	HIT_TYPE	</Type>	</hitType>
 		</Properties>
 	</EXPLOSION>
 
@@ -494,7 +514,7 @@
 			<startPos> <Type> VECTOR3 </Type> </startPos>
 			<endPos> <Type> VECTOR3 </Type> </endPos>
 			<paramsID> <Type> GAMEPARAMS_ID </Type></paramsID>
-			<hitType> <Type> UINT8 </Type> </hitType>
+			<hitType> <Type> HIT_TYPE </Type> </hitType>
 			<ownerID> <Type> PLAYER_ID </Type></ownerID>
 			<gunID> <Type> GUN_ID </Type></gunID>
 			<isTargetFriendly> <Type> BOOL </Type></isTargetFriendly>
@@ -524,7 +544,7 @@
 			<hitNormal>	<Type>	VECTOR3		</Type>	</hitNormal>
 			<shotID>	<Type>	SHOT_ID		</Type>	</shotID>
 			<ownerID>	<Type>	PLAYER_ID	</Type>	</ownerID>
-			<hitType>	<Type>	INT8		</Type>	</hitType>
+			<hitType>	<Type>	HIT_TYPE		</Type>	</hitType>
 		</Properties>
 	</PINGER_SHOT_KILL>
 
@@ -1227,6 +1247,13 @@
 		<AllowNone>true</AllowNone>
 	</UI_INFO_STATE>
 
+	<PHYSICS_STATE>
+		FIXED_DICT
+		<Properties>
+			<collisionResolutionType><Type>UINT8</Type></collisionResolutionType>
+		</Properties>
+	</PHYSICS_STATE>
+
 	<BATTLE_LOGIC_STATE>
 		FIXED_DICT
 		<Properties>
@@ -1247,6 +1274,7 @@
 			<drop><Type>DROP_STATE</Type></drop>
 			<diplomacy><Type>DIPLOMACY_STATE</Type></diplomacy>
 			<uiInfo><Type>UI_INFO_STATE</Type></uiInfo>
+			<physics><Type>PHYSICS_STATE</Type></physics>
 		</Properties>
 	</BATTLE_LOGIC_STATE>
 
@@ -1746,7 +1774,7 @@
 			<proxy><Type>MAILBOX</Type></proxy>	<!-- mailbox: an account or a division -->
 			<playersDefs><Type>PLAYERS_DEFS</Type></playersDefs>
 			<proxyInfo><Type>PRE_BATTLE_CREATOR_DEF</Type></proxyInfo>	<!-- None if it is not a division -->
-			<eventID><Type>GAMEPARAMS_ID</Type></eventID>
+			<operationID><Type>GAMEPARAMS_ID</Type></operationID>
 		</Properties>
 		<implementedBy>EnqueueProcess.DataTypes.EnqueueRequestConverter</implementedBy>
 	</ENQUEUE_REQUEST>
@@ -1759,7 +1787,7 @@
 			<shipID><Type>SHIP_ID</Type></shipID>
 			<queueStatsIDs><Type>PYTHON</Type></queueStatsIDs>
 			<matchmakerDescription><Type>PYTHON</Type></matchmakerDescription>
-			<eventID><Type>GAMEPARAMS_ID</Type></eventID>
+			<operationID><Type>GAMEPARAMS_ID</Type></operationID>
 			<battleStarterService><Type>MAILBOX</Type></battleStarterService>
 		</Properties>
 		<implementedBy>EnqueueProcess.DataTypes.EnqueueDataConverter</implementedBy>
@@ -1787,11 +1815,8 @@
 	</BATTERY_STATE>
 
 	<VEHICLE_VISUAL_STATE>
-		FIXED_DICT
-		<Properties>
-			<stateId><Type>UINT8</Type></stateId>
-		</Properties>
-		<AllowNone> true </AllowNone>
+		UINT8
+		<AllowNone>true</AllowNone>
 	</VEHICLE_VISUAL_STATE>
 
 	<BUFF_STATE>
@@ -1862,6 +1887,7 @@
 			<sectorWidth><Type>FLOAT</Type></sectorWidth>
 			<count><Type>UINT8</Type></count>
 			<lifeTime><Type>FLOAT</Type></lifeTime>
+			<invisibleHitPos><Type>VECTOR3</Type></invisibleHitPos>
 		</Properties>
 	</ATTACHED_PINGER_WAVE>
 
@@ -1948,6 +1974,11 @@
 		<AllowNone>false</AllowNone>
 		<implementedBy>MinefieldStatistics.converter</implementedBy>
 	</MINEFIELD_HEAT_MAP_EVENT_DATA>
+
+	<QUICK_COMMAND>
+		USER_TYPE
+		<implementedBy>CommonQuickCommands.QuickCommandConverter.converter</implementedBy>
+	</QUICK_COMMAND>
 
 	<CREATE_BATTLE_SESSION_PARAMS>
 		FIXED_DICT
