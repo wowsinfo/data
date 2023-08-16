@@ -468,11 +468,10 @@
             <Arg>PLANE_ID</Arg>
         </receive_dropJato>
         <receive_CommonCMD>
-            <Arg>BOOL</Arg>
-            <Arg>PLAYER_ID</Arg>
-            <Arg>UINT8</Arg>
-            <Arg>UINT32</Arg>
-            <Arg>UINT64</Arg>
+            <Args>
+                <playerId>PLAYER_ID</playerId>
+                <command>QUICK_COMMAND</command>
+            </Args>
         </receive_CommonCMD>
         <receiveShootDC>
             <Arg>FLOAT</Arg>
@@ -1011,7 +1010,7 @@
         </checkGamePing>
         <dev_killEntity>
             <Exposed>OWN_CLIENT</Exposed>
-            <Arg>ENTITY_ID</Arg>
+            <Arg>TARGET_ID</Arg>
         </dev_killEntity>
         <dev_setPhysicParams>
             <Exposed>OWN_CLIENT</Exposed>
@@ -1103,6 +1102,12 @@
             <Exposed>OWN_CLIENT</Exposed>
             <Arg>STRING</Arg>
         </dev_reloadShipParams>
+        <send_CommonCMD>
+            <Exposed>OWN_CLIENT</Exposed>
+            <Args>
+                <command>QUICK_COMMAND</command>
+            </Args>
+        </send_CommonCMD>
     </CellMethods>
     <BaseMethods>
         <leaveBattle>
@@ -1114,13 +1119,6 @@
             <Arg>PLAYER_ID</Arg>
             <Arg>UINT8</Arg>
         </makeEvaluation>
-        <send_CommonCMD>
-            <Exposed>OWN_CLIENT</Exposed>
-            <Arg>BOOL</Arg>
-            <Arg>UINT8</Arg>
-            <Arg>UINT32</Arg>
-            <Arg>UINT64</Arg>
-        </send_CommonCMD>
         <onClientLoaded>
             <Exposed>OWN_CLIENT</Exposed>
         </onClientLoaded>

@@ -3,6 +3,7 @@
 	<DockComponent/>
 	<TrainingRoomComponent/>
 	<BrawlBattlesComponent/>
+	<PVEBattlesComponent/>
 	<RankedBattlesComponent/>
 	<AchievementsComponent/>
 	<AlmanacComponent/>

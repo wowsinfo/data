@@ -56,7 +56,7 @@
 		<createBattleSessionEntity>
 			<Args>
 				<clusterID> CLUSTER_ID </clusterID>
-		        <entityParams> CREATE_BATTLE_SESSION_PARAMS </entityParams>
+				<entityParams> CREATE_BATTLE_SESSION_PARAMS </entityParams>
 			</Args>
 			<ReturnValues>
 				<entityMailbox> MAILBOX </entityMailbox>
@@ -64,11 +64,11 @@
 		</createBattleSessionEntity>
 
 		<createPreBattleEntity>
-		    <Args>
-		        <clusterID> CLUSTER_ID </clusterID>
-		        <entityParams> CREATE_PRE_BATTLE_PARAMS </entityParams>
-            </Args>
-            <ReturnValues>
+			<Args>
+				<clusterID> CLUSTER_ID </clusterID>
+				<entityParams> CREATE_PRE_BATTLE_PARAMS </entityParams>
+			</Args>
+			<ReturnValues>
 				<entityMailbox> MAILBOX </entityMailbox>
 			</ReturnValues>
 		</createPreBattleEntity>
@@ -76,7 +76,7 @@
 		<createTrainingRoomEntity>
 			<Args>
 				<clusterID> CLUSTER_ID </clusterID>
-		        <entityParams> CREATE_TRAINING_ROOM_PARAMS </entityParams>
+				<entityParams> CREATE_TRAINING_ROOM_PARAMS </entityParams>
 			</Args>
 			<ReturnValues>
 				<entityMailbox> MAILBOX </entityMailbox>
@@ -85,6 +85,6 @@
 	</Methods>
 
 	<ofService>
-	    <MasterService/>
+		<MasterService/>
 	</ofService>
 </root>

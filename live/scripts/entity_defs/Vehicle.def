@@ -455,6 +455,12 @@
             <Arg>VECTOR3</Arg>
             <Arg>NULLABLE_FLOAT</Arg>
         </dev_teleportShip>
+        <dev_teleportToEntity>
+            <Exposed></Exposed>
+            <Args>
+                <entityId>ENTITY_ID</entityId>
+            </Args>
+        </dev_teleportToEntity>
         <dev_setVehicleHealth>
             <Exposed></Exposed>
             <Arg>INT32</Arg>
