@@ -6,7 +6,9 @@
 	<DropZone/>
 	<Minefield/>
 	<Prefab/>
+	<MapPartInfo/>
 	<MapBorder/>
+	<MapSeparator/>
 	<SoundedEffect/>
 	<SoundedModel/>
 	<SpaceDebugTool/>

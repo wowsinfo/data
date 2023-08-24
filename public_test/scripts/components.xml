@@ -20,8 +20,12 @@
 	<NewbieQuestComponent/>
 	<KeyTargetComponent/>
 	<LootboxComponent/>
+	<DivisionsManagerComponent/>
+	<DivisionsManagerComponentAvatar/>
 	<ControllerToAccountConnector/>
 	<AccountReviverComponent/>
 	<SuperEntityAPIComponent/>
 	<MasterEntityAPIComponent/>
+	<PdataResetComponent/>
+	<StrategicActionsComponent/>
 </root>

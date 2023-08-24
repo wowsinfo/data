@@ -29,13 +29,15 @@
                 <expired>INT64</expired>
             </Args>
         </receiveUIStatisticsServiceInfo>
-        <onGetMapsList>
-            <Arg>BLOB</Arg>
-            <Arg>BLOB</Arg>
+        <onGetMapsInfo>
+            <Args>
+                <mapsInfo>BLOB</mapsInfo>
+                <matchSettings>BLOB</matchSettings>
+            </Args>
             <VariableLengthHeaderSize>
                 <WarnLevel>none</WarnLevel>
             </VariableLengthHeaderSize>
-        </onGetMapsList>
+        </onGetMapsInfo>
         <onGetDisabledMapsList>
             <Arg>BLOB</Arg>
         </onGetDisabledMapsList>
@@ -69,11 +71,6 @@
             <Arg>GAME_MODE</Arg>
             <Arg>GAMEPARAMS_ID</Arg>
         </onGameRoomStateInit>
-        <onPassiveSeekingSet>
-            <Arg>UINT8</Arg>
-            <Arg>UINT8</Arg>
-            <Arg>STRING</Arg>
-        </onPassiveSeekingSet>
         <inviteToPreBattle>
             <Arg>PRE_BATTLE_INVITE_DEF</Arg>
         </inviteToPreBattle>
@@ -202,7 +199,7 @@
         <setTrace>
             <Arg>BOOL</Arg>
         </setTrace>
-        <curVersion_12_7_7376788></curVersion_12_7_7376788>
+        <curVersion_12_8_7432677></curVersion_12_8_7432677>
         <updateSSEProgress>
             <Arg>STRING</Arg>
             <VariableLengthHeaderSize>
@@ -477,11 +474,6 @@
             <Arg>INT32</Arg>
             <Arg>BOOL</Arg>
         </executeTransactionCl>
-        <dev_restoreAccountFromPoint>
-            <Arg>STRING</Arg>
-            <Arg>INT16</Arg>
-            <Exposed></Exposed>
-        </dev_restoreAccountFromPoint>
         <dev_exportAccountToWeb>
             <Arg>BOOL</Arg>
             <Exposed></Exposed>

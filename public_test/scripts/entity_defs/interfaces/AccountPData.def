@@ -121,6 +121,12 @@
 			<Default> 1 </Default>
 		</dataRevision>
 		
+        <dataResetRevision>
+		    <Type> UINT32 </Type>
+			<Flags> BASE </Flags>
+			<Persistent> true </Persistent>
+			<Default> 0 </Default>
+		</dataResetRevision>
 		
 		<ttkStatus>
 			<Type> UINT64 </Type>

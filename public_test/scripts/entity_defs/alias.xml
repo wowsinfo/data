@@ -907,7 +907,7 @@
 			<alliesInZone><Type>UINT8</Type></alliesInZone>
 			<targetId><Type>TARGET_ID</Type></targetId>
 			<speed><Type>FLOAT</Type></speed>
-			<speedMultiplierIndex><Type>UINT8</Type></speedMultiplierIndex>
+			<uiIndex><Type>UINT8</Type></uiIndex>
 		</Properties>
 	</PULL_TARGET_STATE>
 
@@ -919,7 +919,7 @@
 			<pathLength><Type>UINT32</Type></pathLength>  <!-- mission is completed when targets are within zoen radius, cannot simply calculate it on client -->
 			<type><Type>UINT8</Type></type>
 			<targetStates><Type>ARRAY<of>PULL_TARGET_STATE</of></Type></targetStates>
-			<numberOfSpeedMultipliers><Type>UINT8</Type></numberOfSpeedMultipliers>
+			<maxUIIndex><Type>UINT8</Type></maxUIIndex>
 		</Properties>
 	</PULL_TARGETS_MISSION_STATE>
 
@@ -1966,7 +1966,9 @@
 			<lifeTime><Type>FLOAT</Type></lifeTime>
 			<spawnedMines><Type>UINT16</Type></spawnedMines>
 			<despawnedMines><Type>UINT16</Type></despawnedMines>
+			<damageToMines><Type>FLOAT</Type></damageToMines>
 			<destroyedMines><Type>UINT16</Type></destroyedMines>
+			<damage><Type>FLOAT</Type></damage>
 			<minesHits><Type>UINT16</Type></minesHits>
 			<hitsBeforeActivationToEnemy><Type>UINT16</Type></hitsBeforeActivationToEnemy>
 			<hitsAfterActivationWithNoDamage><Type>UINT16</Type></hitsAfterActivationWithNoDamage>
@@ -2005,4 +2007,20 @@
 		</Properties>
 	</CREATE_TRAINING_ROOM_PARAMS>
 
+	<RESTORE_POINT>
+		FIXED_DICT
+		<Properties>
+			<webID><Type> INT32 </Type></webID>
+			<deadline><Type> UINT32 </Type></deadline>
+			<pointID><Type> UINT64 </Type></pointID>
+			<srcData><Type> PYTHON </Type></srcData>
+			<availablePointsIDs><Type> ARRAY <of> UINT64 </of> </Type></availablePointsIDs>
+			<vhID> <Type>UINT64 </Type></vhID>
+			<accountType><Type> UINT32 </Type></accountType>
+			<walletContents><Type> PYTHON </Type></walletContents>
+			<pointCreationDt><Type>UINT32</Type></pointCreationDt>
+			<ignoredInvoiceIDs><Type> PYTHON </Type></ignoredInvoiceIDs>
+		</Properties>
+		<implementedBy>RestorePointConverter.converter</implementedBy>
+	</RESTORE_POINT>
 </root>
