@@ -55,9 +55,11 @@
 		</onMasterChangeStarted>
 
 		<removeGdprDataOnMasters>
-			<Arg>MAILBOX</Arg>
-			<Arg>DB_ID</Arg>
-			<Arg>ZIPPED_BLOB</Arg>
+			<Args>
+				<accountController> MAILBOX </accountController>
+				<accountDBID> DB_ID </accountDBID>
+				<clearPersistentProperties> ZIPPED_BLOB </clearPersistentProperties>
+			</Args>
 			<ReturnValues>
 				<errorCode>UINT8</errorCode>
 			</ReturnValues>
