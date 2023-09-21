@@ -48,6 +48,10 @@
             <Type>BATTLE_RESULT</Type>
             <Flags>ALL_CLIENTS</Flags>
         </battleResult>
+        <playerShipFoamEmission>
+            <Type>VECTOR3</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </playerShipFoamEmission>
     </Properties>
     <ClientMethods>
         <onPlayWorldEffect>

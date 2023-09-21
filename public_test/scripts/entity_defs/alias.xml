@@ -40,6 +40,7 @@
 	<STATE>UINT8</STATE>
 	<FIELD_ID>UINT16</FIELD_ID>
 	<HIT_TYPE>UINT8</HIT_TYPE>
+	<BUOYANCY_STATE>UINT8</BUOYANCY_STATE>
 
 	<ZIPPED_BLOB>
 		USER_TYPE
@@ -610,14 +611,6 @@
 			<int64ListArg1> <Type> DB_ID_LIST </Type> </int64ListArg1>
 		</Properties>
 	</GENERIC_MESSENGER_ARGS>
-
-	<BACKUPED_PROPERTY>
-		FIXED_DICT
-		<Properties>
-			<data> <Type> PYTHON </Type> </data>
-		</Properties>
-		<implementedBy>BackupedProperty.converter</implementedBy>
-	</BACKUPED_PROPERTY>
 
 	<SQUADRON_STATE>
 		FIXED_DICT
@@ -1477,7 +1470,7 @@
 			<id><Type>ENTITY_ID</Type></id>
 			<posX><Type>FLOAT</Type></posX>
 			<posZ><Type>FLOAT</Type></posZ>
-			<buoyancyState><Type>UINT8</Type></buoyancyState>
+			<buoyancyState><Type>BUOYANCY_STATE</Type></buoyancyState>
 		</Properties>
 		<AllowNone>true</AllowNone>
 	</VCL_SHOTS_ENTITY_STATS>

@@ -48,6 +48,12 @@
             <Type>INTERACTIVE_ZONE_STATE</Type>
             <Flags>ALL_CLIENTS</Flags>
         </componentsState>
+        <interactionBuoyancies>
+            <Type>ARRAY
+                <of>BUOYANCY_STATE</of>
+            </Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </interactionBuoyancies>
     </Properties>
     <CellMethods></CellMethods>
 </root>
