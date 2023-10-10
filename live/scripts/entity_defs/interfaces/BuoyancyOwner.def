@@ -7,7 +7,7 @@
 
 	<Properties>
 		<buoyancyCurrentState>
-            <Type> UINT8 </Type>
+            <Type> BUOYANCY_STATE </Type>
             <Flags> ALL_CLIENTS  </Flags>
         </buoyancyCurrentState>
         <buoyancyRudderIndex>
