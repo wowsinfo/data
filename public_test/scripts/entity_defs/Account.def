@@ -199,7 +199,7 @@
         <setTrace>
             <Arg>BOOL</Arg>
         </setTrace>
-        <curVersion_12_9_7608966></curVersion_12_9_7608966>
+        <curVersion_12_10_7652307></curVersion_12_10_7652307>
         <updateSSEProgress>
             <Arg>STRING</Arg>
             <VariableLengthHeaderSize>
