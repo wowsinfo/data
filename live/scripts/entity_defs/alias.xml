@@ -545,7 +545,7 @@
 			<hitNormal>	<Type>	VECTOR3		</Type>	</hitNormal>
 			<shotID>	<Type>	SHOT_ID		</Type>	</shotID>
 			<ownerID>	<Type>	PLAYER_ID	</Type>	</ownerID>
-			<hitType>	<Type>	HIT_TYPE		</Type>	</hitType>
+			<hitType>	<Type>	HIT_TYPE	</Type>	</hitType>
 		</Properties>
 	</PINGER_SHOT_KILL>
 
@@ -628,6 +628,8 @@
 			<hasProjectiles>	<Type>  BOOL		</Type> </hasProjectiles>
 			<isSpawned>			<Type>	BOOL		</Type> </isSpawned>
 			<consumablesStates>	<Type>	UINT8 		</Type> </consumablesStates>
+			<isJatoActive>		<Type>	BOOL 		</Type> </isJatoActive>
+
 		</Properties>
 		<implementedBy>AirPlanes.AirplaneUtils.squadronStateConverter</implementedBy>
 	</SQUADRON_STATE>
@@ -1016,21 +1018,10 @@
 	<FIELD_PACK>
 		FIXED_DICT
 		<Properties>
-			<fieldId><Type>FIELD_ID</Type></fieldId>
+			<fieldId><Type>UINT32</Type></fieldId>
 			<layers><Type>ARRAY<of>FIELD_LAYER_PACK</of></Type></layers>
 		</Properties>
 	</FIELD_PACK>
-
-	<MINEFIELD_INFO>
-		FIXED_DICT
-		<Properties>
-			<id><Type>UINT16</Type></id>
-			<ownerId><Type>ENTITY_ID</Type></ownerId>
-			<paramsId><Type>GAMEPARAMS_ID</Type></paramsId>
-			<position><Type>VECTOR3</Type></position>
-			<spawnTime><Type>FLOAT</Type></spawnTime>
-		</Properties>
-	</MINEFIELD_INFO>
 
 	<LOCAL_WEATHER_STATE>
 		FIXED_DICT
@@ -1132,7 +1123,7 @@
 	<CONTROL_POINT_STATE>
 		FIXED_DICT
 		<Properties>
-			<buoy_modelID><Type>GAMEPARAMS_ID</Type></buoy_modelID>
+			<buoyVisualId><Type>GAMEPARAMS_ID</Type></buoyVisualId>
 			<nextControlPoint><Type>ENTITY_ID</Type></nextControlPoint>
 			<type><Type>UINT8</Type></type>
 			<timerName><Type>STRING</Type></timerName>
@@ -1315,7 +1306,6 @@
 			<diplomacyTickets> <Type> DIPLOMACY_TICKETS_STATE </Type> </diplomacyTickets>
 			<leveling><Type> BATTLE_LEVELING_STATE </Type></leveling>
 			<missions><Type> PRIVATE_MISSIONS_STATE </Type></missions>
-			<minefields><Type>ARRAY<of>MINEFIELD_INFO</of></Type></minefields>
 		</Properties>
 	</PRIVATE_BATTLE_LOGIC_STATE>
 
@@ -1738,17 +1728,6 @@
 		<implementedBy>NullableDef.nullableFloatConverter</implementedBy>
 	</NULLABLE_FLOAT>
 
-	<ACCOUNT_LOAD_ARGS>
-		FIXED_DICT
-		<Properties>
-			<loadReason><Type>UINT8</Type></loadReason>
-			<ignoreMasterShutdown><Type>BOOL</Type></ignoreMasterShutdown>
-			<loadMode><Type>UINT8</Type></loadMode>
-			<additionalArgs><Type>PICKLED_BLOB</Type></additionalArgs>
-		</Properties>
-		<implementedBy>AccountLoadArgsDef.converter</implementedBy>
-	</ACCOUNT_LOAD_ARGS>
-
 	<VS_EVENT_TASK_KEY>
 		TUPLE<of>STRING</of><size>3</size>
 	</VS_EVENT_TASK_KEY>
@@ -1975,6 +1954,11 @@
 		<implementedBy>CommonQuickCommands.QuickCommandConverter.converter</implementedBy>
 	</QUICK_COMMAND>
 
+	<MINEFIELD_INFO>
+		USER_TYPE
+		<implementedBy>Fields.MinefieldInfo.converter</implementedBy>
+	</MINEFIELD_INFO>
+
 	<CREATE_BATTLE_SESSION_PARAMS>
 		FIXED_DICT
 		<Properties>
@@ -2016,4 +2000,39 @@
 		</Properties>
 		<implementedBy>RestorePointConverter.converter</implementedBy>
 	</RESTORE_POINT>
+
+	<ENTITYAPI_TIMEOUT>
+		USER_TYPE
+		<implementedBy>EntityAPI.EntityAPITimeoutDef.converter</implementedBy>
+	</ENTITYAPI_TIMEOUT>
+
+	<ENTITY_LOAD_ARGS>
+		FIXED_DICT
+		<Properties>
+			<loadReason><Type>UINT8</Type></loadReason>
+			<ignoreMasterShutdown><Type>BOOL</Type></ignoreMasterShutdown>
+			<entityAPITimeout><Type>ENTITYAPI_TIMEOUT</Type></entityAPITimeout>
+			<additionalArgs><Type>PICKLED_BLOB</Type></additionalArgs>
+		</Properties>
+		<implementedBy>EntityAPIDefs.loadConverter</implementedBy>
+	</ENTITY_LOAD_ARGS>
+
+	<ENTITY_LOOKUP_ARGS>
+		FIXED_DICT
+		<Properties>
+			<additionalArgs><Type>PICKLED_BLOB</Type></additionalArgs>
+			<entityAPITimeout><Type>ENTITYAPI_TIMEOUT</Type></entityAPITimeout>
+		</Properties>
+		<implementedBy>EntityAPIDefs.lookupConverter</implementedBy>
+	</ENTITY_LOOKUP_ARGS>
+
+	<ENTITY_CREATE_ARGS>
+		FIXED_DICT
+		<Properties>
+			<additionalArgs><Type>PICKLED_BLOB</Type></additionalArgs>
+			<entityAPITimeout><Type>ENTITYAPI_TIMEOUT</Type></entityAPITimeout>
+		</Properties>
+		<implementedBy>EntityAPIDefs.createConverter</implementedBy>
+	</ENTITY_CREATE_ARGS>
+
 </root>
