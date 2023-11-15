@@ -433,6 +433,12 @@
             <Arg>UINT8</Arg>
             <Arg>BOOL</Arg>
         </squadronConsumableEnabled>
+        <ownSquadronConsumableInterrupted>
+            <Args>
+                <squadronIndex>PLANE_ID</squadronIndex>
+                <consType>UINT8</consType>
+            </Args>
+        </ownSquadronConsumableInterrupted>
         <squadronConsumableInterrupted>
             <Args>
                 <squadronID>PLANE_ID</squadronID>
