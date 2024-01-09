@@ -34,17 +34,6 @@
 			<Exposed/>
 		</leave>
 		
-		<devAddBotDivision>
-			<Exposed/>
-			<Args>
-				<queueType> QUEUE_TYPE </queueType>
-				<shipLevel> SHIP_LEVEL </shipLevel>
-				<divisionSize> UINT8 </divisionSize>
-				<data> INT32 </data>
-				<shipType> UNICODE_STRING </shipType>
-			</Args>
-		</devAddBotDivision>
-		
 		<onEnterViaDivision>  <!-- Callback from Division -->
 			<Args>
 				<enqueueData> ENQUEUE_DATA </enqueueData>
