@@ -32,6 +32,7 @@
 		<_BuoyancyOwner__currentStateIndex/>
 		<_BuoyancyOwner__availableStates/>
 		<buoyancyAutoStateMinSpeed/>
+		<isCollisionWarning/>
 		<buoyancyStates/>
 		<buoyancyWaterlineRatio/>
 

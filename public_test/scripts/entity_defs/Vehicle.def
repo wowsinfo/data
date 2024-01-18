@@ -209,6 +209,16 @@
         <onConsumableInterrupted>
             <Arg>UINT8</Arg>
         </onConsumableInterrupted>
+        <onCollisionWarningStateChanged>
+            <Arg>BOOL</Arg>
+        </onCollisionWarningStateChanged>
+        <addSubmarineHydrophoneTargets>
+            <Arg>ARRAY
+                <of>SUBMARINE_HYDROPHONE_TARGET_INFO</of>
+            </Arg>
+            <Arg>FLOAT</Arg>
+            <Arg>UINT16</Arg>
+        </addSubmarineHydrophoneTargets>
         <setAmmoForWeapon>
             <Arg>WEAPON_TYPE</Arg>
             <Arg>GAMEPARAMS_ID</Arg>

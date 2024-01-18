@@ -686,11 +686,6 @@
         <surfaceHydrophoneRemoveTarget>
             <Arg>ENTITY_ID</Arg>
         </surfaceHydrophoneRemoveTarget>
-        <addSubmarineHydrophoneTargets>
-            <Arg>ARRAY
-                <of>SUBMARINE_HYDROPHONE_TARGET_INFO</of>
-            </Arg>
-        </addSubmarineHydrophoneTargets>
         <clearSubmarineHydrophone></clearSubmarineHydrophone>
         <hideIntuitionIndicator></hideIntuitionIndicator>
         <hideHydrophoneIndicator></hideHydrophoneIndicator>
