@@ -686,11 +686,6 @@
         <surfaceHydrophoneRemoveTarget>
             <Arg>ENTITY_ID</Arg>
         </surfaceHydrophoneRemoveTarget>
-        <addSubmarineHydrophoneTargets>
-            <Arg>ARRAY
-                <of>SUBMARINE_HYDROPHONE_TARGET_INFO</of>
-            </Arg>
-        </addSubmarineHydrophoneTargets>
         <clearSubmarineHydrophone></clearSubmarineHydrophone>
         <hideIntuitionIndicator></hideIntuitionIndicator>
         <hideHydrophoneIndicator></hideHydrophoneIndicator>
@@ -863,8 +858,8 @@
             <Exposed>OWN_CLIENT</Exposed>
             <Args>
                 <weaponType>WEAPON_TYPE</weaponType>
-                <shootPos>SHOOT_POSITION</shootPos>
-                <localShootPos>SHOOT_POSITION</localShootPos>
+                <shootPos>NULLABLE_VECTOR3</shootPos>
+                <localShootPos>NULLABLE_VECTOR3</localShootPos>
                 <isSalvo>BOOL</isSalvo>
                 <clientCanShoot>BOOL</clientCanShoot>
             </Args>
