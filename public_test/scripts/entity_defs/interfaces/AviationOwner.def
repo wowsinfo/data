@@ -24,11 +24,6 @@
 			<Exposed/>
 		</dev_killPlane>
 
-		<useSquadConsumable>
-		    <Arg>UINT32</Arg> <!-- squadronId -->
-			<Arg>INT8</Arg> <!-- consId -->
-		</useSquadConsumable>
-
 		<spawnSquadron>
 			<Args>
 				<squadronIndex>		UINT8	</squadronIndex>

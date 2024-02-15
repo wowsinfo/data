@@ -206,9 +206,6 @@
     </Properties>
     <ClientMethods>
         <onAvatarReady></onAvatarReady>
-        <onConsumableInterrupted>
-            <Arg>UINT8</Arg>
-        </onConsumableInterrupted>
         <onCollisionWarningStateChanged>
             <Arg>BOOL</Arg>
         </onCollisionWarningStateChanged>
@@ -216,7 +213,6 @@
             <Arg>ARRAY
                 <of>SUBMARINE_HYDROPHONE_TARGET_INFO</of>
             </Arg>
-            <Arg>FLOAT</Arg>
             <Arg>UINT16</Arg>
         </addSubmarineHydrophoneTargets>
         <setAmmoForWeapon>
@@ -239,10 +235,6 @@
             </Arg>
             <VariableLengthHeaderSize>2</VariableLengthHeaderSize>
         </receiveDamagesOnShip>
-        <consumableUsed>
-            <Arg>INT8</Arg>
-            <Arg>FLOAT32</Arg>
-        </consumableUsed>
         <syncGun>
             <Arg>UINT8</Arg>
             <Arg>INT32</Arg>
@@ -357,10 +349,25 @@
         </receiveMirrorDamage>
         <forceReloadTorpedoes></forceReloadTorpedoes>
         <uniqueTriggerActivated></uniqueTriggerActivated>
+        <onConsumableSelected>
+            <Args>
+                <consumableType>CONSUMABLE_ID</consumableType>
+                <isSelected>BOOL</isSelected>
+            </Args>
+        </onConsumableSelected>
         <onConsumableEnabled>
-            <Arg>UINT8</Arg>
+            <Arg>CONSUMABLE_ID</Arg>
             <Arg>BOOL</Arg>
         </onConsumableEnabled>
+        <onConsumableInterrupted>
+            <Arg>CONSUMABLE_ID</Arg>
+        </onConsumableInterrupted>
+        <onConsumableUsed>
+            <Args>
+                <consumableType>CONSUMABLE_ID</consumableType>
+                <workTimeLeft>FLOAT32</workTimeLeft>
+            </Args>
+        </onConsumableUsed>
         <onReseted>
             <Arg>BOOL</Arg>
         </onReseted>
@@ -446,6 +453,9 @@
                 <wildFireState>WILD_FIRE_STATE</wildFireState>
             </Args>
         </setWildFireState>
+        <onNewWaveHornWave></onNewWaveHornWave>
+        <onCrashCrewEnable></onCrashCrewEnable>
+        <onCrashCrewDisable></onCrashCrewDisable>
     </ClientMethods>
     <CellMethods>
         <onClientEnterWorld>
