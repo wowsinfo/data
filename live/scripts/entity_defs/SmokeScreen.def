@@ -13,7 +13,7 @@
         </bcRadius>
         <points>
             <Type>ARRAY
-                <of>VECTOR2</of>
+                <of>VECTOR3</of>
             </Type>
             <Flags>ALL_CLIENTS</Flags>
         </points>

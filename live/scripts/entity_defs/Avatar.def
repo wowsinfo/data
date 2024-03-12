@@ -356,12 +356,15 @@
             <Arg>PLANE_PATH</Arg>
         </receive_resetWaypoints>
         <receive_wardAdded>
-            <Arg>PLANE_ID</Arg>
-            <Arg>VECTOR3</Arg>
-            <Arg>FLOAT</Arg>
-            <Arg>FLOAT</Arg>
-            <Arg>TEAM_ID</Arg>
-            <Arg>UINT64</Arg>
+            <Args>
+                <squadronId>PLANE_ID</squadronId>
+                <position>VECTOR3</position>
+                <time>FLOAT</time>
+                <radius>FLOAT</radius>
+                <teamId>TEAM_ID</teamId>
+                <ownerId>UINT64</ownerId>
+                <wardType>UINT8</wardType>
+            </Args>
         </receive_wardAdded>
         <receive_wardRemoved>
             <Arg>PLANE_ID</Arg>
@@ -422,33 +425,42 @@
             <Arg>PLANE_ID</Arg>
             <Arg>UINT16</Arg>
         </receive_squadronVisibilityChanged>
+        <squadronConsumableSelected>
+            <Args>
+                <squadronID>PLANE_ID</squadronID>
+                <consType>CONSUMABLE_ID</consType>
+                <isSelected>BOOL</isSelected>
+            </Args>
+        </squadronConsumableSelected>
         <squadronConsumableUsed>
             <Args>
                 <squadronID>PLANE_ID</squadronID>
-                <consType>UINT8</consType>
+                <consType>CONSUMABLE_ID</consType>
             </Args>
         </squadronConsumableUsed>
         <squadronConsumableEnabled>
-            <Arg>PLANE_ID</Arg>
-            <Arg>UINT8</Arg>
-            <Arg>BOOL</Arg>
+            <Args>
+                <squadronIndex>PLANE_ID</squadronIndex>
+                <consumableType>CONSUMABLE_ID</consumableType>
+                <value>BOOL</value>
+            </Args>
         </squadronConsumableEnabled>
         <ownSquadronConsumableInterrupted>
             <Args>
                 <squadronIndex>PLANE_ID</squadronIndex>
-                <consType>UINT8</consType>
+                <consType>CONSUMABLE_ID</consType>
             </Args>
         </ownSquadronConsumableInterrupted>
         <squadronConsumableInterrupted>
             <Args>
                 <squadronID>PLANE_ID</squadronID>
-                <consType>UINT8</consType>
+                <consType>CONSUMABLE_ID</consType>
             </Args>
         </squadronConsumableInterrupted>
         <squadronConsumableStopWorking>
             <Args>
                 <squadronID>PLANE_ID</squadronID>
-                <consType>UINT8</consType>
+                <consType>CONSUMABLE_ID</consType>
             </Args>
         </squadronConsumableStopWorking>
         <receive_squadronInsideEnemyAura>
@@ -710,7 +722,7 @@
         <increaseConsumablesCount>
             <Args>
                 <consumablesIds>ARRAY
-                    <of>UINT8</of>
+                    <of>CONSUMABLE_ID</of>
                 </consumablesIds>
                 <count>UINT8</count>
                 <reason>UINT8</reason>
@@ -720,7 +732,7 @@
             <Args>
                 <squadronId>PLANE_ID</squadronId>
                 <consumablesIds>ARRAY
-                    <of>UINT8</of>
+                    <of>CONSUMABLE_ID</of>
                 </consumablesIds>
                 <count>UINT8</count>
                 <reason>UINT8</reason>
@@ -811,9 +823,12 @@
             <Arg>VECTOR2</Arg>
         </receiveOilLeakPosition>
         <receivePingerLaunchPosition>
-            <Arg>ENTITY_ID</Arg>
-            <Arg>FLAT_VECTOR</Arg>
-            <Arg>FLOAT</Arg>
+            <Args>
+                <vehicleId>ENTITY_ID</vehicleId>
+                <position>FLAT_VECTOR</position>
+                <yaw>FLOAT</yaw>
+                <traceDirection>NULLABLE_VECTOR3</traceDirection>
+            </Args>
         </receivePingerLaunchPosition>
         <onOilLeakStateChanged>
             <Arg>UINT8</Arg>
@@ -828,13 +843,35 @@
         </onDrawMinefieldPrediction>
     </ClientMethods>
     <CellMethods>
+        <selectSquadConsumable>
+            <Exposed>OWN_CLIENT</Exposed>
+            <Args>
+                <squadronId>PLANE_ID</squadronId>
+                <consumableType>CONSUMABLE_ID</consumableType>
+                <isSelected>BOOL</isSelected>
+            </Args>
+        </selectSquadConsumable>
+        <useSquadConsumable>
+            <Exposed>OWN_CLIENT</Exposed>
+            <Args>
+                <squadronId>PLANE_ID</squadronId>
+                <consumableUsageParams>CONSUMABLE_USAGE_PARAMS</consumableUsageParams>
+            </Args>
+        </useSquadConsumable>
+        <selectConsumable>
+            <Exposed>OWN_CLIENT</Exposed>
+            <Args>
+                <consumableType>CONSUMABLE_ID</consumableType>
+                <isSelected>BOOL</isSelected>
+            </Args>
+        </selectConsumable>
         <useConsumable>
             <Exposed>OWN_CLIENT</Exposed>
-            <Arg>INT8</Arg>
+            <Arg>CONSUMABLE_USAGE_PARAMS</Arg>
         </useConsumable>
         <interruptConsumable>
             <Exposed>OWN_CLIENT</Exposed>
-            <Arg>INT8</Arg>
+            <Arg>CONSUMABLE_ID</Arg>
         </interruptConsumable>
         <updateFov>
             <Exposed>OWN_CLIENT</Exposed>
@@ -975,11 +1012,6 @@
             <Arg>PLANE_ID</Arg>
             <Arg>FLOAT</Arg>
         </setSquadronTargetYaw>
-        <useSquadConsumable>
-            <Exposed>OWN_CLIENT</Exposed>
-            <Arg>PLANE_ID</Arg>
-            <Arg>INT8</Arg>
-        </useSquadConsumable>
         <setAntiAirPrioritySector>
             <Exposed>OWN_CLIENT</Exposed>
             <Arg>INT8</Arg>
@@ -1038,6 +1070,12 @@
                 <start>BOOL</start>
             </Args>
         </playFogHorn>
+        <playWaveHorn>
+            <Exposed>OWN_CLIENT</Exposed>
+            <Args>
+                <isActive>BOOL</isActive>
+            </Args>
+        </playWaveHorn>
         <dev_damageSquadron>
             <Exposed>OWN_CLIENT</Exposed>
             <Arg>INT8</Arg>

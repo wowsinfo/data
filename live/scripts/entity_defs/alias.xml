@@ -41,6 +41,8 @@
 	<FIELD_ID>UINT16</FIELD_ID>
 	<HIT_TYPE>UINT8</HIT_TYPE>
 	<BUOYANCY_STATE>UINT8</BUOYANCY_STATE>
+	<INTERCLUSTER_ID>UINT64</INTERCLUSTER_ID>
+	<CONSUMABLE_ID>UINT8</CONSUMABLE_ID>
 
 	<ZIPPED_BLOB>
 		USER_TYPE
@@ -833,6 +835,7 @@
 			<type><Type>UINT8</Type></type>
 			<ownerId><Type>ENTITY_ID</Type></ownerId>
 			<maxValue><Type>FLOAT</Type></maxValue>
+			<thresholds><Type>ARRAY<of>UINT8</of></Type></thresholds>
 			<curValue><Type>FLOAT</Type></curValue>
 		</Properties>
 		<AllowNone>true</AllowNone>
@@ -1744,6 +1747,7 @@
 			<realm><Type>STRING</Type></realm>
 			<queueType><Type>QUEUE_TYPE</Type></queueType>
 			<proxy><Type>MAILBOX</Type></proxy>	<!-- mailbox: an account or a division -->
+			<unitID><Type>INTERCLUSTER_ID</Type></unitID>
 			<playersDefs><Type>PLAYERS_DEFS</Type></playersDefs>
 			<proxyInfo><Type>PRE_BATTLE_CREATOR_DEF</Type></proxyInfo>	<!-- None if it is not a division -->
 			<operationID><Type>GAMEPARAMS_ID</Type></operationID>
@@ -2029,5 +2033,10 @@
 		</Properties>
 		<implementedBy>EntityAPIDefs.createConverter</implementedBy>
 	</ENTITY_CREATE_ARGS>
+
+	<CONSUMABLE_USAGE_PARAMS>
+		USER_TYPE
+		<implementedBy>CommonConsumables.UsageConverter.converter</implementedBy>
+	</CONSUMABLE_USAGE_PARAMS>
 
 </root>
