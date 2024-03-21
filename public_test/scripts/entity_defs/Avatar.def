@@ -895,8 +895,8 @@
             <Exposed>OWN_CLIENT</Exposed>
             <Args>
                 <weaponType>WEAPON_TYPE</weaponType>
-                <shootPos>NULLABLE_VECTOR3</shootPos>
-                <localShootPos>NULLABLE_VECTOR3</localShootPos>
+                <shootPos>SHOOT_POSITION</shootPos>
+                <localShootPos>SHOOT_POSITION</localShootPos>
                 <isSalvo>BOOL</isSalvo>
                 <clientCanShoot>BOOL</clientCanShoot>
             </Args>

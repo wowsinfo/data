@@ -1776,6 +1776,11 @@
 		<implementedBy>NullableDef.nullableVector3Converter</implementedBy>
 	</NULLABLE_VECTOR3>
 
+	<SHOOT_POSITION>
+		USER_TYPE
+		<implementedBy>Converters.ShootPositionConverter.converter</implementedBy>
+	</SHOOT_POSITION>
+
 	<BATTERY_STATE>
 		FIXED_DICT
 		<Properties>

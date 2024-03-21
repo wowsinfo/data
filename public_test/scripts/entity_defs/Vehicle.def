@@ -273,6 +273,7 @@
             <Arg>VECTOR2</Arg>
             <Arg>VECTOR3</Arg>
             <Arg>VECTOR3</Arg>
+            <Arg>ENTITY_ID</Arg>
         </kill>
         <forceSink>
             <Arg>FLOAT</Arg>
