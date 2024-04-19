@@ -28,4 +28,6 @@
 	<MasterEntityAPIComponent/>
 	<PdataResetComponent/>
 	<StrategicActionsComponent/>
+	<EventHubComponent/>
+	<BattleCardsComponent/>
 </root>

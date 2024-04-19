@@ -294,7 +294,7 @@
         <receiveMineKills>
             <Args>
                 <fieldPacks>ARRAY
-                    <of>FIELD_PACK</of>
+                    <of>KILL_FIELD_PACK</of>
                 </fieldPacks>
             </Args>
         </receiveMineKills>
@@ -873,6 +873,18 @@
             <Exposed>OWN_CLIENT</Exposed>
             <Arg>CONSUMABLE_ID</Arg>
         </interruptConsumable>
+        <removeBattleCard>
+            <Exposed>OWN_CLIENT</Exposed>
+            <Args>
+                <battleCardID>BATTLE_CARD_ID</battleCardID>
+            </Args>
+        </removeBattleCard>
+        <installBattleCard>
+            <Exposed>OWN_CLIENT</Exposed>
+            <Args>
+                <battleCardID>BATTLE_CARD_ID</battleCardID>
+            </Args>
+        </installBattleCard>
         <updateFov>
             <Exposed>OWN_CLIENT</Exposed>
             <Arg>FLOAT</Arg>
