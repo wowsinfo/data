@@ -38,11 +38,12 @@
 	<AI_CATEGORY>UINT8</AI_CATEGORY>
 	<RIBBON_ID>INT8</RIBBON_ID>
 	<STATE>UINT8</STATE>
-	<FIELD_ID>UINT16</FIELD_ID>
+	<FIELD_ID>UINT64</FIELD_ID>
 	<HIT_TYPE>UINT8</HIT_TYPE>
 	<BUOYANCY_STATE>UINT8</BUOYANCY_STATE>
 	<INTERCLUSTER_ID>UINT64</INTERCLUSTER_ID>
 	<CONSUMABLE_ID>UINT8</CONSUMABLE_ID>
+	<BATTLE_CARD_ID>UINT32</BATTLE_CARD_ID>
 
 	<ZIPPED_BLOB>
 		USER_TYPE
@@ -221,6 +222,14 @@
 		<implementedBy>AIConfigDef.converter</implementedBy>
 		<AllowNone> true </AllowNone>
 	</AI_CONFIG>
+
+	<BATTLE_CARD>
+		TUPLE<of>UINT32</of><size>2</size> <!-- (CARD_ID, CARD_LEVEL) -->
+	</BATTLE_CARD>
+
+	<BATTLE_CARDS>
+		ARRAY<of>BATTLE_CARD</of>
+	</BATTLE_CARDS>
 
 	<PLAYER_DEF>
 		FIXED_DICT
@@ -1021,10 +1030,19 @@
 	<FIELD_PACK>
 		FIXED_DICT
 		<Properties>
-			<fieldId><Type>UINT32</Type></fieldId>
+			<fieldId><Type>FIELD_ID</Type></fieldId>
 			<layers><Type>ARRAY<of>FIELD_LAYER_PACK</of></Type></layers>
 		</Properties>
 	</FIELD_PACK>
+
+	<KILL_FIELD_PACK>
+		FIXED_DICT
+		<Properties>
+			<fieldId><Type>FIELD_ID</Type></fieldId>
+			<hitType><Type>HIT_TYPE</Type></hitType>
+			<layers><Type>ARRAY<of>FIELD_LAYER_PACK</of></Type></layers>
+		</Properties>
+	</KILL_FIELD_PACK>
 
 	<LOCAL_WEATHER_STATE>
 		FIXED_DICT
@@ -1840,12 +1858,24 @@
 		</Properties>
 	</VEHICLE_STATE>
 
+	<BATTLE_CARDS_STATE>
+		FIXED_DICT
+		<Properties>
+			<ownedCards><Type>BATTLE_CARDS</Type></ownedCards>
+			<installedCards><Type>ARRAY<of>GAMEPARAMS_ID</of></Type></installedCards>
+			<isChangeable><Type>BOOL</Type></isChangeable>
+			<maxCardsAmount><Type>UINT8</Type></maxCardsAmount>
+		</Properties>
+		<AllowNone> true </AllowNone>
+	</BATTLE_CARDS_STATE>
+
 	<PRIVATE_VEHICLE_STATE>
 		FIXED_DICT
 		<Properties>
 			<buffs><Type>BUFFS_STATE</Type></buffs>
 			<rageMode><Type>RAGE_MODE_STATE</Type></rageMode>
 			<ribbons><Type>RIBBONS_STATE</Type></ribbons>
+			<battleCards><Type>BATTLE_CARDS_STATE</Type></battleCards>
 		</Properties>
 	</PRIVATE_VEHICLE_STATE>
 
