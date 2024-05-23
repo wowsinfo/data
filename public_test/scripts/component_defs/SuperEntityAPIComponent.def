@@ -47,6 +47,7 @@
 			<Args>
 				<accountDBID> DB_ID </accountDBID>
 				<accountController>MAILBOX</accountController>
+				<loadArgs> ENTITY_LOAD_ARGS </loadArgs>
 			</Args>
 			<ReturnValues>
 				<masterId>MASTER_ID</masterId>
