@@ -783,6 +783,7 @@
 			<ownerId><Type>ENTITY_ID</Type></ownerId>
 			<ownerTeam><Type>TEAM_ID</Type></ownerTeam>
 			<linkedTaskName><Type>STRING</Type></linkedTaskName>
+			<duration><Type>FLOAT</Type></duration>
 		</Properties>
 		<implementedBy>AttentionMarkerDef.converter</implementedBy>
 	</ATTENTION_MARKER_STATE>
@@ -1863,6 +1864,7 @@
 		<Properties>
 			<ownedCards><Type>BATTLE_CARDS</Type></ownedCards>
 			<installedCards><Type>ARRAY<of>GAMEPARAMS_ID</of></Type></installedCards>
+			<autoPickedCards><Type>ARRAY<of>GAMEPARAMS_ID</of></Type></autoPickedCards>
 			<isChangeable><Type>BOOL</Type></isChangeable>
 			<maxCardsAmount><Type>UINT8</Type></maxCardsAmount>
 		</Properties>

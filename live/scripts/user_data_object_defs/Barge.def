@@ -32,5 +32,11 @@
             <Editable> True </Editable>
             <Default> 0.0 </Default>
         </waterPhysicsAffect>
+
+        <cameraSwitchTime>
+            <Type> FLOAT </Type>
+            <Editable> True </Editable>
+            <Default> 2.0 </Default>
+        </cameraSwitchTime>
     </Properties>
 </root>
