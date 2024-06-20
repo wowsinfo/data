@@ -224,8 +224,20 @@
 	</AI_CONFIG>
 
 	<BATTLE_CARD>
-		TUPLE<of>UINT32</of><size>2</size> <!-- (CARD_ID, CARD_LEVEL) -->
+		FIXED_DICT
+		<Properties>
+			<cardID><Type>GAMEPARAMS_ID</Type></cardID>
+			<level><Type>UINT8</Type></level>
+		</Properties>
 	</BATTLE_CARD>
+
+	<INSTALLED_BATTLE_CARD>
+		FIXED_DICT
+		<Properties>
+			<cardID><Type>GAMEPARAMS_ID</Type></cardID>
+			<isAutopicked><Type>BOOL</Type></isAutopicked>
+		</Properties>
+	</INSTALLED_BATTLE_CARD>
 
 	<BATTLE_CARDS>
 		ARRAY<of>BATTLE_CARD</of>
@@ -1863,8 +1875,7 @@
 		FIXED_DICT
 		<Properties>
 			<ownedCards><Type>BATTLE_CARDS</Type></ownedCards>
-			<installedCards><Type>ARRAY<of>GAMEPARAMS_ID</of></Type></installedCards>
-			<autoPickedCards><Type>ARRAY<of>GAMEPARAMS_ID</of></Type></autoPickedCards>
+			<installedCards><Type>ARRAY<of>INSTALLED_BATTLE_CARD</of></Type></installedCards>
 			<isChangeable><Type>BOOL</Type></isChangeable>
 			<maxCardsAmount><Type>UINT8</Type></maxCardsAmount>
 		</Properties>

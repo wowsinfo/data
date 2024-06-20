@@ -445,9 +445,12 @@
             <Arg>FLOAT</Arg>
         </receiveUpdateAcousticHitFromEnemy>
         <syncRageMode>
-            <Arg>INT8</Arg>
-            <Arg>INT8</Arg>
-            <Arg>FLOAT</Arg>
+            <Args>
+                <hitCounter>UINT8</hitCounter>
+                <state>INT8</state>
+                <stateTimePassed>FLOAT</stateTimePassed>
+                <activatedTimes>UINT8</activatedTimes>
+            </Args>
         </syncRageMode>
         <setWildFireState>
             <Args>
