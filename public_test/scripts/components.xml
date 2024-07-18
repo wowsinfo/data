@@ -11,7 +11,7 @@
 	<VSEventComponent/>
 	<ShipAcesComponent/>
 	<MatchmakerComponent/>
-	<XmppComponent/>
+	<RestrictionComponent/>
 	<UserDataComponent/>
 	<GiftListsComponent/>
 	<RequestPerformerComponent/>
