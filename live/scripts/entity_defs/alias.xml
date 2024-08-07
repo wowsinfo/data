@@ -1426,6 +1426,8 @@
 			<shipTypes><Type>ARRAY<of>SHIP_TYPE_ID</of></Type></shipTypes>
 			<shipLevels><Type>ARRAY<of>INT8</of></Type></shipLevels>
 			<nations><Type>ARRAY<of>SHIP_NATION_ID</of></Type></nations>
+			<validGroups><Type>ARRAY<of>STRING</of></Type></validGroups>
+			<invalidGroups><Type>ARRAY<of>STRING</of></Type></invalidGroups>
 		</Properties>
 	</RESTRICTION_FILTER>
 
@@ -2082,4 +2084,17 @@
 		<implementedBy>CommonConsumables.UsageConverter.converter</implementedBy>
 	</CONSUMABLE_USAGE_PARAMS>
 
+	<RESTRICTIONS_INFO>
+		FIXED_DICT
+		<Properties>
+			<isBlockDockAndClanChat><Type>BOOL</Type></isBlockDockAndClanChat>
+			<isBlockBattleChat><Type>BOOL</Type></isBlockBattleChat>
+			<isBlockPrebattleChat><Type>BOOL</Type></isBlockPrebattleChat>
+			<isBlockDescriptionTextFields><Type>BOOL</Type></isBlockDescriptionTextFields>
+			<isTextSettingsBlocked><Type>BOOL</Type></isTextSettingsBlocked>
+			<isVoiceChatCommunicationBlocked><Type>BOOL</Type></isVoiceChatCommunicationBlocked>
+			<isPaymentBlocked><Type>BOOL</Type></isPaymentBlocked>
+		</Properties>
+		<implementedBy>RestrictionsDef.converter</implementedBy>
+	</RESTRICTIONS_INFO>
 </root>
