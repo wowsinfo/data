@@ -2097,4 +2097,13 @@
 		</Properties>
 		<implementedBy>RestrictionsDef.converter</implementedBy>
 	</RESTRICTIONS_INFO>
+
+	<SSE_BONUS>
+		FIXED_DICT
+		<Properties>
+			<configID><Type>STRING</Type></configID>
+			<idTask><Type>STRING</Type></idTask>
+			<coef><Type>UINT8</Type></coef>
+		</Properties>
+	</SSE_BONUS>
 </root>

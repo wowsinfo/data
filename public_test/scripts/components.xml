@@ -30,4 +30,5 @@
 	<StrategicActionsComponent/>
 	<EventHubComponent/>
 	<BattleCardsComponent/>
+	<SseBonusComponent/>
 </root>
