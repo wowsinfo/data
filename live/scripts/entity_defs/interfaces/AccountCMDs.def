@@ -377,6 +377,16 @@
 			<Arg>ARRAY<of>UINT64</of></Arg>
 			<Exposed/>
 		</cmdL1>
+
+		<cmdL1I1S2>
+			<Arg>UINT8</Arg>
+			<Arg>UINT8</Arg>
+			<Arg>ARRAY<of>UINT64</of></Arg>
+			<Arg> UINT64 </Arg>
+			<Arg> UNICODE_STRING </Arg>
+			<Arg> UNICODE_STRING </Arg>
+			<Exposed/>
+		</cmdL1I1S2>
 	</BaseMethods>
 
 </root>
