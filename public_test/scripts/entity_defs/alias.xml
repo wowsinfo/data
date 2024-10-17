@@ -493,6 +493,45 @@
 		</Properties>
 	</TORPEDOES_PACK>
 
+	<TORPEDO_PHOTON_DUMP>
+		FIXED_DICT
+		<Properties>
+			<speedCoef>			<Type>FLOAT</Type>	</speedCoef>
+			<accelerationTime>	<Type>FLOAT</Type>	</accelerationTime>
+			<rotationYaw>	    <Type>FLOAT</Type>	</rotationYaw>
+			<verticalSpeed>		<Type>FLOAT</Type>	</verticalSpeed>
+			<targetYaw>			<Type>FLOAT</Type>	</targetYaw>
+			<targetDepth>		<Type>FLOAT</Type>	</targetDepth>
+			<targetPitch>		<Type>FLOAT</Type>	</targetPitch >
+		</Properties>
+		<AllowNone> true </AllowNone>
+	</TORPEDO_PHOTON_DUMP>
+
+	<PHOTON_TORPEDO>
+		FIXED_DICT
+		<Properties>
+			<pos>			<Type>VECTOR3</Type>	</pos>
+			<dir>			<Type>VECTOR3</Type>	</dir>
+			<launchDir>		<Type>VECTOR3</Type>	</launchDir>
+			<launchTime>	<Type>FLOAT</Type>		</launchTime>
+			<inertiaTime>	<Type>FLOAT</Type>		</inertiaTime>
+			<shotID>		<Type>SHOT_ID</Type>	</shotID>
+			<armed>			<Type>BOOL</Type>		</armed>
+			<shiftDir>		<Type>VECTOR3</Type>	</shiftDir>
+			<photonDump>	<Type>TORPEDO_PHOTON_DUMP  </Type>	</photonDump>
+		</Properties>
+	</PHOTON_TORPEDO>
+
+	<PHOTON_PACK>
+		FIXED_DICT
+		<Properties>
+			<paramsID>	<Type>GAMEPARAMS_ID</Type>			</paramsID>
+			<ownerID>	<Type>PLAYER_ID</Type>				</ownerID>
+			<salvoID>	<Type>INT32</Type>					</salvoID>
+			<torpedoes>	<Type>ARRAY<of>PHOTON_TORPEDO</of></Type>	</torpedoes>
+		</Properties>
+	</PHOTON_PACK>
+
 	<DEPTH_CHARGE>
 		FIXED_DICT
 		<Properties>
@@ -578,6 +617,7 @@
             <speed>         <Type>FLOAT</Type>         </speed>
             <distance>      <Type>FLOAT</Type>         </distance>
 			<maxHeight>      <Type>FLOAT</Type>         </maxHeight>
+			<waveEffectName>    <Type>STRING</Type>   </waveEffectName> <!-- TODO(g_shakhov): WWSD-228944 -->
 		</Properties>
 	</PINGER_SHOT>
 
@@ -1281,6 +1321,7 @@
 		FIXED_DICT
 		<Properties>
 			<miniMapType><Type>UINT8</Type></miniMapType>
+			<timeToInstallBattleCards><Type>UINT16</Type></timeToInstallBattleCards>
 		</Properties>
 		<AllowNone>true</AllowNone>
 	</UI_INFO_STATE>
@@ -1900,6 +1941,7 @@
 			<installedCards><Type>ARRAY<of>INSTALLED_BATTLE_CARD</of></Type></installedCards>
 			<isChangeable><Type>BOOL</Type></isChangeable>
 			<maxCardsAmount><Type>UINT8</Type></maxCardsAmount>
+			<modifier><Type> MODIFIER_STATE </Type></modifier>  <!-- TODO(g_shakhov): WWSD-231606 -->
 		</Properties>
 		<AllowNone> true </AllowNone>
 	</BATTLE_CARDS_STATE>
@@ -1926,6 +1968,15 @@
 			<invisibleHitPos><Type>VECTOR3</Type></invisibleHitPos>
 		</Properties>
 	</ATTACHED_PINGER_WAVE>
+
+	<PING_AIM_WAVE>
+		FIXED_DICT
+		<Properties>
+			<ownerWeaponType><Type>WEAPON_TYPE</Type></ownerWeaponType>
+			<dump><Type> ARRAY<of>ATTACHED_PINGER_WAVE </of></Type></dump>
+		</Properties>
+		<AllowNone> true </AllowNone>
+	</PING_AIM_WAVE>
 
 	<WILD_FIRE_STATE>
 		FIXED_DICT
@@ -2012,6 +2063,22 @@
 		<AllowNone>false</AllowNone>
 		<implementedBy>MinefieldStatistics.converter</implementedBy>
 	</MINEFIELD_HEAT_MAP_EVENT_DATA>
+
+	<!-- TODO(g_shakhov): Shield - remove -->
+	<SHIELD_HEAT_MAP_EVENT_DATA>
+		FIXED_DICT
+		<Properties>
+			<ownerId><Type>ENTITY_ID</Type></ownerId>
+			<startShieldHp><Type>UINT32</Type></startShieldHp>
+			<regeneratedHp><Type>FLOAT</Type></regeneratedHp>
+			<withShieldTime><Type>FLOAT</Type></withShieldTime>
+			<withoutShieldTime><Type>FLOAT</Type></withoutShieldTime>
+			<receivedDamageShield><Type>FLOAT</Type></receivedDamageShield>
+			<shieldUnarmedCounter><Type>UINT16</Type></shieldUnarmedCounter>
+		</Properties>
+		<AllowNone>false</AllowNone>
+		<implementedBy>ShieldStatistics.converter</implementedBy>
+	</SHIELD_HEAT_MAP_EVENT_DATA>
 
 	<QUICK_COMMAND>
 		USER_TYPE

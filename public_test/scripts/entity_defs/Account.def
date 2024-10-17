@@ -200,7 +200,7 @@
         <setTrace>
             <Arg>BOOL</Arg>
         </setTrace>
-        <curVersion_13_9_9005514></curVersion_13_9_9005514>
+        <curVersion_13_10_9074962></curVersion_13_10_9074962>
         <updateSSEProgress>
             <Arg>STRING</Arg>
             <VariableLengthHeaderSize>
@@ -232,10 +232,6 @@
                 <isInBattle>BOOL</isInBattle>
             </Args>
         </receiveCrewInBattle>
-        <receiveEventShipBattleLock>
-            <Arg>SHIP_ID</Arg>
-            <Arg>MSGPACK_BLOB</Arg>
-        </receiveEventShipBattleLock>
         <receiveActiveShip>
             <Arg>SHIP_ID</Arg>
         </receiveActiveShip>

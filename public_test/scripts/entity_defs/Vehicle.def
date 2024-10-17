@@ -281,6 +281,18 @@
         <bodySinkPartLurched>
             <Arg>FLOAT</Arg>
         </bodySinkPartLurched>
+        <damageShield># TODO(g_shashov): Shield - remove
+            <Args>
+                <damage>UINT32</damage>
+            </Args>
+        </damageShield>
+        <delayShieldRegen># TODO(g_shashov): Shield - remove</delayShieldRegen>
+        <instantShieldRegen># TODO(g_shashov): Shield - remove
+            <Args>
+                <hpToRegen>UINT32</hpToRegen>
+            </Args>
+        </instantShieldRegen>
+        <startShieldRegen># TODO(g_shashov): Shield - remove</startShieldRegen>
         <shootTorpedo>
             <Arg>INT32</Arg>
             <Arg>VECTOR3</Arg>
@@ -288,6 +300,14 @@
             <Arg>INT32</Arg>
             <Arg>BOOL</Arg>
         </shootTorpedo>
+        <shootPhoton>
+            <Args>
+                <gunID>INT32</gunID>
+                <salvoID>INT32</salvoID>
+                <numShoot>INT32</numShoot>
+                <isSalvo>BOOL</isSalvo>
+            </Args>
+        </shootPhoton>
         <shootDepthCharge>
             <Arg>INT32</Arg>
             <Arg>UINT16</Arg>
@@ -296,10 +316,15 @@
             <Arg>INT32</Arg>
         </syncSurfacingTime>
         <receivePingerShot>
-            <Arg>INT32</Arg>
-            <Arg>FLOAT</Arg>
-            <Arg>FLOAT</Arg>
+            <Args>
+                <weaponType>WEAPON_TYPE</weaponType>
+                <gunID>INT32</gunID>
+                <yaw>FLOAT</yaw>
+            </Args>
         </receivePingerShot>
+        <resetPinger>
+            <Arg>WEAPON_TYPE</Arg>
+        </resetPinger>
         <shootOnClient>
             <Arg>WEAPON_TYPE</Arg>
             <Arg>GUN_BITS</Arg>
@@ -398,51 +423,78 @@
             <Arg>WEAPON_TYPE</Arg>
             <Arg>GUN_DIRECTIONS</Arg>
         </receiveGunSyncRotations>
-        <resetAllWaveEnemyHits></resetAllWaveEnemyHits>
+        <resetResettableWaveEnemyHits></resetResettableWaveEnemyHits>
         <onPingDeactivated>
             <Arg>ENTITY_ID</Arg>
+            <Arg>WEAPON_TYPE</Arg>
         </onPingDeactivated>
+        <syncShield># TODO(g_shashov): Shield - remove
+            <Args>
+                <remainingShieldHP>UINT32</remainingShieldHP>
+                <timeSinceLastRegen>FLOAT</timeSinceLastRegen>
+                <isRegenOn>BOOL</isRegenOn>
+            </Args>
+        </syncShield>
         <resetEnemyHit>
             <Arg>ENTITY_ID</Arg>
+            <Arg>WEAPON_TYPE</Arg>
         </resetEnemyHit>
         <onPingerWaveEnemyHit>
-            <Arg>ENTITY_ID</Arg>
-            <Arg>FLOAT</Arg>
-            <Arg>FLOAT</Arg>
-            <Arg>VECTOR3</Arg>
-            <Arg>INT8</Arg>
-            <Arg>UINT8</Arg>
+            <Args>
+                <vehicleID>ENTITY_ID</vehicleID>
+                <lifetime>FLOAT</lifetime>
+                <currentWidth>FLOAT</currentWidth>
+                <localPoint>VECTOR3</localPoint>
+                <side>INT8</side>
+                <count>UINT8</count>
+                <ownerWeaponType>WEAPON_TYPE</ownerWeaponType>
+            </Args>
         </onPingerWaveEnemyHit>
         <updateWaveEnemyHit>
-            <Arg>ENTITY_ID</Arg>
-            <Arg>FLOAT</Arg>
-            <Arg>FLOAT</Arg>
-            <Arg>UINT8</Arg>
+            <Args>
+                <targetId>ENTITY_ID</targetId>
+                <lifetime>FLOAT</lifetime>
+                <currentWidth>FLOAT</currentWidth>
+                <count>UINT8</count>
+                <ownerWeaponType>WEAPON_TYPE</ownerWeaponType>
+            </Args>
         </updateWaveEnemyHit>
         <updateInvisibleWavedPoint>
-            <Arg>ENTITY_ID</Arg>
-            <Arg>NULLABLE_VECTOR3</Arg>
+            <Args>
+                <targetId>ENTITY_ID</targetId>
+                <position>NULLABLE_VECTOR3</position>
+                <ownerWeaponType>WEAPON_TYPE</ownerWeaponType>
+            </Args>
         </updateInvisibleWavedPoint>
         <receiveEnemyHitWaveDump>
-            <Arg>ARRAY
-                <of>ATTACHED_PINGER_WAVE</of>
-            </Arg>
+            <Args>
+                <waveDump>ARRAY
+                    <of>PING_AIM_WAVE</of>
+                </waveDump>
+            </Args>
         </receiveEnemyHitWaveDump>
         <receiveWaveFromEnemy>
-            <Arg>PLAYER_ID</Arg>
-            <Arg>VECTOR3</Arg>
-            <Arg>INT8</Arg>
-            <Arg>FLOAT</Arg>
-            <Arg>FLOAT</Arg>
-            <Arg>UINT8</Arg>
-            <Arg>FLOAT</Arg>
+            <Args>
+                <shooterID>PLAYER_ID</shooterID>
+                <localPoint>VECTOR3</localPoint>
+                <side>INT8</side>
+                <lifetime>FLOAT</lifetime>
+                <currentWidth>FLOAT</currentWidth>
+                <count>UINT8</count>
+                <waveYaw>FLOAT</waveYaw>
+                <ownerWeaponType>WEAPON_TYPE</ownerWeaponType>
+                <isResettable>BOOL</isResettable>
+            </Args>
         </receiveWaveFromEnemy>
         <receiveUpdateAcousticHitFromEnemy>
-            <Arg>PLAYER_ID</Arg>
-            <Arg>FLOAT</Arg>
-            <Arg>FLOAT</Arg>
-            <Arg>UINT8</Arg>
-            <Arg>FLOAT</Arg>
+            <Args>
+                <shooterID>PLAYER_ID</shooterID>
+                <lifetime>FLOAT</lifetime>
+                <currentWidth>FLOAT</currentWidth>
+                <hitCount>UINT8</hitCount>
+                <waveYaw>FLOAT</waveYaw>
+                <ownerWeaponType>WEAPON_TYPE</ownerWeaponType>
+            </Args>
         </receiveUpdateAcousticHitFromEnemy>
         <syncRageMode>
             <Args>
