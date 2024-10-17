@@ -281,18 +281,7 @@
         <bodySinkPartLurched>
             <Arg>FLOAT</Arg>
         </bodySinkPartLurched>
-        <damageShield># TODO(g_shashov): Shield - remove
-            <Args>
-                <damage>UINT32</damage>
-            </Args>
-        </damageShield>
-        <delayShieldRegen># TODO(g_shashov): Shield - remove</delayShieldRegen>
-        <instantShieldRegen># TODO(g_shashov): Shield - remove
-            <Args>
-                <hpToRegen>UINT32</hpToRegen>
-            </Args>
-        </instantShieldRegen>
-        <startShieldRegen># TODO(g_shashov): Shield - remove</startShieldRegen>
+        <shieldRegen># TODO(g_shashov): Shield - remove</shieldRegen>
         <shootTorpedo>
             <Arg>INT32</Arg>
             <Arg>VECTOR3</Arg>
@@ -428,13 +417,6 @@
             <Arg>ENTITY_ID</Arg>
             <Arg>WEAPON_TYPE</Arg>
         </onPingDeactivated>
-        <syncShield># TODO(g_shashov): Shield - remove
-            <Args>
-                <remainingShieldHP>UINT32</remainingShieldHP>
-                <timeSinceLastRegen>FLOAT</timeSinceLastRegen>
-                <isRegenOn>BOOL</isRegenOn>
-            </Args>
-        </syncShield>
         <resetEnemyHit>
             <Arg>ENTITY_ID</Arg>
             <Arg>WEAPON_TYPE</Arg>

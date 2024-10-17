@@ -1357,13 +1357,13 @@
 		</Properties>
 	</BATTLE_LOGIC_STATE>
 
-	<TRIGGERS_STATE>
+	<MODIFIER_STATE_WRAPPER>
 		FIXED_DICT
 		<Properties>
 			<modifier><Type> MODIFIER_STATE </Type></modifier>
 		</Properties>
 		<AllowNone>true</AllowNone>
-	</TRIGGERS_STATE>
+	</MODIFIER_STATE_WRAPPER>
 
 	<DIPLOMACY_TICKET>
 		FIXED_DICT
@@ -1397,7 +1397,7 @@
 		FIXED_DICT
 		<Properties>
 			<battleItems><Type> ARRAY <of> STASHED_BATTLE_ITEM_STATE </of> </Type></battleItems>
-			<triggers><Type> TRIGGERS_STATE </Type></triggers>
+			<triggers><Type> MODIFIER_STATE_WRAPPER </Type></triggers>
 			<diplomacyTickets> <Type> DIPLOMACY_TICKETS_STATE </Type> </diplomacyTickets>
 			<leveling><Type> BATTLE_LEVELING_STATE </Type></leveling>
 			<missions><Type> PRIVATE_MISSIONS_STATE </Type></missions>
@@ -1925,12 +1925,21 @@
 		<AllowNone> true </AllowNone>
 	</RAGE_MODE_STATE>
 
+	<SHIELD_STATE>
+		FIXED_DICT
+		<Properties>
+			<remainingHP><Type>UINT32</Type></remainingHP>
+		</Properties>
+		<AllowNone> true </AllowNone>
+	</SHIELD_STATE>
+
 	<VEHICLE_STATE>
 		FIXED_DICT
 		<Properties>
 			<battery><Type>BATTERY_STATE</Type></battery>
 			<buffs><Type>BUFFS_STATE</Type></buffs>
 			<vehicleVisualState><Type>VEHICLE_VISUAL_STATE</Type></vehicleVisualState>
+			<shield><Type>SHIELD_STATE</Type></shield>
 		</Properties>
 	</VEHICLE_STATE>
 
@@ -1941,7 +1950,7 @@
 			<installedCards><Type>ARRAY<of>INSTALLED_BATTLE_CARD</of></Type></installedCards>
 			<isChangeable><Type>BOOL</Type></isChangeable>
 			<maxCardsAmount><Type>UINT8</Type></maxCardsAmount>
-			<modifier><Type> MODIFIER_STATE </Type></modifier>  <!-- TODO(g_shakhov): WWSD-231606 -->
+			<commonBonus><Type> MODIFIER_STATE_WRAPPER </Type></commonBonus>  <!-- TODO(g_shakhov): WWSD-231606 -->
 		</Properties>
 		<AllowNone> true </AllowNone>
 	</BATTLE_CARDS_STATE>
@@ -2070,10 +2079,10 @@
 		<Properties>
 			<ownerId><Type>ENTITY_ID</Type></ownerId>
 			<startShieldHp><Type>UINT32</Type></startShieldHp>
-			<regeneratedHp><Type>FLOAT</Type></regeneratedHp>
+			<regeneratedHp><Type>UINT32</Type></regeneratedHp>
 			<withShieldTime><Type>FLOAT</Type></withShieldTime>
 			<withoutShieldTime><Type>FLOAT</Type></withoutShieldTime>
-			<receivedDamageShield><Type>FLOAT</Type></receivedDamageShield>
+			<receivedDamageShield><Type>UINT32</Type></receivedDamageShield>
 			<shieldUnarmedCounter><Type>UINT16</Type></shieldUnarmedCounter>
 		</Properties>
 		<AllowNone>false</AllowNone>
