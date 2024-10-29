@@ -133,7 +133,8 @@
                     <of>WEAPON_LOCK_STATE</of>
                 </weaponLocks>
             </Args>
-        </onConnected>
+        </onConnected># TODO(g_shakhov): Shield - remove
+        <receiveShieldDamageInfo></receiveShieldDamageInfo>
         <receiveShellInfo>
             <Arg>GAMEPARAMS_ID</Arg>
             <Arg>UINT32</Arg>
@@ -181,6 +182,11 @@
                 <of>TORPEDOES_PACK</of>
             </Arg>
         </receiveTorpedoes>
+        <receivePhotonShots>
+            <Arg>ARRAY
+                <of>PHOTON_PACK</of>
+            </Arg>
+        </receivePhotonShots>
         <receiveShotKills>
             <Arg>ARRAY
                 <of>SHOTKILLS_PACK</of>
@@ -261,6 +267,19 @@
             <Arg>FLOAT</Arg>
             <Arg>BOOL</Arg>
         </receiveTorpedoDirection>
+        <receivePhotonDirection>
+            <Args>
+                <ownerId>PLAYER_ID</ownerId>
+                <torpedoId>UINT16</torpedoId>
+                <serverPos>VECTOR3</serverPos>
+                <targetYaw>FLOAT</targetYaw>
+                <targetDepth>FLOAT</targetDepth>
+                <targetPitch>FLOAT</targetPitch>
+                <speedCoef>FLOAT</speedCoef>
+                <curYawSpeed>FLOAT</curYawSpeed>
+                <curPitchSpeed>FLOAT</curPitchSpeed>
+            </Args>
+        </receivePhotonDirection>
         <receiveTorpedoChasingSwitch>
             <Arg>PLAYER_ID</Arg>
             <Arg>SHOT_ID</Arg>
@@ -746,6 +765,12 @@
             <Arg>ZIPPED_BLOB</Arg>
             <Arg>UINT8</Arg>
         </receiveScreenMessage>
+        <receiveLowerLogMessage>
+            <Arg>STRING</Arg>
+            <Arg>ZIPPED_BLOB</Arg>
+            <Arg>STRING</Arg>
+            <Arg>STRING</Arg>
+        </receiveLowerLogMessage>
         <updateGameParams>
             <Arg>STRING</Arg>
         </updateGameParams>
@@ -1142,7 +1167,10 @@
         </activateRageMode>
         <deactivatePing>
             <Exposed>OWN_CLIENT</Exposed>
-            <Arg>ENTITY_ID</Arg>
+            <Args>
+                <targetId>ENTITY_ID</targetId>
+                <ownerWeaponType>WEAPON_TYPE</ownerWeaponType>
+            </Args>
         </deactivatePing>
         <changeAutopilotState>
             <Exposed>OWN_CLIENT</Exposed>
