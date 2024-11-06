@@ -31,4 +31,5 @@
 	<EventHubComponent/>
 	<BattleCardsComponent/>
 	<SseBonusComponent/>
+	<NewYear25Component/>
 </root>
