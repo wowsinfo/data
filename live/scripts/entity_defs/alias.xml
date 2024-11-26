@@ -2202,4 +2202,13 @@
 			<coef><Type>UINT8</Type></coef>
 		</Properties>
 	</SSE_BONUS>
+
+	<MASTERY_BADGE>
+		FIXED_DICT
+		<Properties>
+			<shipID><Type>SHIP_ID</Type></shipID>
+			<masterySign><Type>UINT8</Type></masterySign>
+		</Properties>
+		<implementedBy>MasteryBadgesDef.converter</implementedBy>
+	</MASTERY_BADGE>
 </root>

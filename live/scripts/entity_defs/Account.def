@@ -200,7 +200,7 @@
         <setTrace>
             <Arg>BOOL</Arg>
         </setTrace>
-        <curVersion_13_10_0_9129736></curVersion_13_10_0_9129736>
+        <curVersion_13_11_0_9251401></curVersion_13_11_0_9251401>
         <updateSSEProgress>
             <Arg>STRING</Arg>
             <VariableLengthHeaderSize>
@@ -397,6 +397,23 @@
                 <newSeenFeat>UINT32</newSeenFeat>
             </Args>
         </onChangeAccountLevelingState>
+        <onGetMasteryBadges>
+            <Args>
+                <masteryBadges>ARRAY
+                    <of>MASTERY_BADGE</of>
+                </masteryBadges>
+            </Args>
+        </onGetMasteryBadges>
+        <onStatistStatusChanged>
+            <Args>
+                <isOnline>BOOL</isOnline>
+            </Args>
+        </onStatistStatusChanged>
+        <onMasteryBadgeCreated>
+            <Args>
+                <masteryBadge>MASTERY_BADGE</masteryBadge>
+            </Args>
+        </onMasteryBadgeCreated>
     </ClientMethods>
     <CellMethods></CellMethods>
     <BaseMethods>
