@@ -494,6 +494,13 @@
         <onNewWaveHornWave></onNewWaveHornWave>
         <onCrashCrewEnable></onCrashCrewEnable>
         <onCrashCrewDisable></onCrashCrewDisable>
+        <reloadWeapon>
+            <Args>
+                <weaponTypes>ARRAY
+                    <of>WEAPON_TYPE</of>
+                </weaponTypes>
+            </Args>
+        </reloadWeapon>
     </ClientMethods>
     <CellMethods>
         <onClientEnterWorld>
