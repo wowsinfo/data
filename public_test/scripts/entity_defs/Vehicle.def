@@ -224,11 +224,6 @@
             <Arg>WEAPON_TYPE</Arg>
             <Arg>UINT8</Arg>
         </onWeaponStateSwitched>
-        <setShotDecals>
-            <Arg>ARRAY
-                <of>UINT64</of>
-            </Arg>
-        </setShotDecals>
         <receiveDamagesOnShip>
             <Arg>ARRAY
                 <of>DAMAGES</of>
@@ -356,9 +351,6 @@
             <Arg>BLOB</Arg>
         </setSqsConsumables>
         <stopVarys></stopVarys>
-        <onShotDecal>
-            <Arg>UINT64</Arg>
-        </onShotDecal>
         <receiveMirrorDamage>
             <Arg>FLOAT</Arg>
         </receiveMirrorDamage>

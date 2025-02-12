@@ -243,6 +243,18 @@
 		ARRAY<of>BATTLE_CARD</of>
 	</BATTLE_CARDS>
 
+	<BATTLE_CARDS_INFO>
+		FIXED_DICT
+		<Properties>
+			<owned><Type>BATTLE_CARDS</Type></owned>
+			<autopick><Type>ARRAY
+				<of>
+					GAMEPARAMS_ID
+				</of>
+			</Type></autopick>
+		</Properties>
+	</BATTLE_CARDS_INFO>
+
 	<PLAYER_DEF>
 		FIXED_DICT
 		<Properties>
@@ -796,9 +808,17 @@
 		</Properties>
 	</COLLISION_INFO_BASE>
 
-	<SHOT_DECAL_STATE>
+	<SHOT_DECAL>
 		USER_TYPE
 		<implementedBy>ShotDecalDef.converter</implementedBy>
+	</SHOT_DECAL>
+
+	<SHOT_DECAL_STATE>
+		FIXED_DICT
+		<Properties>
+			<id><Type>UINT8</Type></id>
+			<decal><Type>SHOT_DECAL</Type></decal>
+		</Properties>
 	</SHOT_DECAL_STATE>
 
 	<HEAT_INFO_STATE>
@@ -806,7 +826,7 @@
 		<Properties>
 			<id><Type>UINT8</Type></id>
 			<endTime><Type>FLOAT</Type></endTime>
-			<decal><Type>SHOT_DECAL_STATE</Type></decal>
+			<decal><Type>SHOT_DECAL</Type></decal>
 		</Properties>
 	</HEAT_INFO_STATE>
 
@@ -1321,6 +1341,7 @@
 		FIXED_DICT
 		<Properties>
 			<miniMapType><Type>UINT8</Type></miniMapType>
+			<battleCardSelectorType><Type>UINT8</Type></battleCardSelectorType>
 			<timeToInstallBattleCards><Type>UINT16</Type></timeToInstallBattleCards>
 		</Properties>
 		<AllowNone>true</AllowNone>
@@ -1933,6 +1954,14 @@
 		<AllowNone> true </AllowNone>
 	</SHIELD_STATE>
 
+	<DECALS_STATE>
+		FIXED_DICT
+		<Properties>
+			<shotDecals><Type> ARRAY <of> SHOT_DECAL_STATE </of> </Type></shotDecals>
+			<heatDecals><Type>ARRAY <of> HEAT_INFO_STATE </of></Type></heatDecals>
+		</Properties>
+	</DECALS_STATE>
+
 	<VEHICLE_STATE>
 		FIXED_DICT
 		<Properties>
@@ -1940,6 +1969,7 @@
 			<buffs><Type>BUFFS_STATE</Type></buffs>
 			<vehicleVisualState><Type>VEHICLE_VISUAL_STATE</Type></vehicleVisualState>
 			<shield><Type>SHIELD_STATE</Type></shield>
+			<decals><Type>DECALS_STATE</Type></decals>
 		</Properties>
 	</VEHICLE_STATE>
 
@@ -1950,7 +1980,6 @@
 			<installedCards><Type>ARRAY<of>INSTALLED_BATTLE_CARD</of></Type></installedCards>
 			<isChangeable><Type>BOOL</Type></isChangeable>
 			<maxCardsAmount><Type>UINT8</Type></maxCardsAmount>
-			<commonBonus><Type> MODIFIER_STATE_WRAPPER </Type></commonBonus>  <!-- TODO(g_shakhov): WWSD-231606 -->
 		</Properties>
 		<AllowNone> true </AllowNone>
 	</BATTLE_CARDS_STATE>
@@ -2211,4 +2240,87 @@
 		</Properties>
 		<implementedBy>MasteryBadgesDef.converter</implementedBy>
 	</MASTERY_BADGE>
+
+	<GLOBAL_CONFIG>
+		FIXED_DICT
+		<Properties>
+			<name><Type>STRING</Type></name>
+			<value><Type>BLOB</Type></value>
+		</Properties>
+	</GLOBAL_CONFIG>
+
+	<CURRENCY_PRICE>
+		FIXED_DICT
+		<Properties>
+			<currencyID><Type>STRING</Type></currencyID>
+			<value><Type>UINT32</Type></value>
+		</Properties>
+		<implementedBy>PriceGroup.currencyPriceConverter</implementedBy>
+	</CURRENCY_PRICE>
+
+	<PRICE_GROUP>
+		FIXED_DICT
+		<Properties>
+			<currencyPrices><Type> ARRAY <of> CURRENCY_PRICE </of> </Type></currencyPrices>
+		</Properties>
+		<implementedBy>PriceGroup.priceGroupConverter</implementedBy>
+	</PRICE_GROUP>
+
+	<MINI_DOCKYARD_COMPONENT>
+		FIXED_DICT
+		<Properties>
+			<id><Type>STRING</Type></id>
+			<priceGroup><Type>PRICE_GROUP</Type></priceGroup>
+			<slot><Type>UINT32</Type></slot>
+			<isUnlocked><Type>BOOL</Type></isUnlocked>
+		</Properties>
+		<implementedBy>MiniDockyardDTO.componentConverter</implementedBy>
+	</MINI_DOCKYARD_COMPONENT>
+
+	<MINI_DOCKYARD_STAGE>
+		FIXED_DICT
+		<Properties>
+			<components><Type> ARRAY <of> MINI_DOCKYARD_COMPONENT </of> </Type></components>
+			<shipID><Type>SHIP_ID</Type></shipID>
+			<completeRewardsDump><Type>MSGPACK_BLOB</Type></completeRewardsDump>
+			<buyRewardsDump><Type>MSGPACK_BLOB</Type></buyRewardsDump>
+			<buyPriceGroup><Type>PRICE_GROUP</Type></buyPriceGroup>
+		</Properties>
+		<implementedBy>MiniDockyardDTO.stageConverter</implementedBy>
+	</MINI_DOCKYARD_STAGE>
+
+	<MINI_DOCKYARD_BRANCH>
+		FIXED_DICT
+		<Properties>
+			<id><Type>STRING</Type></id>
+			<stages><Type> ARRAY <of> MINI_DOCKYARD_STAGE </of> </Type></stages>
+			<deferredRewardsDump><Type>MSGPACK_BLOB</Type></deferredRewardsDump>
+		</Properties>
+		<implementedBy>MiniDockyardDTO.branchConverter</implementedBy>
+	</MINI_DOCKYARD_BRANCH>
+
+	<MINIDOCKYARD_UNLOCK_INFO>
+		FIXED_DICT
+		<Properties>
+			<isUnlocked><Type>BOOL</Type></isUnlocked>
+			<buyPriceGroup><Type>PRICE_GROUP</Type></buyPriceGroup>
+			<unlockTaskTag><Type>STRING</Type></unlockTaskTag>
+		</Properties>
+		<implementedBy>MiniDockyardDTO.unlockInfoConverter</implementedBy>
+	</MINIDOCKYARD_UNLOCK_INFO>
+
+	<MINI_DOCKYARD>
+		FIXED_DICT
+		<Properties>
+			<id><Type>STRING</Type></id>
+			<branches><Type> ARRAY <of> MINI_DOCKYARD_BRANCH </of> </Type></branches>
+			<currencyID><Type>STRING</Type></currencyID>
+			<startTime><Type>UINT32</Type></startTime>
+			<finishTime><Type>UINT32</Type></finishTime>
+			<mainTasksTag><Type>STRING</Type></mainTasksTag>
+			<unlockInfo><Type>MINIDOCKYARD_UNLOCK_INFO</Type><AllowNone> true </AllowNone></unlockInfo>
+		</Properties>
+		<implementedBy>MiniDockyardDTO.miniDockyardConverter</implementedBy>
+	</MINI_DOCKYARD>
+
 </root>
