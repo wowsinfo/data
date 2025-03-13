@@ -375,9 +375,13 @@
                 <workTimeLeft>FLOAT32</workTimeLeft>
             </Args>
         </onConsumableUsed>
-        <onReseted>
-            <Arg>BOOL</Arg>
-        </onReseted>
+        <onRespawned>
+            <Args>
+                <resetConsumablesCount>BOOL</resetConsumablesCount>
+                <initialSpeed>FLOAT</initialSpeed>
+                <yaw>FLOAT</yaw>
+            </Args>
+        </onRespawned>
         <setAirDefenseState>
             <Arg>BLOB</Arg>
         </setAirDefenseState>
