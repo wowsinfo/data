@@ -61,6 +61,9 @@
             <Arg>FLOAT</Arg>
             <Arg>INT32</Arg>
         </onChangeAOGASPenalty>
+        <onTakeBreak>
+            <Arg>INT32</Arg>
+        </onTakeBreak>
         <onTotalUsersCountUpdate>
             <Arg>PYTHON</Arg>
         </onTotalUsersCountUpdate>
@@ -200,7 +203,7 @@
         <setTrace>
             <Arg>BOOL</Arg>
         </setTrace>
-        <curVersion_14_2_0_9643943></curVersion_14_2_0_9643943>
+        <curVersion_14_3_0_9773198></curVersion_14_3_0_9773198>
         <updateSSEProgress>
             <Arg>STRING</Arg>
             <VariableLengthHeaderSize>
