@@ -3,7 +3,6 @@
 <root>
     <Implements>
         <Interface>VisionOwner</Interface>
-        <Interface>AtbaOwner</Interface>
         <Interface>AirDefenceOwner</Interface>
         <Interface>BattleLogicEntityOwner</Interface>
         <Interface>DamageDealerOwner</Interface>
@@ -205,20 +204,23 @@
         </oilLeakState>
     </Properties>
     <ClientMethods>
-        <onAvatarReady></onAvatarReady>
         <onCollisionWarningStateChanged>
             <Arg>BOOL</Arg>
         </onCollisionWarningStateChanged>
         <addSubmarineHydrophoneTargets>
-            <Arg>ARRAY
-                <of>SUBMARINE_HYDROPHONE_TARGET_INFO</of>
-            </Arg>
-            <Arg>UINT16</Arg>
+            <Args>
+                <targetsInfo>ARRAY
+                    <of>SUBMARINE_HYDROPHONE_TARGET_INFO</of>
+                </targetsInfo>
+                <zoneLifeTime>UINT16</zoneLifeTime>
+            </Args>
         </addSubmarineHydrophoneTargets>
         <setAmmoForWeapon>
-            <Arg>WEAPON_TYPE</Arg>
-            <Arg>GAMEPARAMS_ID</Arg>
-            <Arg>BOOL</Arg>
+            <Args>
+                <weaponType>WEAPON_TYPE</weaponType>
+                <ammoParamsId>GAMEPARAMS_ID</ammoParamsId>
+                <isReload>BOOL</isReload>
+            </Args>
         </setAmmoForWeapon>
         <onWeaponStateSwitched>
             <Arg>WEAPON_TYPE</Arg>
@@ -231,15 +233,17 @@
             <VariableLengthHeaderSize>2</VariableLengthHeaderSize>
         </receiveDamagesOnShip>
         <syncGun>
-            <Arg>UINT8</Arg>
-            <Arg>INT32</Arg>
-            <Arg>FLOAT32</Arg>
-            <Arg>FLOAT32</Arg>
-            <Arg>BOOL</Arg>
-            <Arg>FLOAT32</Arg>
-            <Arg>ARRAY
-                <of>STRING</of>
-            </Arg>
+            <Args>
+                <weaponType>WEAPON_TYPE</weaponType>
+                <gunId>GUN_ID</gunId>
+                <yaw>FLOAT32</yaw>
+                <pitch>FLOAT32</pitch>
+                <alive>BOOL</alive>
+                <reloadPerc>FLOAT32</reloadPerc>
+                <loadedAmmo>ARRAY
+                    <of>STRING</of>
+                </loadedAmmo>
+            </Args>
         </syncGun>
         <syncWaveGun>
             <Arg>INT32</Arg>
@@ -277,6 +281,9 @@
             <Arg>FLOAT</Arg>
         </bodySinkPartLurched>
         <shieldRegen># TODO(g_shashov): Shield - remove</shieldRegen>
+        <shootATBAGuns>
+            <Arg>UINT32</Arg>
+        </shootATBAGuns>
         <shootTorpedo>
             <Arg>INT32</Arg>
             <Arg>VECTOR3</Arg>
@@ -375,6 +382,11 @@
                 <workTimeLeft>FLOAT32</workTimeLeft>
             </Args>
         </onConsumableUsed>
+        <onConsumablePaused>
+            <Args>
+                <consumableType>CONSUMABLE_ID</consumableType>
+            </Args>
+        </onConsumablePaused>
         <onRespawned>
             <Args>
                 <resetConsumablesCount>BOOL</resetConsumablesCount>
@@ -505,9 +517,6 @@
         <onClientLeaveWorld>
             <Exposed></Exposed>
         </onClientLeaveWorld>
-        <onAvatarReady>
-            <Exposed></Exposed>
-        </onAvatarReady>
         <suicide>
             <Exposed></Exposed>
         </suicide>
