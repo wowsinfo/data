@@ -147,9 +147,6 @@
 		<splashMeshes/>
 		<splashBoxes/>
 		<devMode/>
-		<splashBoxes/>
-		<splashMeshes/>
-		<armorDict/>
 		<serviceUpdatesID/>
 		<battleLogic/>
 		<incomingDamageManager/>

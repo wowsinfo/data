@@ -67,10 +67,6 @@
 		<Type>VECTOR2</Type>
 		<implementedBy>FlatVectorDef.converter</implementedBy>
 	</FLAT_VECTOR>
-
-	<ATBA_TARGETS>
-		ARRAY<of>UINT32</of>
-	</ATBA_TARGETS>
 	
 	<VISIBILITY_BY_TEAM>
 		ARRAY<of>TEAM_ID</of>
@@ -1962,6 +1958,21 @@
 		</Properties>
 	</DECALS_STATE>
 
+	<ATBA_STATE>
+		FIXED_DICT
+		<Properties>
+			<atbaTargets><Type>ARRAY<of>ENTITY_ID</of></Type></atbaTargets>
+		</Properties>
+		<AllowNone> true </AllowNone>
+	</ATBA_STATE>
+
+	<BUILDING_STATE>
+		FIXED_DICT
+		<Properties>
+			<atba><Type>ATBA_STATE</Type></atba>
+		</Properties>
+	</BUILDING_STATE>
+
 	<VEHICLE_STATE>
 		FIXED_DICT
 		<Properties>
@@ -1970,6 +1981,7 @@
 			<vehicleVisualState><Type>VEHICLE_VISUAL_STATE</Type></vehicleVisualState>
 			<shield><Type>SHIELD_STATE</Type></shield>
 			<decals><Type>DECALS_STATE</Type></decals>
+			<atba><Type>ATBA_STATE</Type></atba>
 		</Properties>
 	</VEHICLE_STATE>
 
@@ -2117,6 +2129,17 @@
 		<AllowNone>false</AllowNone>
 		<implementedBy>ShieldStatistics.converter</implementedBy>
 	</SHIELD_HEAT_MAP_EVENT_DATA>
+
+	<FLAGSHIP_HEAT_MAP_EVENT_DATA>
+		FIXED_DICT
+		<Properties>
+			<dt><Type>UINT32</Type></dt>
+			<vehicle_type_id><Type>SHIP_ID</Type></vehicle_type_id>
+			<flagship_buff><Type>UINT8</Type></flagship_buff>
+		</Properties>
+		<AllowNone>false</AllowNone>
+		<implementedBy>FlagshipStatistics.converter</implementedBy>
+	</FLAGSHIP_HEAT_MAP_EVENT_DATA>
 
 	<QUICK_COMMAND>
 		USER_TYPE

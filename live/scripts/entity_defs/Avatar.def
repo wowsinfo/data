@@ -463,6 +463,12 @@
                 <consType>CONSUMABLE_ID</consType>
             </Args>
         </squadronConsumableUsed>
+        <squadronConsumablePaused>
+            <Args>
+                <squadronID>PLANE_ID</squadronID>
+                <consType>CONSUMABLE_ID</consType>
+            </Args>
+        </squadronConsumablePaused>
         <squadronConsumableEnabled>
             <Args>
                 <squadronIndex>PLANE_ID</squadronIndex>
@@ -656,6 +662,11 @@
             <Arg>UINT32</Arg>
             <Arg>BOOL</Arg>
         </onShutdownTime>
+        <onBuildingSpawned>
+            <Args>
+                <packedData>BLOB</packedData>
+            </Args>
+        </onBuildingSpawned>
         <onBuildingsDataChanged>
             <Arg>BLOB</Arg>
         </onBuildingsDataChanged>
@@ -889,6 +900,13 @@
                 <consumableUsageParams>CONSUMABLE_USAGE_PARAMS</consumableUsageParams>
             </Args>
         </useSquadConsumable>
+        <pauseSquadConsumable>
+            <Exposed>OWN_CLIENT</Exposed>
+            <Args>
+                <squadronId>PLANE_ID</squadronId>
+                <consumableType>CONSUMABLE_ID</consumableType>
+            </Args>
+        </pauseSquadConsumable>
         <selectConsumable>
             <Exposed>OWN_CLIENT</Exposed>
             <Args>
@@ -904,6 +922,12 @@
             <Exposed>OWN_CLIENT</Exposed>
             <Arg>CONSUMABLE_ID</Arg>
         </interruptConsumable>
+        <pauseConsumable>
+            <Exposed>OWN_CLIENT</Exposed>
+            <Args>
+                <consumableType>CONSUMABLE_ID</consumableType>
+            </Args>
+        </pauseConsumable>
         <removeBattleCard>
             <Exposed>OWN_CLIENT</Exposed>
             <Args>
@@ -1071,7 +1095,9 @@
         </dev_switchIdealGunHack>
         <dev_switchIdealATBASelectedGunId>
             <Exposed>OWN_CLIENT</Exposed>
-            <Arg>UINT8</Arg>
+            <Args>
+                <gunId>GUN_ID</gunId>
+            </Args>
         </dev_switchIdealATBASelectedGunId>
         <dev_switchCameraShootHack>
             <Exposed>OWN_CLIENT</Exposed>
