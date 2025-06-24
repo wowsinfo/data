@@ -17,7 +17,7 @@
 	<ENTITY_ID>INT32</ENTITY_ID>
 	<WEAPON_TYPE>UINT8</WEAPON_TYPE>
 	<GUN_ID>UINT8</GUN_ID>
-	<GUN_BITS>UINT16</GUN_BITS>
+	<GUN_BITS>UINT32</GUN_BITS>
 	<PLANE_ID>INT64</PLANE_ID>
 	<TARGET_ID>INT64</TARGET_ID>			<!-- place in which we can use PLANE_ID or ENTITY_ID -->
 	<MASTER_ID>UINT32</MASTER_ID>
@@ -1197,6 +1197,7 @@
 			<airDefenseVisibilityTime><Type> FLOAT </Type></airDefenseVisibilityTime>
 			<GMIdealRadius><Type> FLOAT </Type></GMIdealRadius>
 			<GSIdealRadius><Type> FLOAT </Type></GSIdealRadius>
+			<GSMIdealRadius><Type> FLOAT </Type></GSMIdealRadius>
 			<AAMaxDist><Type> FLOAT </Type></AAMaxDist>
 			<shootShift><Type> FLOAT </Type></shootShift>
 			<speedCoef><Type> FLOAT </Type></speedCoef>
