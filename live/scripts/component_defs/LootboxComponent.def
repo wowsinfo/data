@@ -19,6 +19,23 @@
 		<openLootboxes>
 			<Exposed/>
 		</openLootboxes>
+
+		<getLootboxSavePointGameParams>
+			<Exposed/>
+			<ReturnValues>
+				<savePointsByType> MSGPACK_BLOB </savePointsByType>
+			</ReturnValues>
+		</getLootboxSavePointGameParams>
+
+		<getBoxTypeParams>
+			<Exposed/>
+			<Args>
+				<boxtype> GAMEPARAMS_ID </boxtype>
+			</Args>
+			<ReturnValues>
+				<boxTypeParams> MSGPACK_BLOB </boxTypeParams>
+			</ReturnValues>
+		</getBoxTypeParams>
 	</BaseMethods>
 
 	<ClientMethods>

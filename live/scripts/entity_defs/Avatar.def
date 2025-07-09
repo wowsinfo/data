@@ -128,6 +128,7 @@
             <Args>
                 <artilleryAmmoId>GAMEPARAMS_ID</artilleryAmmoId>
                 <torpdoAmmoId>GAMEPARAMS_ID</torpdoAmmoId>
+                <airSupportAmmoId>GAMEPARAMS_ID</airSupportAmmoId>
                 <torpedoSelectedAngle>UINT8</torpedoSelectedAngle>
                 <weaponLocks>ARRAY
                     <of>WEAPON_LOCK_STATE</of>
@@ -832,14 +833,7 @@
         <updateBuoyancyRudderCruise>
             <Arg>FLOAT</Arg>
         </updateBuoyancyRudderCruise>
-        <activateAutoAirSupport>
-            <Args>
-                <index>UINT8</index>
-                <squadronID>PLANE_ID</squadronID>
-                <airSupportShotID>SHOT_ID</airSupportShotID>
-            </Args>
-        </activateAutoAirSupport>
-        <activateManualAirSupport>
+        <activateAirSupport>
             <Args>
                 <index>UINT8</index>
                 <squadronID>PLANE_ID</squadronID>
@@ -847,11 +841,13 @@
                 <aimLength>FLOAT</aimLength>
                 <airSupportShotID>SHOT_ID</airSupportShotID>
             </Args>
-        </activateManualAirSupport>
-        <manualAirSupportDeactivated>#TODO:have to be removed
-            <Arg>UINT8</Arg>
-            <Arg>PLANE_ID</Arg>
-        </manualAirSupportDeactivated>
+        </activateAirSupport>
+        <deactivateAirSupport>#TODO:have to be removed
+            <Args>
+                <index>UINT8</index>
+                <squadronID>PLANE_ID</squadronID>
+            </Args>
+        </deactivateAirSupport>
         <diplomacyRejection>
             <Arg>UINT8</Arg>
         </diplomacyRejection>
