@@ -134,14 +134,7 @@
                     <of>WEAPON_LOCK_STATE</of>
                 </weaponLocks>
             </Args>
-        </onConnected># TODO(g_shakhov): Shield - remove
-        <receiveShieldDamageInfo>
-            <Args>
-                <victimId>ENTITY_ID</victimId>
-                <hitOwnerId>ENTITY_ID</hitOwnerId>
-                <shieldDamage>UINT32</shieldDamage>
-            </Args>
-        </receiveShieldDamageInfo>
+        </onConnected>
         <receiveShellInfo>
             <Arg>GAMEPARAMS_ID</Arg>
             <Arg>UINT32</Arg>
