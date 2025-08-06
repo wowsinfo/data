@@ -280,7 +280,6 @@
         <bodySinkPartLurched>
             <Arg>FLOAT</Arg>
         </bodySinkPartLurched>
-        <shieldRegen># TODO(g_shashov): Shield - remove</shieldRegen>
         <shootATBAGuns>
             <Arg>UINT32</Arg>
         </shootATBAGuns>
@@ -509,6 +508,17 @@
                 </weaponTypes>
             </Args>
         </reloadWeapon>
+        <startFullScreenEffect>
+            <Args>
+                <effectGroupId>INT8</effectGroupId>
+                <effectName>STRING</effectName>
+            </Args>
+        </startFullScreenEffect>
+        <stopFullScreenEffect>
+            <Args>
+                <effectGroupId>INT8</effectGroupId>
+            </Args>
+        </stopFullScreenEffect>
     </ClientMethods>
     <CellMethods>
         <onClientEnterWorld>

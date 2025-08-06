@@ -1943,14 +1943,6 @@
 		<AllowNone> true </AllowNone>
 	</RAGE_MODE_STATE>
 
-	<SHIELD_STATE>
-		FIXED_DICT
-		<Properties>
-			<remainingHP><Type>UINT32</Type></remainingHP>
-		</Properties>
-		<AllowNone> true </AllowNone>
-	</SHIELD_STATE>
-
 	<DECALS_STATE>
 		FIXED_DICT
 		<Properties>
@@ -1980,7 +1972,6 @@
 			<battery><Type>BATTERY_STATE</Type></battery>
 			<buffs><Type>BUFFS_STATE</Type></buffs>
 			<vehicleVisualState><Type>VEHICLE_VISUAL_STATE</Type></vehicleVisualState>
-			<shield><Type>SHIELD_STATE</Type></shield>
 			<decals><Type>DECALS_STATE</Type></decals>
 			<atba><Type>ATBA_STATE</Type></atba>
 		</Properties>
@@ -2114,22 +2105,6 @@
 		<AllowNone>false</AllowNone>
 		<implementedBy>MinefieldStatistics.converter</implementedBy>
 	</MINEFIELD_HEAT_MAP_EVENT_DATA>
-
-	<!-- TODO(g_shakhov): Shield - remove -->
-	<SHIELD_HEAT_MAP_EVENT_DATA>
-		FIXED_DICT
-		<Properties>
-			<ownerId><Type>ENTITY_ID</Type></ownerId>
-			<startShieldHp><Type>UINT32</Type></startShieldHp>
-			<regeneratedHp><Type>UINT32</Type></regeneratedHp>
-			<withShieldTime><Type>FLOAT</Type></withShieldTime>
-			<withoutShieldTime><Type>FLOAT</Type></withoutShieldTime>
-			<receivedDamageShield><Type>UINT32</Type></receivedDamageShield>
-			<shieldUnarmedCounter><Type>UINT16</Type></shieldUnarmedCounter>
-		</Properties>
-		<AllowNone>false</AllowNone>
-		<implementedBy>ShieldStatistics.converter</implementedBy>
-	</SHIELD_HEAT_MAP_EVENT_DATA>
 
 	<FLAGSHIP_HEAT_MAP_EVENT_DATA>
 		FIXED_DICT
