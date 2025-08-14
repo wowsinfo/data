@@ -6,5 +6,11 @@
             <Type> STRING </Type>
             <Editable> True </Editable>
         </trajectory>
+
+        <fov>
+            <Type> FLOAT </Type>
+            <Editable> True </Editable>
+            <Default> -1.0 </Default>
+        </fov>
     </Properties>
 </root>
