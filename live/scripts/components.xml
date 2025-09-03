@@ -32,4 +32,6 @@
 	<BattleCardsComponent/>
 	<SseBonusComponent/>
 	<MiniDockyardComponent/>
+	<GrandStrategyPassComponent/>
+	<Hub2DComponent/>
 </root>
