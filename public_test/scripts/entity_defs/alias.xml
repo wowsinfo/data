@@ -162,6 +162,17 @@
 		<implementedBy>ShipConfig.converter</implementedBy>
 	</SHIP_CONFIG>
 
+	<SHIP_STATE>
+		FIXED_DICT
+		<Properties>
+			<lockInfo><Type>UINT32</Type></lockInfo>
+			<repairInfo><Type>UINT32</Type></repairInfo>
+			<shellCost><Type>UINT32</Type></shellCost>
+			<shipConfig><Type>SHIP_CONFIG</Type></shipConfig>
+		</Properties>
+		<implementedBy>ShipState.converter</implementedBy>
+	</SHIP_STATE>
+
 	<PLAYER_CLAN_INFO>
 		FIXED_DICT
 		<Properties>
@@ -2321,4 +2332,18 @@
 		</Properties>
 		<implementedBy>MiniDockyardDTO.miniDockyardConverter</implementedBy>
 	</MINI_DOCKYARD>
+
+	<GET_INVENTORY_REQUEST>
+		FIXED_DICT
+		<Properties>
+			<playerID><Type>DB_ID</Type></playerID>
+			<categoryPaths><Type>ARRAY<of>STRING</of></Type></categoryPaths>
+			<expiredAtIs><Type>STRING</Type></expiredAtIs>
+			<nextCursor><Type>STRING</Type></nextCursor>
+			<limit><Type>UINT32</Type></limit>
+			<etag><Type>STRING</Type></etag>
+			<messageID><Type>STRING</Type></messageID>
+		</Properties>
+		<implementedBy>BWGatewayCommon.InventoryAPIDefs.getInventoryRequestConverter</implementedBy>
+	</GET_INVENTORY_REQUEST>
 </root>

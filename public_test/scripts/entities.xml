@@ -16,6 +16,7 @@
 		<ReplayLeech />
 		<ReplayConnectionHandler />
 		<InteractiveZone />
+		<InteractiveObject />
 	</ClientServerEntities>
 	
 	</root>

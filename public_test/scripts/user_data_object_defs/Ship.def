@@ -1,6 +1,5 @@
 <root>
 	<Domain> CLIENT </Domain>
-
 	<OptionsFlag> Enable </OptionsFlag>
 
 	<Properties>
@@ -14,5 +13,11 @@
 			<Type> STRING </Type>
 			<Editable> True </Editable>
 		</exteriorId>
+
+		<useOnlyMainLOD>
+			<Type> BOOL </Type>
+			<Editable> true </Editable>
+			<Default> 0 </Default>
+		</useOnlyMainLOD>
 	</Properties>
 </root>

@@ -34,4 +34,5 @@
 	<MiniDockyardComponent/>
 	<GrandStrategyPassComponent/>
 	<Hub2DComponent/>
+	<AccountInventoryAPIComponent/>
 </root>

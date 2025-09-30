@@ -5,7 +5,7 @@
 	<ControlPoint/>
 	<ConvoyWayPoint/>
 	<DropZone/>
-	<InteractiveObject/>
+	<InteractiveObjectUDO/>
 	<Minefield/>
 	<Prefab/>
 	<MapPartInfo/>
