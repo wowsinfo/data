@@ -3,14 +3,20 @@
 <root>
     <Volatile></Volatile>
     <Properties>
-        <shipId>
-            <Type>SHIP_ID</Type>
+        <shipState>
+            <Type>SHIP_STATE</Type>
             <Flags>ALL_CLIENTS</Flags>
-        </shipId>
-        <exteriorId>
-            <Type>INT64</Type>
+        </shipState>
+        <useOnlyMainLOD>
+            <Type>BOOL</Type>
             <Flags>ALL_CLIENTS</Flags>
-        </exteriorId>
+            <Default>True</Default>
+        </useOnlyMainLOD>
+        <isPlayersVehicle>
+            <Type>BOOL</Type>
+            <Flags>ALL_CLIENTS</Flags>
+            <Default>False</Default>
+        </isPlayersVehicle>
     </Properties>
     <ClientMethods></ClientMethods>
     <CellMethods></CellMethods>
