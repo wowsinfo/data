@@ -35,4 +35,6 @@
 	<GrandStrategyPassComponent/>
 	<Hub2DComponent/>
 	<AccountInventoryAPIComponent/>
+	<BattleComponent/>
+	<EventShopComponent/>
 </root>

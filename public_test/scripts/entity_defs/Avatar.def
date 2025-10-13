@@ -187,6 +187,37 @@
                 <of>PHOTON_PACK</of>
             </Arg>
         </receivePhotonShots>
+        <receiveMissile>
+            <Args>
+                <missileData>MISSILE</missileData>
+            </Args>
+        </receiveMissile>
+        <updateMissileWaypoints>
+            <Args>
+                <shotID>INT64</shotID>
+                <flyTime>FLOAT</flyTime>
+                <points>PLANE_PATH</points>
+            </Args>
+        </updateMissileWaypoints>
+        <resetMissileWaypoints>
+            <Args>
+                <shotID>INT64</shotID>
+                <points>PLANE_PATH</points>
+            </Args>
+        </resetMissileWaypoints>
+        <receiveMissileDamage>
+            <Args>
+                <shotID>INT64</shotID>
+                <damage>FLOAT</damage>
+            </Args>
+        </receiveMissileDamage>
+        <killMissile>
+            <Args>
+                <shotID>INT64</shotID>
+                <hitPos>VECTOR3</hitPos>
+                <hitType>INT8</hitType>
+            </Args>
+        </killMissile>
         <receiveShotKills>
             <Arg>ARRAY
                 <of>SHOTKILLS_PACK</of>
@@ -444,6 +475,13 @@
             <Arg>PLANE_ID</Arg>
             <Arg>UINT16</Arg>
         </receive_squadronVisibilityChanged>
+        <receive_missileStateChanged>
+            <Args>
+                <shotId>INT64</shotId>
+                <previousStateId>UINT16</previousStateId>
+                <newStateId>UINT16</newStateId>
+            </Args>
+        </receive_missileStateChanged>
         <squadronConsumableSelected>
             <Args>
                 <squadronID>PLANE_ID</squadronID>
@@ -517,6 +555,13 @@
                 <teamId>TEAM_ID</teamId>
             </Args>
         </receive_squadronChangeTeamAtWorld>
+        <receive_waterLaunchpadGenerated>
+            <Args>
+                <vehicleID>ENTITY_ID</vehicleID>
+                <startPos>VECTOR3</startPos>
+                <moveVec>VECTOR3</moveVec>
+            </Args>
+        </receive_waterLaunchpadGenerated>
         <receive_dropJato>
             <Arg>PLANE_ID</Arg>
         </receive_dropJato>
@@ -605,6 +650,12 @@
         <capturedAsAGoal>
             <Arg>UINT8</Arg>
         </capturedAsAGoal>
+        <updateMissileThreatStatus>
+            <Args>
+                <threatStatus>UINT8</threatStatus>
+                <missileThreatCount>UINT8</missileThreatCount>
+            </Args>
+        </updateMissileThreatStatus>
         <onEnterPreBattle>
             <Args>
                 <packedPreBattleData>BLOB</packedPreBattleData>
@@ -1222,6 +1273,10 @@
                 <command>QUICK_COMMAND</command>
             </Args>
         </send_CommonCMD>
+        <selectRespawnSector>
+            <Exposed>OWN_CLIENT</Exposed>
+            <Arg>UINT8</Arg>
+        </selectRespawnSector>
     </CellMethods>
     <BaseMethods>
         <leaveBattle>
