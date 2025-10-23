@@ -308,6 +308,7 @@
         <useMissile>
             <Args>
                 <gunID>INT32</gunID>
+                <shootNodeId>INT8</shootNodeId>
             </Args>
         </useMissile>
         <useAntiMissile>

@@ -2033,6 +2033,17 @@
 		<AllowNone> true </AllowNone>
 	</RAGE_MODE_STATE>
 
+	<MISSILES_STATE>
+		FIXED_DICT
+		<Properties>
+			<shotsCount><Type>INT8</Type></shotsCount>
+			<tubesLoadState><Type>ARRAY<of>INT8</of></Type></tubesLoadState>
+			<nextShootingGunId><Type>INT8</Type></nextShootingGunId>
+			<nextShootingTubeId><Type>INT8</Type></nextShootingTubeId>
+		</Properties>
+		<AllowNone> true </AllowNone>
+	</MISSILES_STATE>
+
 	<DECALS_STATE>
 		FIXED_DICT
 		<Properties>
@@ -2085,6 +2096,7 @@
 			<rageMode><Type>RAGE_MODE_STATE</Type></rageMode>
 			<ribbons><Type>RIBBONS_STATE</Type></ribbons>
 			<battleCards><Type>BATTLE_CARDS_STATE</Type></battleCards>
+			<missiles><Type>MISSILES_STATE</Type></missiles>
 		</Properties>
 	</PRIVATE_VEHICLE_STATE>
 
