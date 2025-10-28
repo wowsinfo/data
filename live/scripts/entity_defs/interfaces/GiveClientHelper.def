@@ -8,6 +8,8 @@
 		<attemptNumber/>
 		<nextTransactionStageCallback/>
 		<_GiveClientHelper__logName/>
+		<givePromise/>
+		<giveClientLock/>
 	</TempProperties>
 
 	<BaseMethods>

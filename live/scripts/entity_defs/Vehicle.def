@@ -305,6 +305,17 @@
         <syncSurfacingTime>
             <Arg>INT32</Arg>
         </syncSurfacingTime>
+        <useMissile>
+            <Args>
+                <gunID>INT32</gunID>
+                <shootNodeId>INT8</shootNodeId>
+            </Args>
+        </useMissile>
+        <useAntiMissile>
+            <Args>
+                <gunID>INT32</gunID>
+            </Args>
+        </useAntiMissile>
         <receivePingerShot>
             <Args>
                 <weaponType>WEAPON_TYPE</weaponType>

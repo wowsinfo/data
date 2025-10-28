@@ -45,6 +45,10 @@
 				<eventID>GAMEPARAMS_ID</eventID>
 				<description>UNICODE_STRING</description>
 			</Args>
+			<ReturnValues>
+			    <response>INT16</response>
+			    <divisionID>ENTITY_ID</divisionID>
+			</ReturnValues>
 			<Exposed/>
 		</create>
 
@@ -88,7 +92,45 @@
 			</Args>
 			<Exposed/>
 		</getDivisionInfo>
-	
+
+		<start>
+		    <Args>
+		        <queueType>INT8</queueType>
+		        <isSoft>BOOL</isSoft>
+		    </Args>
+		    <ReturnValues>
+		        <result>INT8</result>
+		    </ReturnValues>
+		</start>
+		<setReady>
+		    <Args>
+		        <shipID>SHIP_ID</shipID>
+		        <queueType>INT8</queueType>
+		    </Args>
+		    <ReturnValues>
+		        <result>INT8</result>
+		    </ReturnValues>
+		</setReady>
+		<sendInvite>
+		    <Args>
+		        <accountDBID>DB_ID</accountDBID>
+		        <inviteType>INT8</inviteType>
+		        <teamId>INT8</teamId>
+		    </Args>
+		    <ReturnValues>
+		        <result>INT8</result>
+		    </ReturnValues>
+		</sendInvite>
+		<setSelectedQueueType>
+		    <Args>
+		        <selectedQueueType>QUEUE_TYPE</selectedQueueType>
+		        <gameParamID>GAMEPARAMS_ID</gameParamID>
+		        <enterMatchmaker>BOOL</enterMatchmaker>
+		    </Args>
+		    <ReturnValues>
+		        <result>INT8</result>
+		    </ReturnValues>
+		</setSelectedQueueType>
 	</BaseMethods>
 
 	<ClientMethods>

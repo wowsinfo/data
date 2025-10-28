@@ -130,6 +130,9 @@
             <Arg>UINT8</Arg>
             <Arg>BLOB</Arg>
         </leaveBattleSession>
+        <onBattlePreparationFailed>
+            <Arg>UINT8</Arg>
+        </onBattlePreparationFailed>
         <enterTrainingRoom>
             <Arg>BLOB</Arg>
             <Arg>COUNTDOWN_INFO</Arg>
@@ -203,7 +206,7 @@
         <setTrace>
             <Arg>BOOL</Arg>
         </setTrace>
-        <curVersion_14_9_0_10695045></curVersion_14_9_0_10695045>
+        <curVersion_14_10_0_10846255></curVersion_14_10_0_10846255>
         <updateSSEProgress>
             <Arg>STRING</Arg>
             <VariableLengthHeaderSize>

@@ -11,13 +11,14 @@
 				<battleStarterService> MAILBOX </battleStarterService>
 			</Args>
 		</onRedirected>
-		<onStartBattle>
+		<startBattlePreparation>
 			<Args>
-				<battleInfo> PYTHON </battleInfo>
+				<mmResult> PYTHON </mmResult>
+				<battleSession> BATTLE_SESSION_DEF </battleSession>
 			</Args>
 			<ReturnValues>
-				<resultCode> INT64 </resultCode>
+				<resultCode> UINT8 </resultCode>
 			</ReturnValues>
-		</onStartBattle>
+		</startBattlePreparation>
 	</BaseMethods>
 </root>

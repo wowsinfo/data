@@ -1,6 +1,7 @@
 <root>
 	<BOOL> UINT8 </BOOL>
 	<PRE_BATTLE_ID>UINT32</PRE_BATTLE_ID>
+	<BATTLE_SESSION_ID>STRING</BATTLE_SESSION_ID>
 	<PLAYER_ID>INT32</PLAYER_ID>
 	<TEAM_ID>INT8</TEAM_ID>
 	<SHIP_ID>UINT32</SHIP_ID>
@@ -56,6 +57,12 @@
 		<Type>BLOB</Type>
 		<implementedBy>BoundServiceUtils.CachedZippedBlobConverter.CachedZippedBlobConverter</implementedBy>
 	</CACHED_ZIPPED_BLOB>
+
+	<MSGPACK_BLOB>
+		USER_TYPE
+		<Type>BLOB</Type>
+		<implementedBy>MsgPackCustomConverter.converter</implementedBy>
+	</MSGPACK_BLOB>
 
 	<GAMEPARAMS>
 		USER_TYPE
@@ -151,6 +158,19 @@
 		</Properties>
 		<implementedBy>BattleDef.converter</implementedBy>
 	</BATTLE_DEF>
+
+	<TEST_START_BATTLE_DEF>
+		FIXED_DICT
+		<Properties>
+			<battleSessionID><Type>STRING</Type></battleSessionID>
+			<sseInfo><Type>STRING</Type></sseInfo>
+			<shipId><Type>SHIP_ID</Type><AllowNone>true</AllowNone></shipId>
+			<teamBuildType><Type>UINT8</Type></teamBuildType>
+			<duration><Type>INT16</Type></duration>
+			<map><Type>STRING</Type><DefaultValue>spaces/00_CO_ocean</DefaultValue></map>
+		</Properties>
+		<implementedBy>TestStartBattleDef.converter</implementedBy>
+	</TEST_START_BATTLE_DEF>
 
 	<BATTLE_EVENT>
 		USER_TYPE
@@ -292,21 +312,42 @@
 		FIXED_DICT
 		<Properties>
 			<spaID><Type>DB_ID</Type></spaID>
-			<realm><Type>STRING</Type></realm>
-			<battleId><Type>PRE_BATTLE_ID</Type></battleId>
-			<type_><Type>BOOL</Type></type_>
-			<reason><Type>UINT8</Type></reason>
+			<battleSessionUniqueID><Type>BATTLE_SESSION_ID</Type></battleSessionUniqueID>
 			<compressedResults><Type>BLOB</Type></compressedResults>
-			<arenaUniqueID><Type>INT64</Type></arenaUniqueID>
-			<arenaClusterID><Type>INT32</Type></arenaClusterID>
-			<teamBuildType><Type>INT16</Type></teamBuildType>
-			<operationID><Type>GAMEPARAMS_ID</Type></operationID>
-			<pickledArenaInfo><Type>BLOB</Type></pickledArenaInfo>
-			<battleSessionUniqueID><Type>INT64</Type></battleSessionUniqueID>
+			<evaluationsSpent><Type>MSGPACK_BLOB</Type></evaluationsSpent>
+			<evaluationsCaused><Type>MSGPACK_BLOB</Type></evaluationsCaused>
 			<gameVersion><Type>STRING</Type></gameVersion>
 		</Properties>
 		<implementedBy>BattleResultsDef.converter</implementedBy>
 	</BATTLE_RESULTS_DEF>
+
+	<BATTLE_SESSION_INFO_DEF>
+		FIXED_DICT
+		<Properties>
+			<realm><Type>STRING</Type></realm>
+			<battleSessionUniqueID><Type>BATTLE_SESSION_ID</Type></battleSessionUniqueID>
+			<arenaUniqueID><Type>INT64</Type></arenaUniqueID>
+			<arenaClusterID><Type>INT32</Type></arenaClusterID>
+			<teamBuildType><Type>INT16</Type></teamBuildType>
+			<operationID><Type>GAMEPARAMS_ID</Type></operationID>
+			<shipConfig><Type>SHIP_CONFIG</Type></shipConfig>
+			<battleDuration><Type>INT16</Type></battleDuration>
+			<surveyID><Type>INT32</Type></surveyID>
+			<strategicActionsTask><Type>PYTHON</Type></strategicActionsTask>
+		</Properties>
+		<AllowNone> true </AllowNone>
+		<implementedBy>BattleSessionInfoDef.converter</implementedBy>
+	</BATTLE_SESSION_INFO_DEF>
+
+	<BATTLE_SESSION_DEF>
+		FIXED_DICT
+		<Properties>
+			<mBox><Type>MAILBOX</Type></mBox>
+			<uniqueID><Type>BATTLE_SESSION_ID</Type></uniqueID>
+		</Properties>
+		<implementedBy>BattleSessionDef.converter</implementedBy>
+		<AllowNone> true </AllowNone>
+	</BATTLE_SESSION_DEF>
 
 	<!-- Alias is used by matchmaker to send pack of players divided on teams to battle session -->
 	<TEAMSLIST>
@@ -550,6 +591,24 @@
 			<torpedoes>	<Type>ARRAY<of>PHOTON_TORPEDO</of></Type>	</torpedoes>
 		</Properties>
 	</PHOTON_PACK>
+
+	<MISSILE>
+		FIXED_DICT
+		<Properties>
+			<ownerID>			<Type>PLAYER_ID</Type>		</ownerID>
+			<spotterID>			<Type>PLAYER_ID</Type>		</spotterID>
+			<teamId>			<Type>TEAM_ID</Type>		</teamId>
+			<salvoID>			<Type>INT32</Type>			</salvoID>
+			<paramsID>			<Type>GAMEPARAMS_ID</Type>	</paramsID>
+			<pos>				<Type>VECTOR3</Type>		</pos>
+			<pitch>				<Type>FLOAT</Type>			</pitch>
+			<yaw>				<Type>FLOAT</Type>			</yaw>
+			<shotID>			<Type>INT64</Type>			</shotID>
+			<tarPos>			<Type>VECTOR3</Type>		</tarPos>
+			<currentStateId>	<Type>INT32</Type>			</currentStateId>
+			<currentHealth>		<Type>INT32</Type>			</currentHealth>
+		</Properties>
+	</MISSILE>
 
 	<DEPTH_CHARGE>
 		FIXED_DICT
@@ -1362,6 +1421,30 @@
 		</Properties>
 	</PHYSICS_STATE>
 
+	<RESPAWN_SECTORS_STATE>
+		FIXED_DICT
+		<Properties>
+			<activeLine><Type>UINT8</Type></activeLine>
+		</Properties>
+		<AllowNone>true</AllowNone>
+	</RESPAWN_SECTORS_STATE>
+
+	<RESPAWNS_STATE>
+		FIXED_DICT
+		<Properties>
+			<sectors><Type>RESPAWN_SECTORS_STATE</Type></sectors>
+		</Properties>
+		<AllowNone>true</AllowNone>
+	</RESPAWNS_STATE>
+
+	<PRIVATE_RESPAWNS_STATE>
+		FIXED_DICT
+		<Properties>
+			<selectedSector><Type>UINT8</Type></selectedSector>
+		</Properties>
+		<AllowNone>true</AllowNone>
+	</PRIVATE_RESPAWNS_STATE>
+
 	<BATTLE_LOGIC_STATE>
 		FIXED_DICT
 		<Properties>
@@ -1383,6 +1466,7 @@
 			<diplomacy><Type>DIPLOMACY_STATE</Type></diplomacy>
 			<uiInfo><Type>UI_INFO_STATE</Type></uiInfo>
 			<physics><Type>PHYSICS_STATE</Type></physics>
+			<respawns><Type>RESPAWNS_STATE</Type></respawns>
 		</Properties>
 	</BATTLE_LOGIC_STATE>
 
@@ -1430,6 +1514,7 @@
 			<diplomacyTickets> <Type> DIPLOMACY_TICKETS_STATE </Type> </diplomacyTickets>
 			<leveling><Type> BATTLE_LEVELING_STATE </Type></leveling>
 			<missions><Type> PRIVATE_MISSIONS_STATE </Type></missions>
+			<respawns><Type> PRIVATE_RESPAWNS_STATE </Type></respawns>
 		</Properties>
 	</PRIVATE_BATTLE_LOGIC_STATE>
 
@@ -1749,12 +1834,6 @@
 		</Properties>
 	</PLANE_ROCKET_PACK>
 
-	<MSGPACK_BLOB>
-		USER_TYPE
-		<Type>BLOB</Type>
-		<implementedBy>MsgPackCustomConverter.converter</implementedBy>
-	</MSGPACK_BLOB>
-
 	<PICKLED_BLOB>
 		USER_TYPE
 		<Type>BLOB</Type>
@@ -1954,6 +2033,17 @@
 		<AllowNone> true </AllowNone>
 	</RAGE_MODE_STATE>
 
+	<MISSILES_STATE>
+		FIXED_DICT
+		<Properties>
+			<shotsCount><Type>INT8</Type></shotsCount>
+			<tubesLoadState><Type>ARRAY<of>INT8</of></Type></tubesLoadState>
+			<nextShootingGunId><Type>INT8</Type></nextShootingGunId>
+			<nextShootingTubeId><Type>INT8</Type></nextShootingTubeId>
+		</Properties>
+		<AllowNone> true </AllowNone>
+	</MISSILES_STATE>
+
 	<DECALS_STATE>
 		FIXED_DICT
 		<Properties>
@@ -2006,6 +2096,7 @@
 			<rageMode><Type>RAGE_MODE_STATE</Type></rageMode>
 			<ribbons><Type>RIBBONS_STATE</Type></ribbons>
 			<battleCards><Type>BATTLE_CARDS_STATE</Type></battleCards>
+			<missiles><Type>MISSILES_STATE</Type></missiles>
 		</Properties>
 	</PRIVATE_VEHICLE_STATE>
 
@@ -2142,7 +2233,7 @@
 		FIXED_DICT
 		<Properties>
 			<battleDef> <Type>BATTLE_DEF</Type> </battleDef>
-			<uniqueCreationID> <Type>ENTITY_ID</Type> </uniqueCreationID>
+			<battleSessionUniqueID> <Type>BATTLE_SESSION_ID</Type> </battleSessionUniqueID>
 		</Properties>
 	</CREATE_BATTLE_SESSION_PARAMS>
 
