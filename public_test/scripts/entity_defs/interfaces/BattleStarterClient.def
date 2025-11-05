@@ -20,5 +20,14 @@
 				<resultCode> UINT8 </resultCode>
 			</ReturnValues>
 		</startBattlePreparation>
+
+		<onPlayersJoinFailed>
+			<Args>
+				<battleSessionID> BATTLE_SESSION_ID </battleSessionID>
+			</Args>
+			<ReturnValues>
+				<resultCode> UINT8 </resultCode>
+			</ReturnValues>
+		</onPlayersJoinFailed>
 	</BaseMethods>
 </root>

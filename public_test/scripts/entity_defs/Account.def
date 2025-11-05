@@ -128,7 +128,7 @@
         </leavePreBattle>
         <leaveBattleSession>
             <Arg>UINT8</Arg>
-            <Arg>BLOB</Arg>
+            <Arg>MSGPACK_BLOB</Arg>
         </leaveBattleSession>
         <onBattlePreparationFailed>
             <Arg>UINT8</Arg>
@@ -206,7 +206,7 @@
         <setTrace>
             <Arg>BOOL</Arg>
         </setTrace>
-        <curVersion_14_10_0_10846318></curVersion_14_10_0_10846318>
+        <curVersion_14_11_10918482></curVersion_14_11_10918482>
         <updateSSEProgress>
             <Arg>STRING</Arg>
             <VariableLengthHeaderSize>

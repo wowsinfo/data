@@ -37,4 +37,6 @@
 	<AccountInventoryAPIComponent/>
 	<BattleComponent/>
 	<EventShopComponent/>
+	<ConnectionQualityComponent/>
+	<NewYear25Component/>
 </root>
