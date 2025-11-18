@@ -3,7 +3,7 @@
         <appendPingResults>
             <Exposed/>
             <Args>
-                <realms> PING_RESULTS </realms>
+                <pingResults> MSGPACK_BLOB </pingResults>
             </Args>
         </appendPingResults>
 

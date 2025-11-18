@@ -2437,15 +2437,4 @@
 		</Properties>
 		<implementedBy>BWGatewayCommon.InventoryAPIDefs.getInventoryRequestConverter</implementedBy>
 	</GET_INVENTORY_REQUEST>
-
-    <PING_RESULTS>
-        FIXED_DICT
-        <Properties>
-            <eu><Type>ARRAY<of>INT16</of></Type></eu>
-            <na><Type>ARRAY<of>INT16</of></Type></na>
-            <asia><Type>ARRAY<of>INT16</of></Type></asia>
-            <cn><Type>ARRAY<of>INT16</of></Type></cn>
-        </Properties>
-        <implementedBy>PingResultsDTO.pingResultsConverter</implementedBy>
-    </PING_RESULTS>
 </root>
