@@ -208,6 +208,7 @@
         <receiveMissileDamage>
             <Args>
                 <shotID>INT64</shotID>
+                <damagerID>PLAYER_ID</damagerID>
                 <damage>FLOAT</damage>
             </Args>
         </receiveMissileDamage>
