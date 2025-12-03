@@ -39,4 +39,5 @@
 	<EventShopComponent/>
 	<ConnectionQualityComponent/>
 	<NewYear25Component/>
+	<StatistAchievementsComponent/>
 </root>

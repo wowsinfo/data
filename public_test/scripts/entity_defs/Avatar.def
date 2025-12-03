@@ -196,13 +196,13 @@
             <Args>
                 <shotID>INT64</shotID>
                 <flyTime>FLOAT</flyTime>
-                <points>PLANE_PATH</points>
+                <points>AERIAL_PATH</points>
             </Args>
         </updateMissileWaypoints>
         <resetMissileWaypoints>
             <Args>
                 <shotID>INT64</shotID>
-                <points>PLANE_PATH</points>
+                <points>AERIAL_PATH</points>
             </Args>
         </resetMissileWaypoints>
         <receiveMissileDamage>
@@ -212,13 +212,13 @@
                 <damage>FLOAT</damage>
             </Args>
         </receiveMissileDamage>
-        <killMissile>
+        <receiveMissileKill>
             <Args>
                 <shotID>INT64</shotID>
                 <hitPos>VECTOR3</hitPos>
                 <hitType>INT8</hitType>
             </Args>
-        </killMissile>
+        </receiveMissileKill>
         <receiveShotKills>
             <Arg>ARRAY
                 <of>SHOTKILLS_PACK</of>
@@ -400,11 +400,11 @@
         <receive_updateSquadron>
             <Arg>PLANE_ID</Arg>
             <Arg>FLOAT</Arg>
-            <Arg>PLANE_PATH</Arg>
+            <Arg>AERIAL_PATH</Arg>
         </receive_updateSquadron>
         <receive_resetWaypoints>
             <Arg>PLANE_ID</Arg>
-            <Arg>PLANE_PATH</Arg>
+            <Arg>AERIAL_PATH</Arg>
         </receive_resetWaypoints>
         <receive_wardAdded>
             <Args>
@@ -1044,11 +1044,18 @@
         </moveTo>
         <setWeaponLock>
             <Exposed>OWN_CLIENT</Exposed>
-            <Arg>INT8</Arg>
+            <Arg>WEAPON_TYPE</Arg>
             <Arg>INT8</Arg>
             <Arg>TARGET_ID</Arg>
             <Arg>VECTOR3</Arg>
         </setWeaponLock>
+        <setPriorityTarget>
+            <Exposed>OWN_CLIENT</Exposed>
+            <Args>
+                <weaponType>WEAPON_TYPE</weaponType>
+                <targetId>TARGET_ID</targetId>
+            </Args>
+        </setPriorityTarget>
         <updateWeaponTargetPos>
             <Exposed>OWN_CLIENT</Exposed>
             <Arg>VECTOR3</Arg>
