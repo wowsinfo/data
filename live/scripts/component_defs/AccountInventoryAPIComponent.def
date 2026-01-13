@@ -5,7 +5,7 @@
     <BaseMethods>
         <getInventory>
            <Args>
-              <requestDTO>GET_INVENTORY_REQUEST</requestDTO>
+              <request> STRING </request>
            </Args>
            <ReturnValues>
              <Arg> STRING </Arg>

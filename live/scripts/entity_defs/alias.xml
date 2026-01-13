@@ -100,7 +100,7 @@
 		ARRAY<of>DB_ID</of>
 	</DB_ID_LIST>
 
-	<PLANE_WAYPOINT>
+	<AERIAL_WAYPOINT>
 		FIXED_DICT
 		<Properties>
 			<position><Type>VECTOR3</Type></position>
@@ -109,11 +109,11 @@
 			<time><Type>INT16</Type></time>
 			<type><Type>INT8</Type></type>
 		</Properties>
-	</PLANE_WAYPOINT>
+	</AERIAL_WAYPOINT>
 
-	<PLANE_PATH>
-		ARRAY <of> PLANE_WAYPOINT </of>
-	</PLANE_PATH>
+	<AERIAL_PATH>
+		ARRAY <of> AERIAL_WAYPOINT </of>
+	</AERIAL_PATH>
 
 	<TEAM_STATE>
 		FIXED_DICT
@@ -2337,7 +2337,7 @@
 		FIXED_DICT
 		<Properties>
 			<shipID><Type>SHIP_ID</Type></shipID>
-			<masterySign><Type>UINT8</Type></masterySign>
+			<masterySign><Type>INT8</Type></masterySign>
 		</Properties>
 		<implementedBy>MasteryBadgesDef.converter</implementedBy>
 	</MASTERY_BADGE>
