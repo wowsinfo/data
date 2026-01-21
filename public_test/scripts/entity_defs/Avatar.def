@@ -182,11 +182,6 @@
                 <of>TORPEDOES_PACK</of>
             </Arg>
         </receiveTorpedoes>
-        <receivePhotonShots>
-            <Arg>ARRAY
-                <of>PHOTON_PACK</of>
-            </Arg>
-        </receivePhotonShots>
         <receiveMissile>
             <Args>
                 <missileData>MISSILE</missileData>
@@ -299,19 +294,6 @@
             <Arg>FLOAT</Arg>
             <Arg>BOOL</Arg>
         </receiveTorpedoDirection>
-        <receivePhotonDirection>
-            <Args>
-                <ownerId>PLAYER_ID</ownerId>
-                <torpedoId>UINT16</torpedoId>
-                <serverPos>VECTOR3</serverPos>
-                <targetYaw>FLOAT</targetYaw>
-                <targetDepth>FLOAT</targetDepth>
-                <targetPitch>FLOAT</targetPitch>
-                <speedCoef>FLOAT</speedCoef>
-                <curYawSpeed>FLOAT</curYawSpeed>
-                <curPitchSpeed>FLOAT</curPitchSpeed>
-            </Args>
-        </receivePhotonDirection>
         <receiveTorpedoChasingSwitch>
             <Arg>PLAYER_ID</Arg>
             <Arg>SHOT_ID</Arg>
@@ -827,6 +809,7 @@
             <Arg>STRING</Arg>
             <Arg>ZIPPED_BLOB</Arg>
             <Arg>UINT8</Arg>
+            <Arg>STRING</Arg>
         </receiveScreenMessage>
         <receiveLowerLogMessage>
             <Arg>STRING</Arg>

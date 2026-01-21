@@ -1162,6 +1162,7 @@
 			<showOnHUD><Type>UINT8</Type></showOnHUD>
 			<teamId><Type>TEAM_ID</Type></teamId>
 			<name><Type>STRING</Type></name>
+			<icon><Type>STRING</Type></icon>
 			<messageData><Type>ZIPPED_BLOB</Type></messageData>
 		</Properties>
 		<AllowNone>true</AllowNone>
@@ -2218,6 +2219,16 @@
 		<AllowNone>false</AllowNone>
 		<implementedBy>FlagshipStatistics.converter</implementedBy>
 	</FLAGSHIP_HEAT_MAP_EVENT_DATA>
+
+	<RESPAWN_HEAT_MAP_DATA>
+		FIXED_DICT
+		<Properties>
+			<avatarId><Type>AVATAR_ID</Type></avatarId>
+			<sectorNumber><Type>UINT8</Type></sectorNumber>
+		</Properties>
+		<AllowNone>false</AllowNone>
+		<implementedBy>RespawnStatistics.converter</implementedBy>
+	</RESPAWN_HEAT_MAP_DATA>
 
 	<QUICK_COMMAND>
 		USER_TYPE

@@ -39,5 +39,7 @@
 	<EventShopComponent/>
 	<ConnectionQualityComponent/>
 	<NewYear25Component/>
+	<XboxGamePassComponent/>
 	<StatistAchievementsComponent/>
+	<SideChoiceEventComponent/>
 </root>
