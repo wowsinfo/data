@@ -270,14 +270,6 @@
             <Arg>INT32</Arg>
             <Arg>BOOL</Arg>
         </shootTorpedo>
-        <shootPhoton>
-            <Args>
-                <gunID>INT32</gunID>
-                <salvoID>INT32</salvoID>
-                <numShoot>INT32</numShoot>
-                <isSalvo>BOOL</isSalvo>
-            </Args>
-        </shootPhoton>
         <shootDepthCharge>
             <Arg>INT32</Arg>
             <Arg>UINT16</Arg>
