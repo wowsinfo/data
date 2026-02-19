@@ -30,6 +30,7 @@
 		<permanentlyVisibleByTeammates/>
 		<permanentlyVisibleByEnemies/>
 		<isBlind/>
+		<isVisibleByShot/>
 	</TempProperties>
 	
 	<CellMethods>

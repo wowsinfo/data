@@ -54,7 +54,8 @@
 
 		<onOpenLootboxesStarted>
 			<Args>
-				<num> UINT16 </num>
+			    <showShipArt> BOOL </showShipArt>
+				<containersInfo> MSGPACK_BLOB </containersInfo>
 			</Args>
 		</onOpenLootboxesStarted>
 

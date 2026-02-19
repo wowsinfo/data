@@ -415,6 +415,23 @@
             <Arg>UINT8</Arg>
             <Arg>INT64</Arg>
         </receive_planeDeath>
+        <receive_startManeuvering>
+            <Args>
+                <squadronId>PLANE_ID</squadronId>
+            </Args>
+        </receive_startManeuvering>
+        <receive_stopManeuvering>
+            <Args>
+                <squadronId>PLANE_ID</squadronId>
+            </Args>
+        </receive_stopManeuvering>
+        <receive_addManeuveringPlane>
+            <Args>
+                <squadronId>PLANE_ID</squadronId>
+                <planeIdx>UINT8</planeIdx>
+                <maneuverIdx>UINT8</maneuverIdx>
+            </Args>
+        </receive_addManeuveringPlane>
         <receive_squadronOutOfFuel>
             <Arg>PLANE_ID</Arg>
         </receive_squadronOutOfFuel>
@@ -475,7 +492,7 @@
         <squadronConsumableUsed>
             <Args>
                 <squadronID>PLANE_ID</squadronID>
-                <consType>CONSUMABLE_ID</consType>
+                <consumableUsageParams>CONSUMABLE_USAGE_PARAMS</consumableUsageParams>
             </Args>
         </squadronConsumableUsed>
         <squadronConsumablePaused>
@@ -802,6 +819,12 @@
                 <reason>UINT8</reason>
             </Args>
         </increaseSquadronsConsumablesCount>
+        <onConsumableModeChanged>
+            <Args>
+                <consumableType>CONSUMABLE_ID</consumableType>
+                <mode>UINT8</mode>
+            </Args>
+        </onConsumableModeChanged>
         <onPlaySound>
             <Arg>STRING</Arg>
         </onPlaySound>
@@ -942,6 +965,13 @@
             <Exposed>OWN_CLIENT</Exposed>
             <Arg>CONSUMABLE_USAGE_PARAMS</Arg>
         </useConsumable>
+        <switchConsumableMode>
+            <Exposed>OWN_CLIENT</Exposed>
+            <Args>
+                <consumableType>CONSUMABLE_ID</consumableType>
+                <mode>UINT8</mode>
+            </Args>
+        </switchConsumableMode>
         <interruptConsumable>
             <Exposed>OWN_CLIENT</Exposed>
             <Arg>CONSUMABLE_ID</Arg>

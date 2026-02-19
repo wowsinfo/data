@@ -35,6 +35,10 @@
             <Type>INTERACTIVE_ZONE_ENTITY_STATE</Type>
             <Flags>ALL_CLIENTS</Flags>
         </visualState>
+        <effectState>
+            <Type>INTERACTIVE_ZONE_EFFECT_STATE</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </effectState>
         <type>
             <Type>UINT8</Type>
             <Flags>ALL_CLIENTS</Flags>
@@ -44,6 +48,11 @@
             <Flags>ALL_CLIENTS</Flags>
             <Default>True</Default>
         </useRing>
+        <attachedToOwner>
+            <Type>BOOL</Type>
+            <Flags>ALL_CLIENTS</Flags>
+            <Default>True</Default>
+        </attachedToOwner>
         <componentsState>
             <Type>INTERACTIVE_ZONE_STATE</Type>
             <Flags>ALL_CLIENTS</Flags>

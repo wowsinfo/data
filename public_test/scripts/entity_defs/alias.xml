@@ -88,6 +88,14 @@
 		</Properties>
 	</VISIBILITY_DISTANCES>
 
+	<VISIBILITY_TIMES>
+		FIXED_DICT
+		<Properties>
+			<startTime><Type>FLOAT</Type></startTime>
+			<duration><Type>FLOAT</Type></duration>
+		</Properties>
+	</VISIBILITY_TIMES>
+
 	<VISIBILITY_BY_CLIENTS>
 		ARRAY<of>AVATAR_ID</of>
 	</VISIBILITY_BY_CLIENTS>
@@ -773,23 +781,43 @@
 		</Properties>
 	</GENERIC_MESSENGER_ARGS>
 
+	<PLANE_MANEUVERING_STATE>
+		FIXED_DICT
+		<Properties>
+			<maneuverIdx>		<Type>	UINT8	</Type>	</maneuverIdx>
+			<currentStepIds>	<Type>	UINT8	</Type>	</currentStepIds>
+			<timeLeftInStep>	<Type>	FLOAT	</Type>	</timeLeftInStep>
+		</Properties>
+		<AllowNone>true</AllowNone>
+	</PLANE_MANEUVERING_STATE>
+
+	<SQUADRON_MANEUVERING_STATE>
+		FIXED_DICT
+		<Properties>
+			<isActive>				<Type>	BOOL										</Type>	</isActive>
+			<planesManeuverStates>	<Type>	ARRAY <of> PLANE_MANEUVERING_STATE </of>	</Type>	</planesManeuverStates>
+		</Properties>
+		<AllowNone>true</AllowNone>
+	</SQUADRON_MANEUVERING_STATE>
+
 	<SQUADRON_STATE>
 		FIXED_DICT
 		<Properties>
-			<planeID>       	<Type>	PLANE_ID	</Type> </planeID>
-			<skinID>        	<Type>	GAMEPARAMS_ID </Type> </skinID>
-			<isActive>      	<Type>	BOOL	    </Type> </isActive>
-			<numPlanes>     	<Type>	UINT8	    </Type>	</numPlanes>
-			<position>      	<Type>	VECTOR3	    </Type>	</position>
-			<yaw>				<Type>	FLOAT 		</Type>	</yaw>
-			<throttleMode>		<Type>	INT8 		</Type> </throttleMode>
-			<turnMode>			<Type>  INT8 		</Type> </turnMode>
-			<turnDirection>		<Type>	INT8 		</Type> </turnDirection>
-			<currentStateId>	<Type>	UINT8 		</Type> </currentStateId>
-			<hasProjectiles>	<Type>  BOOL		</Type> </hasProjectiles>
-			<isSpawned>			<Type>	BOOL		</Type> </isSpawned>
-			<consumablesStates>	<Type>	UINT8 		</Type> </consumablesStates>
-			<isJatoActive>		<Type>	BOOL 		</Type> </isJatoActive>
+			<planeID>			<Type>	PLANE_ID					</Type> </planeID>
+			<skinID>			<Type>	GAMEPARAMS_ID				</Type> </skinID>
+			<isActive>			<Type>	BOOL						</Type> </isActive>
+			<numPlanes>			<Type>	UINT8						</Type>	</numPlanes>
+			<position>			<Type>	VECTOR3						</Type>	</position>
+			<yaw>				<Type>	FLOAT						</Type>	</yaw>
+			<throttleMode>		<Type>	INT8						</Type> </throttleMode>
+			<turnMode>			<Type>  INT8						</Type> </turnMode>
+			<turnDirection>		<Type>	INT8						</Type> </turnDirection>
+			<currentStateId>	<Type>	UINT8						</Type> </currentStateId>
+			<hasProjectiles>	<Type>  BOOL						</Type> </hasProjectiles>
+			<isSpawned>			<Type>	BOOL						</Type> </isSpawned>
+			<consumablesStates>	<Type>	UINT8						</Type> </consumablesStates>
+			<isJatoActive>		<Type>	BOOL						</Type> </isJatoActive>
+			<maneuveringState>	<Type>	SQUADRON_MANEUVERING_STATE	</Type> </maneuveringState>
 
 		</Properties>
 		<implementedBy>AirPlanes.AirplaneUtils.squadronStateConverter</implementedBy>
@@ -995,6 +1023,16 @@
 			<forEnemies><Type>UINT8</Type></forEnemies>
 		</Properties>
 	</INTERACTIVE_ZONE_ENTITY_STATE>
+
+	<INTERACTIVE_ZONE_EFFECT_STATE>
+		FIXED_DICT
+		<Properties>
+			<zoneDuration><Type>FLOAT</Type></zoneDuration>
+			<startTime><Type>FLOAT</Type></startTime>
+			<visualParamsId><Type>GAMEPARAMS_ID</Type></visualParamsId>
+		</Properties>
+		<AllowNone>true</AllowNone>
+	</INTERACTIVE_ZONE_EFFECT_STATE>
 
 	<KEY_OBJECT_STATE>
 		FIXED_DICT
