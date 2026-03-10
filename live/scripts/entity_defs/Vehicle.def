@@ -47,6 +47,10 @@
             <Type>VISIBILITY_FLAG</Type>
             <Flags>ALL_CLIENTS</Flags>
         </visibilityFlags>
+        <visibilityTime>
+            <Type>VISIBILITY_TIMES</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </visibilityTime>
         <owner>
             <Type>ENTITY_ID</Type>
             <Flags>ALL_CLIENTS</Flags>
@@ -360,7 +364,7 @@
         </onConsumableInterrupted>
         <onConsumableUsed>
             <Args>
-                <consumableType>CONSUMABLE_ID</consumableType>
+                <consumableUsageParams>CONSUMABLE_USAGE_PARAMS</consumableUsageParams>
                 <workTimeLeft>FLOAT32</workTimeLeft>
             </Args>
         </onConsumableUsed>
