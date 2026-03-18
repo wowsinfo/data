@@ -68,6 +68,10 @@
 		    <Arg> STRING </Arg>
 		</handleMarkRegionUnseen>
 
+		<cleanInactiveGSPasses>
+	        <Arg> ARRAY <of> STRING </of> </Arg>
+	    </cleanInactiveGSPasses>
+
 	</ClientMethods>
 
 	<ofEntity>

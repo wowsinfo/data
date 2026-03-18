@@ -425,13 +425,6 @@
                 <squadronId>PLANE_ID</squadronId>
             </Args>
         </receive_stopManeuvering>
-        <receive_addManeuveringPlane>
-            <Args>
-                <squadronId>PLANE_ID</squadronId>
-                <planeIdx>UINT8</planeIdx>
-                <maneuverIdx>UINT8</maneuverIdx>
-            </Args>
-        </receive_addManeuveringPlane>
         <receive_squadronOutOfFuel>
             <Arg>PLANE_ID</Arg>
         </receive_squadronOutOfFuel>
@@ -482,6 +475,11 @@
                 <newStateId>UINT16</newStateId>
             </Args>
         </receive_missileStateChanged>
+        <receive_victoryPoints>
+            <Args>
+                <totalPoints>FLOAT</totalPoints>
+            </Args>
+        </receive_victoryPoints>
         <squadronConsumableSelected>
             <Args>
                 <squadronID>PLANE_ID</squadronID>

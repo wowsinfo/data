@@ -561,45 +561,6 @@
 		</Properties>
 	</TORPEDOES_PACK>
 
-	<TORPEDO_PHOTON_DUMP>
-		FIXED_DICT
-		<Properties>
-			<speedCoef>			<Type>FLOAT</Type>	</speedCoef>
-			<accelerationTime>	<Type>FLOAT</Type>	</accelerationTime>
-			<rotationYaw>	    <Type>FLOAT</Type>	</rotationYaw>
-			<verticalSpeed>		<Type>FLOAT</Type>	</verticalSpeed>
-			<targetYaw>			<Type>FLOAT</Type>	</targetYaw>
-			<targetDepth>		<Type>FLOAT</Type>	</targetDepth>
-			<targetPitch>		<Type>FLOAT</Type>	</targetPitch >
-		</Properties>
-		<AllowNone> true </AllowNone>
-	</TORPEDO_PHOTON_DUMP>
-
-	<PHOTON_TORPEDO>
-		FIXED_DICT
-		<Properties>
-			<pos>			<Type>VECTOR3</Type>	</pos>
-			<dir>			<Type>VECTOR3</Type>	</dir>
-			<launchDir>		<Type>VECTOR3</Type>	</launchDir>
-			<launchTime>	<Type>FLOAT</Type>		</launchTime>
-			<inertiaTime>	<Type>FLOAT</Type>		</inertiaTime>
-			<shotID>		<Type>SHOT_ID</Type>	</shotID>
-			<armed>			<Type>BOOL</Type>		</armed>
-			<shiftDir>		<Type>VECTOR3</Type>	</shiftDir>
-			<photonDump>	<Type>TORPEDO_PHOTON_DUMP  </Type>	</photonDump>
-		</Properties>
-	</PHOTON_TORPEDO>
-
-	<PHOTON_PACK>
-		FIXED_DICT
-		<Properties>
-			<paramsID>	<Type>GAMEPARAMS_ID</Type>			</paramsID>
-			<ownerID>	<Type>PLAYER_ID</Type>				</ownerID>
-			<salvoID>	<Type>INT32</Type>					</salvoID>
-			<torpedoes>	<Type>ARRAY<of>PHOTON_TORPEDO</of></Type>	</torpedoes>
-		</Properties>
-	</PHOTON_PACK>
-
 	<MISSILE>
 		FIXED_DICT
 		<Properties>
@@ -781,43 +742,24 @@
 		</Properties>
 	</GENERIC_MESSENGER_ARGS>
 
-	<PLANE_MANEUVERING_STATE>
-		FIXED_DICT
-		<Properties>
-			<maneuverIdx>		<Type>	UINT8	</Type>	</maneuverIdx>
-			<currentStepIds>	<Type>	UINT8	</Type>	</currentStepIds>
-			<timeLeftInStep>	<Type>	FLOAT	</Type>	</timeLeftInStep>
-		</Properties>
-		<AllowNone>true</AllowNone>
-	</PLANE_MANEUVERING_STATE>
-
-	<SQUADRON_MANEUVERING_STATE>
-		FIXED_DICT
-		<Properties>
-			<isActive>				<Type>	BOOL										</Type>	</isActive>
-			<planesManeuverStates>	<Type>	ARRAY <of> PLANE_MANEUVERING_STATE </of>	</Type>	</planesManeuverStates>
-		</Properties>
-		<AllowNone>true</AllowNone>
-	</SQUADRON_MANEUVERING_STATE>
-
 	<SQUADRON_STATE>
 		FIXED_DICT
 		<Properties>
-			<planeID>			<Type>	PLANE_ID					</Type> </planeID>
-			<skinID>			<Type>	GAMEPARAMS_ID				</Type> </skinID>
-			<isActive>			<Type>	BOOL						</Type> </isActive>
-			<numPlanes>			<Type>	UINT8						</Type>	</numPlanes>
-			<position>			<Type>	VECTOR3						</Type>	</position>
-			<yaw>				<Type>	FLOAT						</Type>	</yaw>
-			<throttleMode>		<Type>	INT8						</Type> </throttleMode>
-			<turnMode>			<Type>  INT8						</Type> </turnMode>
-			<turnDirection>		<Type>	INT8						</Type> </turnDirection>
-			<currentStateId>	<Type>	UINT8						</Type> </currentStateId>
-			<hasProjectiles>	<Type>  BOOL						</Type> </hasProjectiles>
-			<isSpawned>			<Type>	BOOL						</Type> </isSpawned>
-			<consumablesStates>	<Type>	UINT8						</Type> </consumablesStates>
-			<isJatoActive>		<Type>	BOOL						</Type> </isJatoActive>
-			<maneuveringState>	<Type>	SQUADRON_MANEUVERING_STATE	</Type> </maneuveringState>
+			<planeID>				<Type>	PLANE_ID					</Type> </planeID>
+			<skinID>				<Type>	GAMEPARAMS_ID				</Type> </skinID>
+			<isActive>				<Type>	BOOL						</Type> </isActive>
+			<numPlanes>				<Type>	UINT8						</Type>	</numPlanes>
+			<position>				<Type>	VECTOR3						</Type>	</position>
+			<yaw>					<Type>	FLOAT						</Type>	</yaw>
+			<throttleMode>			<Type>	INT8						</Type> </throttleMode>
+			<turnMode>				<Type>  INT8						</Type> </turnMode>
+			<turnDirection>			<Type>	INT8						</Type> </turnDirection>
+			<currentStateId>		<Type>	UINT8						</Type> </currentStateId>
+			<hasProjectiles>		<Type>  BOOL						</Type> </hasProjectiles>
+			<isSpawned>				<Type>	BOOL						</Type> </isSpawned>
+			<consumablesStates>		<Type>	UINT8						</Type> </consumablesStates>
+			<isJatoActive>			<Type>	BOOL						</Type> </isJatoActive>
+			<isManeuveringActive>	<Type>	BOOL						</Type>	</isManeuveringActive>
 
 		</Properties>
 		<implementedBy>AirPlanes.AirplaneUtils.squadronStateConverter</implementedBy>
@@ -1027,8 +969,8 @@
 	<INTERACTIVE_ZONE_EFFECT_STATE>
 		FIXED_DICT
 		<Properties>
-			<zoneDuration><Type>FLOAT</Type></zoneDuration>
-			<startTime><Type>FLOAT</Type></startTime>
+			<effectDuration><Type>FLOAT</Type></effectDuration>
+			<leftTime><Type>FLOAT</Type></leftTime>
 			<visualParamsId><Type>GAMEPARAMS_ID</Type></visualParamsId>
 		</Properties>
 		<AllowNone>true</AllowNone>
@@ -2486,4 +2428,13 @@
 		</Properties>
 		<implementedBy>BWGatewayCommon.InventoryAPIDefs.getInventoryRequestConverter</implementedBy>
 	</GET_INVENTORY_REQUEST>
+
+	<LINKAGE_DATA>
+		FIXED_DICT
+		<Properties>
+			<linkageIdentifier><Type>STRING</Type></linkageIdentifier>
+			<linkageMbox><Type>MAILBOX</Type></linkageMbox>
+		</Properties>
+		<implementedBy>LinkageHelpers.LinkageData.converter</implementedBy>
+	</LINKAGE_DATA>
 </root>
