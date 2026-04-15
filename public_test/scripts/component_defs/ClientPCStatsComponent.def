@@ -1,0 +1,18 @@
+<root>
+    <BaseMethods>
+        <onClientReady></onClientReady>
+        <onDisconnect></onDisconnect>
+    </BaseMethods>
+
+    <ClientMethods>
+        <gatherClientPCStatsData>
+            <ReturnValues>
+                <status> BOOL </status>
+            </ReturnValues>
+        </gatherClientPCStatsData>
+    </ClientMethods>
+
+    <ofEntity>
+        <Account/>
+    </ofEntity>
+</root>

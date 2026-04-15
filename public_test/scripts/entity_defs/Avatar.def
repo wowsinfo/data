@@ -350,13 +350,15 @@
             <Arg>UINT16</Arg>
         </targetLoss>
         <receive_addSquadron>
-            <Arg>GAMEPARAMS_ID</Arg>
-            <Arg>UINT8</Arg>
-            <Arg>SQUADRON_STATE</Arg>
-            <Arg>PLANE_ID</Arg>
-            <Arg>UINT32</Arg>
-            <Arg>FLOAT</Arg>
-            <Arg>UINT64</Arg>
+            <Args>
+                <paramsID>GAMEPARAMS_ID</paramsID>
+                <totalNumPlanes>UINT8</totalNumPlanes>
+                <squadronState>SQUADRON_STATE</squadronState>
+                <parentID>PLANE_ID</parentID>
+                <maxHealth>UINT32</maxHealth>
+                <squadronHealthPart>FLOAT</squadronHealthPart>
+                <planeHealth>UINT64</planeHealth>
+            </Args>
         </receive_addSquadron>
         <receive_addMinimapSquadron>
             <Arg>PLANE_ID</Arg>

@@ -760,6 +760,7 @@
 			<consumablesStates>		<Type>	UINT8						</Type> </consumablesStates>
 			<isJatoActive>			<Type>	BOOL						</Type> </isJatoActive>
 			<isManeuveringActive>	<Type>	BOOL						</Type>	</isManeuveringActive>
+			<initialOrder>			<Type>	INT8						</Type>	</initialOrder>
 
 		</Properties>
 		<implementedBy>AirPlanes.AirplaneUtils.squadronStateConverter</implementedBy>
