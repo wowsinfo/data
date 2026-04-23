@@ -6,9 +6,6 @@
 
     <ClientMethods>
         <gatherClientPCStatsData>
-            <ReturnValues>
-                <status> BOOL </status>
-            </ReturnValues>
         </gatherClientPCStatsData>
     </ClientMethods>
 
