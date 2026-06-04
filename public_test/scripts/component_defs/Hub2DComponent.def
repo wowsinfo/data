@@ -8,6 +8,7 @@
 
         <syncToken>
 			<Arg> STRING </Arg>
+			<Arg> STRING </Arg>
 			<Arg> BOOL </Arg>
 		</syncToken>
 

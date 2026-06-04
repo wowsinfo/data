@@ -45,6 +45,8 @@
 	<INTERCLUSTER_ID>UINT64</INTERCLUSTER_ID>
 	<CONSUMABLE_ID>UINT8</CONSUMABLE_ID>
 	<BATTLE_CARD_ID>UINT32</BATTLE_CARD_ID>
+	<NODE_ID>STRING</NODE_ID>
+	<CUSTOMIZATION_ID>UINT32</CUSTOMIZATION_ID>
 
 	<ZIPPED_BLOB>
 		USER_TYPE
@@ -2438,4 +2440,25 @@
 		</Properties>
 		<implementedBy>LinkageHelpers.LinkageData.converter</implementedBy>
 	</LINKAGE_DATA>
+
+    <PING_RESULTS>
+        FIXED_DICT
+        <Properties>
+            <eu><Type>ARRAY<of>INT16</of></Type></eu>
+            <na><Type>ARRAY<of>INT16</of></Type></na>
+            <asia><Type>ARRAY<of>INT16</of></Type></asia>
+            <cn><Type>ARRAY<of>INT16</of></Type></cn>
+        </Properties>
+        <implementedBy>PingResultsDTO.pingResultsConverter</implementedBy>
+    </PING_RESULTS>
+
+	<VISUAL_CUSTOMIZATION_INSTALL_INFO>
+		FIXED_DICT
+		<Properties>
+			<nodeID><Type>NODE_ID</Type></nodeID>
+			<customizationID><Type>CUSTOMIZATION_ID</Type></customizationID>
+		</Properties>
+		<implementedBy>ExteriorCommon.ExteriorDTO.visualCustomizationInstallInfoConverter</implementedBy>
+	</VISUAL_CUSTOMIZATION_INSTALL_INFO>
+
 </root>
