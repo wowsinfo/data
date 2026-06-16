@@ -43,4 +43,6 @@
 	<StatistAchievementsComponent/>
 	<SideChoiceEventComponent/>
 	<ClientPCStatsComponent/>
+	<ExteriorComponent/>
+	<NarrativeCampaignComponent/>
 </root>
