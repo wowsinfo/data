@@ -348,7 +348,15 @@
             <Arg>FLOAT</Arg>
         </receiveMirrorDamage>
         <forceReloadTorpedoes></forceReloadTorpedoes>
-        <uniqueTriggerActivated></uniqueTriggerActivated>
+        <uniqueTriggerActivated>
+            <Args>
+                <uniqueSkillId>STRING</uniqueSkillId>
+                <skillInfos>ARRAY
+                    <of>UNIQUE_SKILL_INFO</of>
+                </skillInfos>
+                <sortIndex>UINT16</sortIndex>
+            </Args>
+        </uniqueTriggerActivated>
         <onConsumableSelected>
             <Args>
                 <consumableType>CONSUMABLE_ID</consumableType>
@@ -517,6 +525,10 @@
         <suicide>
             <Exposed></Exposed>
         </suicide>
+        <dev_activateUniqueSkill>
+            <Exposed></Exposed>
+            <Arg>STRING</Arg>
+        </dev_activateUniqueSkill>
         <dev_teleportShip>
             <Exposed></Exposed>
             <Arg>VECTOR3</Arg>

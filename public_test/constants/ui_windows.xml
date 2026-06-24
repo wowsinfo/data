@@ -41,7 +41,7 @@
 		<const name="BATTLE_PASS_PURCHASE"		value="ModalWindowBattlePassPurchase" />
 		<const name="PREFERENCES"				value="ModalWindowPreferences" />
 		<const name="NARRATIVE_CAMPAIGN"		value="ModalWindowNarrativeCampaign" />
-
+		<const name="GRAND_STRATEGY_PASS"		value="ModalWindowGrandStrategyPass" />
 	</enum>
 
 	<enum name="PANEL" type="String">
@@ -94,6 +94,7 @@
 		<const name="SUMMARY"					value="summary"						/>
 
 		<const name="MINI_DOCKYARD_MAIN"		value="mini_dockyard"				/>
+		<const name="WAREHOUSE"					value="warehouse"					/>
 
 		<!-- Modern Era -->
 		<const name="MODERN_ERA_MAIN"			value="modern_era_main"				/>
@@ -193,7 +194,6 @@
 		<const name="CLAN_WARS_IN_GAME" value="clanWarsInGame"/>
 		<const name="RULES_ABOUT_CLAN_SEASON" value="rulesAboutClanSeasonInGame"/>
 		<const name="GUIDES_IN_GAME" value="guidesInGame"/>
-		<const name="WAREHOUSE_IN_GAME" value="warehouseInGame"/>
 		<const name="SHOP_IN_GAME" value="shopInGame"/>
 		<const name="METASHOP" value="metaShop"/>
 		<const name="BUY_GOLD_IN_GAME" value="buyGoldInGame"/>

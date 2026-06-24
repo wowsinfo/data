@@ -86,6 +86,7 @@
 		<const name="ITA_CA"			/>
 		<const name="ITA_CA_PIEMONTE"	/>
 		<const name="ITA_BB"			/>
+		<const name="ITA_BB_AFFONDATORE"/>
 		<const name="ITA_DD"			/>
 		<const name="ITA_SS"			/>
 
