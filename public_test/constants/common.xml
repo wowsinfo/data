@@ -1213,7 +1213,7 @@
 		<const name="DAMAGE_PER_TIME"				value="DamagePerTimePeriodActivator"/>
 		<const name="RAGE_MODE"						value="RageModeActivator"/>
 		<const name="ALL_IN_GROUP"					value="AllInGroupActivator" />
-		<const name="FIRST_RIBBON"					value="FirstRibbonActivator" />
+		<const name="FIRST_SHIP_KILL"				value="FirstShipKillActivator" />
 		<const name="REMAINING_HEALTH"				value="RemainingHealthActivator" />
 		<const name="POTENTIAL_DAMAGE_DEALT"		value="PotentialDamageDealtActivator" />
 		<const name="CONSUMABLE_USE"				value="ConsumableUseActivator" />
