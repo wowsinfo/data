@@ -1,0 +1,22 @@
+<space.settings>
+	<skipLods>	false	</skipLods>
+	<bounds
+			minX="-5"
+			maxX="4"
+			minY="-5"
+			maxY="4" />
+	<terrain>
+		<version>	200	</version>
+		<heightMapSize>	256	</heightMapSize>
+		<normalMapSize>	256	</normalMapSize>
+	</terrain>
+	<startPosition>	71.667351 7.838980 27.087185	</startPosition>
+	<startDirection>	0.000345 -0.020000 -0.800000	</startDirection>
+	<UnprocessedData>
+		<shadows>	true	</shadows>
+		<heightMap>	true	</heightMap>
+		<miniMap>	true	</miniMap>
+		<saved>	false	</saved>
+	</UnprocessedData>
+	<navmeshGenerator>	navgen	</navmeshGenerator>
+</space.settings>
