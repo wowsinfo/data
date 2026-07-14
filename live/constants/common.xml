@@ -274,11 +274,11 @@
 
 	<enum name="UNIQUE_SKILLS_TRIGGERS"	type="String">
 		<const name="CONSUMABLE"	value="consumable"/>
-		<const name="HEALTH"		value="health" 		/>
-		<const name="RIBBONS"		value="ribbons" 	/>
-		<const name="DAMAGE"		value="damage" 		/>
-		<const name="ACHIEVEMENT"	value="achievement" />
-		<const name="RAGE_MODE"	value="rageMode" />
+		<const name="HEALTH"		value="health"/>
+		<const name="RIBBONS"		value="ribbons"/>
+		<const name="DAMAGE"		value="damage"/>
+		<const name="ACHIEVEMENT"	value="achievement"/>
+		<const name="RAGE_MODE"		value="rageMode"/>
 	</enum>
 
 	<enum name="BATTLE_TYPES" type="String">
@@ -311,6 +311,8 @@
 		<range name="WITH_CLASSIFIED_DOCUMENTS_SELECTOR" values="PVE_BATTLE"/>
 		<range name="WITH_CLASSIFIED_DOCUMENTS_INFOBLOCK" values="CLAN_BATTLE"/>
 		<range name="WITH_EXTENDED_SHIP_LISTS" values="EVENT_BATTLE, CLAN_BATTLE"/>
+		<range name="TALENT_GROUP_PVP" values="RANDOM_BATTLE, COOPERATIVE_BATTLE, RANKED_BATTLE, BRAWL_BATTLE"/>
+		<range name="TALENT_GROUP_OPERATIONS" values="PVE_BATTLE"/>
 	</enum>
 
 	<enum name="NATION"	type="String">
@@ -1205,14 +1207,25 @@
 		<const name="RECEIVED_DAMAGE"				value="ReceivedDamageActivator" />
 		<const name="DAMAGE_TO_PLANE"				value="DamageToPlaneActivator" />
 		<const name="DAMAGE_SPOTTED"				value="DamageSpottedActivator" />
+		<const name="TARGETS_DAMAGED"				value="TargetsDamagedActivator"/>
+		<const name="FIRST_PLANE_KILL"				value="FirstPlaneKillActivator"/>
+		<const name="FIRST_HITS"					value="FirstHitsActivator"/>
+		<const name="DAMAGE_PER_TIME"				value="DamagePerTimePeriodActivator"/>
+		<const name="RAGE_MODE"						value="RageModeActivator"/>
+		<const name="ALL_IN_GROUP"					value="AllInGroupActivator" />
+		<const name="FIRST_SHIP_KILL"				value="FirstShipKillActivator" />
+		<const name="REMAINING_HEALTH"				value="RemainingHealthActivator" />
+		<const name="POTENTIAL_DAMAGE_DEALT"		value="PotentialDamageDealtActivator" />
+		<const name="CONSUMABLE_USE"				value="ConsumableUseActivator" />
 
-		<range name="DAMAGE_INCREMENT_TYPES" values="DAMAGE_DONE, RECEIVED_DAMAGE, DAMAGE_TO_PLANE, DAMAGE_SPOTTED"/>
+		<range name="DAMAGE_INCREMENT_TYPES" values="DAMAGE_DONE, RECEIVED_DAMAGE, DAMAGE_TO_PLANE, DAMAGE_SPOTTED, CONSUMABLE_USE"/>
 	</enum>
 
 	<enum name="GAME_LOGIC_ACTION" type="String">
 		<const name="RAGE_MODE_PROGRESS"			value="RageModeProgressAction"/>
 		<const name="TOGGLE_TRIGGER"				value="ToggleTriggerAction"/>
 		<const name="SWITCH_VEHICLE_VISUAL_STATE"	value="SwitchVehicleVisualStateAction"/>
+		<const name="TRIGGER_UNIQUE_SKILL"			value="TriggerUniqueSkill"/>
 	</enum>
 
 	<!-- Warning reason bit flags -->
@@ -1594,6 +1607,19 @@
 		<const name="DOCK_AUTO_SHOW_TURN_ON"		value="ub2:dock_card_selector_auto_show_on"/>
 	</enum>
 
+	<enum name="TALENT_GROUPS"	type="Integer">
+		<const name="BATTLE_GROUP_EVERY"						value='0' />
+		<const name="BATTLE_GROUP_REGULAR"						value='1' />
+		<const name="BATTLE_GROUP_OPERATIONS"					value='2' />
+		<const name="BATTLE_GROUP_DISABLED"						value='3' />
+
+		<range name="TABS" values="BATTLE_GROUP_REGULAR, BATTLE_GROUP_OPERATIONS, BATTLE_GROUP_DISABLED"/>
+		<range name="ENABLED_TABS" values="BATTLE_GROUP_REGULAR, BATTLE_GROUP_OPERATIONS"/>
+
+		<value_to_name/>
+		<name_to_value/>
+	</enum>
+
 	<enum name="RARITY_CATEGORY_NAMES"	type="String">
 		<const name="COMMON"		value="Common"/>
 		<const name="UNCOMMON"		value="Uncommon"/>
@@ -1724,5 +1750,10 @@
 
 	<enum name="SHIP_NODE_TYPES" type="String">
 		<const name="VISUAL_CUSTOMIZATIONS"	value="visualCustomizations"/>
+	</enum>
+
+	<enum name="GRAND_STRATEGY_PASS_CLAIM_TYPE" type="String">
+		<const name="FREE"	value="free"/>
+		<const name="PAID"	value="paid"/>
 	</enum>
 </constants>

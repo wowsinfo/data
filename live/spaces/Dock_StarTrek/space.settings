@@ -1,0 +1,22 @@
+<space.settings>
+	<chunkSize>	100.0000	</chunkSize>
+	<bounds>
+		<minX>	-5	</minX>
+		<maxX>	4	</maxX>
+		<minY>	-5	</minY>
+		<maxY>	4	</maxY>
+	</bounds>
+	<UnprocessedData>
+		<shadows>	false	</shadows>
+		<heightMap>	true	</heightMap>
+		<miniMap>	true	</miniMap>
+		<saved>	false	</saved>
+	</UnprocessedData>
+	<startPosition>	9.8935 2.5972 6.6868	</startPosition>
+	<startDirection>	0.0000 0.0644 -2.1516	</startDirection>
+	<terrain>
+		<version>	200	</version>
+		<heightMapSize>	128	</heightMapSize>
+		<normalMapSize>	128	</normalMapSize>
+	</terrain>
+</space.settings>

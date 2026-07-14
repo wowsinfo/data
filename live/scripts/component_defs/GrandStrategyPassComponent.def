@@ -47,6 +47,16 @@
 			<Arg> ARRAY <of> MSGPACK_BLOB </of> </Arg>
 		</sync>
 
+		<syncOnlyProvinces>
+			<Arg> STRING </Arg>
+			<Arg> ARRAY <of> MSGPACK_BLOB </of> </Arg>
+		</syncOnlyProvinces>
+
+		<syncRegions>
+			<Arg> STRING </Arg>
+			<Arg> ARRAY <of> MSGPACK_BLOB </of> </Arg>
+		</syncRegions>
+
         <handlePassUpgrade>
 			<Arg> STRING </Arg>
 		</handlePassUpgrade>

@@ -47,6 +47,7 @@
 	<BATTLE_CARD_ID>UINT32</BATTLE_CARD_ID>
 	<NODE_ID>STRING</NODE_ID>
 	<CUSTOMIZATION_ID>UINT32</CUSTOMIZATION_ID>
+	<BATTLE_TYPE_ID>UINT32</BATTLE_TYPE_ID>
 
 	<ZIPPED_BLOB>
 		USER_TYPE
@@ -1649,6 +1650,14 @@
 		TUPLE<of>INT32</of><size>2</size>
 	</COUNTDOWN_INFO>
 
+	<UNIQUE_SKILL_INFO>
+		FIXED_DICT
+		<Properties>
+			<id><Type>UINT32</Type></id>
+			<level><Type>UINT32</Type></level>
+		</Properties>
+	</UNIQUE_SKILL_INFO>
+
 	<VCL_SHOTS_ENTITY_STATS>
 		FIXED_DICT
 		<Properties>
@@ -1984,6 +1993,8 @@
 			<level><Type>INT8</Type></level>
 			<endTime><Type>INT16</Type></endTime>
 			<startTime><Type>INT16</Type></startTime>
+			<source><Type>UINT8</Type></source>
+			<targetType><Type>UINT8</Type></targetType>
 		</Properties>
 		<implementedBy>BuffDef.converter</implementedBy>
 	</BUFF_STATE>
@@ -2158,6 +2169,7 @@
 			<mainText><Type>STRING</Type></mainText>
 			<tooltipText><Type>STRING</Type></tooltipText>
 			<backgroundImage><Type>STRING</Type></backgroundImage>
+			<hideExpirationTimer><Type>BOOL</Type></hideExpirationTimer>
 		</Properties>
 		<AllowNone>false</AllowNone>
 	</BARGE_BANNER>
@@ -2461,4 +2473,14 @@
 		<implementedBy>ExteriorCommon.ExteriorDTO.visualCustomizationInstallInfoConverter</implementedBy>
 	</VISUAL_CUSTOMIZATION_INSTALL_INFO>
 
+
+	<BATTLE_TYPE_INFO>
+		FIXED_DICT
+		<Properties>
+			<battleTypeID><Type>BATTLE_TYPE_ID</Type></battleTypeID>
+			<operationID><Type>GAMEPARAMS_ID</Type></operationID>
+			<teamBuildType><Type>UINT8</Type></teamBuildType>
+		</Properties>
+		<implementedBy>BattleTypeInfoDef.converter</implementedBy>
+	</BATTLE_TYPE_INFO>
 </root>
