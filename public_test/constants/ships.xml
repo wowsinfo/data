@@ -50,6 +50,7 @@
 		<const name="JP_BB_SATSUMA"		/>
 		<const name="JP_BB_LIGHT"		/>
 		<const name="JP_CA"				/>
+		<const name="JP_CA_KURAMA"		/>
 		<const name="JP_CL"				/>
 		<const name="JP_DD_MAIN"		/>
 		<const name="JP_DD_ART"			/>
@@ -123,6 +124,7 @@
 		<const name="PAM_BB"			/>
 		<const name="PAM_CL_LOW"		/>
 		<const name="PAM_CL_HIGH"		/>
+		<const name="PAM_DD"			/>
 
 		<const name="BATTLESHIPS"		/>
 		<const name="CRUISERS"			/>

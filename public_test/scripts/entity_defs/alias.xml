@@ -1946,6 +1946,8 @@
 			<playersDefs><Type>PLAYERS_DEFS</Type></playersDefs>
 			<proxyInfo><Type>PRE_BATTLE_CREATOR_DEF</Type></proxyInfo>	<!-- None if it is not a division -->
 			<operationID><Type>GAMEPARAMS_ID</Type></operationID>
+			<requestID><Type>STRING</Type></requestID>	<!-- ULID for callback staleness checks; "" = absent -->
+			<originalEnqueueTime><Type>FLOAT64</Type></originalEnqueueTime>
 		</Properties>
 		<implementedBy>EnqueueProcess.DataTypes.EnqueueRequestConverter</implementedBy>
 	</ENQUEUE_REQUEST>
@@ -1960,6 +1962,7 @@
 			<matchmakerDescription><Type>PYTHON</Type></matchmakerDescription>
 			<operationID><Type>GAMEPARAMS_ID</Type></operationID>
 			<battleStarterService><Type>MAILBOX</Type></battleStarterService>
+			<url><Type>PYTHON</Type></url>
 		</Properties>
 		<implementedBy>EnqueueProcess.DataTypes.EnqueueDataConverter</implementedBy>
 		<AllowNone> true </AllowNone>
@@ -1994,7 +1997,6 @@
 			<endTime><Type>INT16</Type></endTime>
 			<startTime><Type>INT16</Type></startTime>
 			<source><Type>UINT8</Type></source>
-			<targetType><Type>UINT8</Type></targetType>
 		</Properties>
 		<implementedBy>BuffDef.converter</implementedBy>
 	</BUFF_STATE>
@@ -2038,6 +2040,14 @@
 		</Properties>
 		<AllowNone> true </AllowNone>
 	</MISSILES_STATE>
+
+	<AIR_DEFENSE_STATE>
+		FIXED_DICT
+		<Properties>
+			<aimedFireProgress><Type>FLOAT</Type></aimedFireProgress>
+		</Properties>
+		<AllowNone> true </AllowNone>
+	</AIR_DEFENSE_STATE>
 
 	<DECALS_STATE>
 		FIXED_DICT
@@ -2092,6 +2102,7 @@
 			<ribbons><Type>RIBBONS_STATE</Type></ribbons>
 			<battleCards><Type>BATTLE_CARDS_STATE</Type></battleCards>
 			<missiles><Type>MISSILES_STATE</Type></missiles>
+			<airDefense><Type>AIR_DEFENSE_STATE</Type></airDefense>
 		</Properties>
 	</PRIVATE_VEHICLE_STATE>
 

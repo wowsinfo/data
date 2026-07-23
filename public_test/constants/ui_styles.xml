@@ -80,6 +80,12 @@
 
 		<const name="DECAL"					value="decal" />
 		<const name="NARRATIVE_CAMPAIGN_REWARD"	value="narrative_campaign_reward" />
+
+		<const name="RARITY_COMMON"			value="rarity_common" />
+		<const name="RARITY_RARE"			value="rarity_rare" />
+		<const name="RARITY_UNCOMMON"		value="rarity_uncommon" />
+		<const name="RARITY_EPIC"			value="rarity_epic" />
+		<const name="RARITY_LEGENDARY"		value="rarity_legendary" />
 	</enum>
 
 	<enum name="BUTTON_TYPE" type="String">
