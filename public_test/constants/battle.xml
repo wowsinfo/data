@@ -726,6 +726,10 @@
 		<const name="atbaReloadTimeGun1"/>
 		<const name="atbaReloadTimeGun2"/>
 		<const name="atbaReloadTimeGun3"/>
+		<const name="atbaDamageGun0"/>
+		<const name="atbaDamageGun1"/>
+		<const name="atbaDamageGun2"/>
+		<const name="atbaDamageGun3"/>
 		<const name="atbaMaxDist"/>
 
 		<const name="artilleryReloadTime"/>
