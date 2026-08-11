@@ -5,6 +5,7 @@
         <trajectory>
             <Type> STRING </Type>
             <Editable> True </Editable>
+            <resourceref/>
         </trajectory>
 
         <fov>

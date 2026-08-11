@@ -450,7 +450,8 @@
 		<const name="FIRST_BATTLE_AUDIO_PROMPT_LISTENED"		value="20"	/>
 		<const name="KNOWS_ABOUT_ECOBOOSTS"						value="21"	/>
 		<const name="KNOWS_ABOUT_NEWS"							value="22"	/>
-		<const name="KNOWS_ABOUT_PREFERENCES_UPDATE"			value="23"	/> <!-- Temporary, will be removed in a few versions-->
+		<!-- Temporarily unused. Revive for WWSD-247044 and update the marker logic for new players. -->
+		<const name="KNOWS_ABOUT_PREFERENCES_UPDATE"			value="23"	/>
 	</enum>
 
 	<enum name="BRAWLS_DENY_REASONS" type="BinaryShift">
@@ -1222,10 +1223,11 @@
 	</enum>
 
 	<enum name="GAME_LOGIC_ACTION" type="String">
-		<const name="RAGE_MODE_PROGRESS"			value="RageModeProgressAction"/>
-		<const name="TOGGLE_TRIGGER"				value="ToggleTriggerAction"/>
-		<const name="SWITCH_VEHICLE_VISUAL_STATE"	value="SwitchVehicleVisualStateAction"/>
+		<const name="RAGE_MODE_PROGRESS"				value="RageModeProgressAction"/>
+		<const name="TOGGLE_TRIGGER"					value="ToggleTriggerAction"/>
+		<const name="SWITCH_VEHICLE_VISUAL_STATE"		value="SwitchVehicleVisualStateAction"/>
 		<const name="TRIGGER_UNIQUE_SKILL"			value="TriggerUniqueSkill"/>
+		<const name="AIR_DEFENSE_AIMED_FIRE_PROGRESS"	value="AirDefenseAimedFireProgressAction"/>
 	</enum>
 
 	<!-- Warning reason bit flags -->
@@ -1513,6 +1515,7 @@
 
 	<enum name="EXTERNAL_IMAGE_CONSTANT_URLS" type="String">
 		<const name="BATTLE_PASS_CDN"		value="https://liveops-media-wows.wgcdn.co/battlepass/"/>
+		<const name="BATTLE_PASS_CDN_CN"	value="https://liveops-media-wows.wowsgame.cn/battlepass/"/>
 	</enum>
 
 	<enum name="BATTLE_PASS_BANNERS" type="String">

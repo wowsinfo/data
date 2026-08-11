@@ -1,23 +1,9 @@
 <root>
 	<Properties>
-		<_MatchmakerComponent__realm>
-			<Type> STRING </Type>
-			<Flags> BASE </Flags>
-		</_MatchmakerComponent__realm>
-		<_MatchmakerComponent__queueType>
-			<Type> QUEUE_TYPE </Type>
-			<Flags> BASE </Flags>
-		</_MatchmakerComponent__queueType>
-		<_MatchmakerComponent__inDivision>
-			<Type> BOOL </Type>
-			<Flags> BASE </Flags>
-		</_MatchmakerComponent__inDivision>
-		<_MatchmakerComponent__battleStarterService>
-			<Type> MAILBOX </Type>
-			<Flags> BASE </Flags>
-		</_MatchmakerComponent__battleStarterService>
+		<!-- Matchmaker entry state now lives in MatchmakerState/EnqueueContext, not on the
+		     component, so no BASE properties are persisted here. -->
 	</Properties>
-	
+
 	<BaseMethods>
 		<enter>
 			<Exposed/>
@@ -37,20 +23,22 @@
 		<onEnterViaDivision>  <!-- Callback from Division -->
 			<Args>
 				<enqueueData> ENQUEUE_DATA </enqueueData>
+				<requestID> STRING </requestID>
 			</Args>
 		</onEnterViaDivision>
 
 		<onRedirectedViaDivision>  <!-- Callback from Division -->
 			<Args>
 				<enqueueData> ENQUEUE_DATA </enqueueData>
+				<requestID> STRING </requestID>
 			</Args>
 		</onRedirectedViaDivision>
 		
-		<onLeave>  <!-- Callback from Division -->
+		<notifyPlayerLeftDivisionMatchmaker>  <!-- Callback from Division -->
 			<Args>
 				<reason> UINT8 </reason>
 			</Args>
-		</onLeave>
+		</notifyPlayerLeftDivisionMatchmaker>
 	</BaseMethods>
 	
 	<ClientMethods>
@@ -74,6 +62,9 @@
 				<reason> UINT8 </reason>
 			</Args>
 		</onLeave>
+
+		<onBattlePreparationCancelled>
+		</onBattlePreparationCancelled>
 	</ClientMethods>
 	
 	<ofEntity>

@@ -538,6 +538,10 @@
             <Arg>PLANE_ID</Arg>
             <Arg>UINT8</Arg>
         </receive_squadronUnderFighterAttack>
+        <receive_squadronUnderAimedFire>
+            <Arg>PLANE_ID</Arg>
+            <Arg>BOOL</Arg>
+        </receive_squadronUnderAimedFire>
         <receive_teleportSquadron>
             <Arg>PLANE_ID</Arg>
             <Arg>VECTOR3</Arg>
@@ -562,6 +566,12 @@
                 <moveVec>VECTOR3</moveVec>
             </Args>
         </receive_waterLaunchpadGenerated>
+        <receive_fireExtinguishingStateChanged>
+            <Args>
+                <squadronId>PLANE_ID</squadronId>
+                <newState>BOOL</newState>
+            </Args>
+        </receive_fireExtinguishingStateChanged>
         <receive_dropJato>
             <Arg>PLANE_ID</Arg>
         </receive_dropJato>
@@ -1140,10 +1150,18 @@
             <Arg>PLANE_ID</Arg>
             <Arg>FLOAT</Arg>
         </setSquadronTargetYaw>
-        <setAntiAirPrioritySector>
+        <activateAntiAirManualFire>
             <Exposed>OWN_CLIENT</Exposed>
-            <Arg>INT8</Arg>
-        </setAntiAirPrioritySector>
+        </activateAntiAirManualFire>
+        <activateAirDefenseAimedFire>
+            <Exposed>OWN_CLIENT</Exposed>
+        </activateAirDefenseAimedFire>
+        <dev_applyAimedFireChargeProgress>
+            <Exposed>OWN_CLIENT</Exposed>
+            <Args>
+                <progress>FLOAT</progress>
+            </Args>
+        </dev_applyAimedFireChargeProgress>
         <shootDepthCharges>
             <Exposed>OWN_CLIENT</Exposed>
         </shootDepthCharges>

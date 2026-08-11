@@ -2,6 +2,7 @@
 	<Barge/>
 	<Building/>
 	<CameraEllipsePoI/>
+	<CameraEllipsePoIByPath/>
 	<ControlPoint/>
 	<ConvoyWayPoint/>
 	<DropZone/>

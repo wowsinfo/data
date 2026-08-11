@@ -391,13 +391,15 @@
         <setAirDefenseState>
             <Arg>BLOB</Arg>
         </setAirDefenseState>
-        <onPrioritySectorSet>
-            <Arg>INT8</Arg>
+        <onManualAirFireSet>
             <Arg>FLOAT</Arg>
-        </onPrioritySectorSet>
-        <onNextPrioritySectorSet>
-            <Arg>INT8</Arg>
-        </onNextPrioritySectorSet>
+        </onManualAirFireSet>
+        <onAirDefenseAimedFireStateChanged>
+            <Args>
+                <newCharge>UINT8</newCharge>
+                <source>UINT8</source>
+            </Args>
+        </onAirDefenseAimedFireStateChanged>
         <teleport>
             <Arg>VECTOR3</Arg>
             <Arg>FLOAT</Arg>
@@ -488,6 +490,12 @@
                 <activatedTimes>UINT8</activatedTimes>
             </Args>
         </syncRageMode>
+        <changeFireImmunity>
+            <Args>
+                <enabled>BOOL</enabled>
+                <firesExtinguishable>INT8</firesExtinguishable>
+            </Args>
+        </changeFireImmunity>
         <setWildFireState>
             <Args>
                 <wildFireState>WILD_FIRE_STATE</wildFireState>
