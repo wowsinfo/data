@@ -65,7 +65,7 @@
             <Arg>INT32</Arg>
         </onTakeBreak>
         <onTotalUsersCountUpdate>
-            <Arg>PYTHON</Arg>
+            <Arg>MSGPACK_BLOB</Arg>
         </onTotalUsersCountUpdate>
         <onGameRoomStateInit>
             <Arg>INT16</Arg>
@@ -206,7 +206,7 @@
         <setTrace>
             <Arg>BOOL</Arg>
         </setTrace>
-        <curVersion_15_7_0_13016296></curVersion_15_7_0_13016296>
+        <curVersion_15_8_13090112></curVersion_15_8_13090112>
         <updateSSEProgress>
             <Arg>STRING</Arg>
             <VariableLengthHeaderSize>

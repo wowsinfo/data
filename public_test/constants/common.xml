@@ -1498,6 +1498,15 @@
 		<const name="RESTRICT_JOIN_DISABLED"		value="ub1:loading_screen_battle_tabs_restrict_join_disabled"/>
 	</enum>
 
+	<enum name="ACCOUNT_LEVEL_UP_STATISTICS" type="String">
+		<const name="PVP_CARD_HOVERED"				value="ub1:account_level_up_pvp_card_hovered"/>
+		<const name="PVE_CARD_HOVERED"				value="ub1:account_level_up_pve_card_hovered"/>
+		<const name="PVP_CARD_CLICKED"				value="ub1:account_level_up_pvp_card_clicked"/>
+		<const name="PVE_CARD_CLICKED"				value="ub1:account_level_up_pve_card_clicked"/>
+		<const name="ESC_SKIP_PRESSED"				value="ub1:account_level_up_esc_skip_pressed"/>
+		<const name="ESC_CLOSE_PRESSED"				value="ub1:account_level_up_esc_close_pressed"/>
+	</enum>
+
 	<enum name="GF_LOOTBOX_TIP_STATS" type="String">
 		<const name="BUTTON_NEXT"						value="gf:guiding_tip_next"/>
 		<const name="BUTTON_FINISH"						value="gf:guiding_tip_finish"/>

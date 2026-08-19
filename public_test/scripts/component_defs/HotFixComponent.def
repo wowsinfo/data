@@ -16,7 +16,7 @@
 	<ClientMethods>
 		<updateHotFixData>
 			<Args>
-				<updateData>PYTHON</updateData>
+				<updateData>PICKLED_BLOB</updateData>
 			</Args>
 		</updateHotFixData>
 	</ClientMethods>
