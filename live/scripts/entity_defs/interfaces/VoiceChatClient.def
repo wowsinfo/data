@@ -16,7 +16,6 @@
 	<ClientMethods>
 		<receiveSignedCommand>
 			<Arg>BLOB</Arg>
-			<VariableLengthHeaderSize> 2 </VariableLengthHeaderSize>
 		</receiveSignedCommand>
 	</ClientMethods>
 	

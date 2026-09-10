@@ -103,7 +103,7 @@
 			<Type> STRING </Type>
 			<Flags> BASE </Flags>
 			<Persistent> True </Persistent>
-			<DatabaseLength> 100000 </DatabaseLength>
+			<DatabaseLength> 800000 </DatabaseLength>
 		</persistentData>
 
 		<!-- Last used vital action id. -->

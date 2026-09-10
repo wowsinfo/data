@@ -158,7 +158,6 @@
             </Args>
             <isBuffered>true</isBuffered>
             <onlyLast>true</onlyLast>
-            <VariableLengthHeaderSize>2</VariableLengthHeaderSize>
         </onGameRoomStateChanged>
         <onNewPlayerSpawnedInBattle>
             <Args>
@@ -166,7 +165,6 @@
                 <botsData>BLOB</botsData>
                 <observersData>BLOB</observersData>
             </Args>
-            <VariableLengthHeaderSize>2</VariableLengthHeaderSize>
         </onNewPlayerSpawnedInBattle>
         <onBattleEnd>
             <isBuffered>false</isBuffered>
@@ -1306,6 +1304,12 @@
             <Exposed>OWN_CLIENT</Exposed>
             <Arg>STRING</Arg>
         </dev_reloadShipParams>
+        <dev_addRibbonInBattle>
+            <Args>
+                <ribbonId>INT32</ribbonId>
+            </Args>
+            <Exposed>OWN_CLIENT</Exposed>
+        </dev_addRibbonInBattle>
         <send_CommonCMD>
             <Exposed>OWN_CLIENT</Exposed>
             <Args>

@@ -369,7 +369,7 @@
 		FIXED_DICT
 		<Properties>
 			<id><Type>DB_ID</Type></id>
-			<info><Type>PYTHON</Type></info>
+			<info><Type>MSGPACK_BLOB</Type></info>
 		</Properties>
 		<AllowNone> true </AllowNone>
 	</PRE_BATTLE_CREATOR_DEF>

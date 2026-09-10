@@ -499,6 +499,7 @@
 		<const name="SCRAP"						value="13"/>
 		<const name="ORBITAL_STRIKE"			value="14"/>
 		<const name="ATTACK_SCRAP"				value="15"/>
+		<const name="ALLY_FLAGSHIP"				value="16"/>
 		<value_to_name/>
 	</enum>
 
@@ -1171,6 +1172,7 @@
 		<const name="UNDERARMORED_CA"	value="underarmored_ca"/>
 		<const name="UNDERARMORED_DD"	value="underarmored_dd"/>
 		<const name="HYBRID"			value="hybrid"/>
+		<const name="ALLY"              value="ally"/>
 
 		<range name="PRESENTED_ON_CARDS" values="FLAMMABLE, FLOODABLE, UNDERARMORED"/>
 		<range name="FLAGSHIPS_2" values="FLAMMABLE_BB, FLAMMABLE_CA, FLAMMABLE_DD, FLOODABLE_BB, FLOODABLE_CA,
