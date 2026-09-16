@@ -298,6 +298,7 @@
 		<const name="BRAWL_BATTLE"			value="BrawlBattle"			/>
 
 		<name_to_value/>
+		<value_to_name/>
 
 		<range name="MAP_TEAMBUILDTYPE_TO_BATTLETYPE" values="RANDOM_BATTLE, TRAINING_BATTLE, COOPERATIVE_BATTLE, INTRO_MISSION, RANKED_BATTLE, CLUB_BATTLE, PVE_BATTLE, PVE_BATTLE, CLAN_BATTLE, EVENT_BATTLE, BRAWL_BATTLE"/>
 		<range name="BATTLE_TYPES_WITH_HARD_FILTER" values="PVE_BATTLE, EVENT_BATTLE, RANKED_BATTLE, CLAN_BATTLE, BRAWL_BATTLE"/>
@@ -313,6 +314,8 @@
 		<range name="WITH_EXTENDED_SHIP_LISTS" values="EVENT_BATTLE, CLAN_BATTLE"/>
 		<range name="TALENT_GROUP_PVP" values="RANDOM_BATTLE, COOPERATIVE_BATTLE, RANKED_BATTLE, BRAWL_BATTLE"/>
 		<range name="TALENT_GROUP_OPERATIONS" values="PVE_BATTLE"/>
+		<!--leads to wows/source/scripts/common/KillTagConstants.py-->
+		<range name="WITH_KILL_TAG" values="COOPERATIVE_BATTLE, RANDOM_BATTLE, RANKED_BATTLE"/>
 	</enum>
 
 	<enum name="NATION"	type="String">
@@ -1210,7 +1213,7 @@
 		<const name="DAMAGE_SPOTTED"				value="DamageSpottedActivator" />
 		<const name="TARGETS_DAMAGED"				value="TargetsDamagedActivator"/>
 		<const name="FIRST_PLANE_KILL"				value="FirstPlaneKillActivator"/>
-		<const name="FIRST_HITS"					value="FirstHitsActivator"/>
+		<const name="HITS_COUNT"					value="HitsCountActivator"/>
 		<const name="DAMAGE_PER_TIME"				value="DamagePerTimePeriodActivator"/>
 		<const name="RAGE_MODE"						value="RageModeActivator"/>
 		<const name="ALL_IN_GROUP"					value="AllInGroupActivator" />
@@ -1762,6 +1765,13 @@
 
 	<enum name="SHIP_NODE_TYPES" type="String">
 		<const name="VISUAL_CUSTOMIZATIONS"	value="visualCustomizations"/>
+	</enum>
+
+	<!-- Prefixes of the VisualCustomization ship node names, they tell what a node is for.
+	     Match the ship editor's PointsConstants -->
+	<enum name="VISUAL_CUSTOMIZATION_NODE_PREFIX" type="String">
+		<const name="DECAL"		value="DP_"/>
+		<const name="KILL_TAG"	value="KP_"/>
 	</enum>
 
 	<enum name="GRAND_STRATEGY_PASS_CLAIM_TYPE" type="String">

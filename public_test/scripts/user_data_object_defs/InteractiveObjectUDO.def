@@ -2,12 +2,12 @@
     <Domain> CLIENT </Domain>
     <OptionsFlag> Enable </OptionsFlag>
     <Properties>
-        <modelPath>
+        <assetPath>
             <Type> STRING </Type>
             <Editable> True </Editable>
             <Default> content/location/ship/dead/LSD001/LSD001.model </Default>
             <resourceref/>
-        </modelPath>
+        </assetPath>
 
         <paramsName>
             <Type> STRING </Type>

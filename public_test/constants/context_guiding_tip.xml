@@ -77,6 +77,7 @@
 		<const name="UNBREAKABLE_FRONT_EVENT"				value="73" />
 		<const name="UNIQUE_SKILLS"							value="74" />
 		<const name="LOW_LEVEL_OPERATIONS" 					value="75" />
+		<const name="ADECK_2"								value="76" />
 
 		<range name="REPEAT" values="RESEARCH_REPEAT, PVP_REPEAT, EXTERIOR_REPEAT, BATTLE_BONUSES_REPEAT,
 			FREE_XP_REPEAT, ECO_BONUSES_REPEAT, LOOTBOXES_REPEAT, CREW_REPEAT, SSE_REPEAT,
@@ -92,7 +93,7 @@
 		PORT_BUFF_FOR_HALLOWEEN, TACTICAL_CONSUMABLES, EVENT_HUB, BATTLEPASS_TASK_BONUS, SHIP_DESTRUCTION,
 		CHRISTMAS_TREE, GRAND_STRATEGY_PASS, GRAND_STRATEGY_PASS_FINISH, SUBMARINE_OPERATIONS,
 		SUBMARINE_EQUIPMENT, DEAD_MODULES_REMOVAL, MODERN_ERA_OPERATION, MODERN_ERA_OPERATION_EVENT,
-		UNBREAKABLE_FRONT_EVENT, UNIQUE_SKILLS, LOW_LEVEL_OPERATIONS"/>
+		UNBREAKABLE_FRONT_EVENT, UNIQUE_SKILLS, LOW_LEVEL_OPERATIONS, ADECK_2"/>
 	</enum>
 
 	<enum name="TIP_TYPE" type="Integer">
@@ -337,8 +338,8 @@
 		<const name="DEAD_MODULES_REMOVAL_TIP"					value="305"	/>
 
 		<const name="MODERN_ERA_OPERATION_EQUIPMENT"			value="307"	/>
-        <const name="MODERN_ERA_OPERATION_EVENT_INFO"			value="308"	/>
-        <const name="UNBREAKABLE_FRONT_EVENT_INFO"				value="309"	/>
+		<const name="MODERN_ERA_OPERATION_EVENT_INFO"			value="308"	/>
+		<const name="UNBREAKABLE_FRONT_EVENT_INFO"				value="309"	/>
 		<const name="UNIQUE_SKILL_DOCK"							value="310"	/>
 		<const name="UNIQUE_SKILL_CREW_PAGE"					value="311"	/>
 
@@ -346,5 +347,7 @@
 		<const name="GRAND_STRATEGY_PASS_PROVINCE_CLAIM"		value="313"	/>
 
 		<const name="LOW_LEVEL_OPERATIONS_ADDED" 				value="314" />
-    </enum>
+
+		<const name="ADECK_2_INTRO"								value="315"	/>
+	</enum>
 </constants>

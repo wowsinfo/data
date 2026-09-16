@@ -552,6 +552,13 @@
             <Exposed></Exposed>
             <Arg>INT32</Arg>
         </dev_setVehicleHealth>
+        <dev_requestDebugModifiers>
+            <Exposed></Exposed>
+            <Args>
+                <source>INT32</source>
+            </Args>
+            <Flags>OWN_CLIENT</Flags>
+        </dev_requestDebugModifiers>
         <dev_flight>
             <Exposed></Exposed>
             <Flags>OWN_CLIENT</Flags>

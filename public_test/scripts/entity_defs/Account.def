@@ -206,7 +206,7 @@
         <setTrace>
             <Arg>BOOL</Arg>
         </setTrace>
-        <curVersion_15_8_0_13187914></curVersion_15_8_0_13187914>
+        <curVersion_15_9_13268656></curVersion_15_9_13268656>
         <updateSSEProgress>
             <Arg>STRING</Arg>
             <VariableLengthHeaderSize>
@@ -381,6 +381,12 @@
                 </gameParamsIds>
             </Args>
         </receiveDeficitList>
+        <receiveKillTagShipTotalStats>
+            <Args>
+                <shipId>SHIP_ID</shipId>
+                <fragsByCategory>MSGPACK_BLOB</fragsByCategory>
+            </Args>
+        </receiveKillTagShipTotalStats>
         <onLeaveBattleTransactionsCompleted>
             <Args>
                 <deficitList>ARRAY
@@ -448,6 +454,12 @@
         <onClientReady>
             <Exposed></Exposed>
         </onClientReady>
+        <requestKillTagShipTotalStats>
+            <Args>
+                <shipId>SHIP_ID</shipId>
+            </Args>
+            <Exposed></Exposed>
+        </requestKillTagShipTotalStats>
         <chatMessage>
             <Exposed></Exposed>
             <Arg>STRING</Arg>

@@ -11,10 +11,10 @@
             <Type>STRING</Type>
             <Flags>ALL_CLIENTS</Flags>
         </paramsName>
-        <modelPath>
+        <assetPath>
             <Type>STRING</Type>
             <Flags>ALL_CLIENTS</Flags>
-        </modelPath>
+        </assetPath>
         <initialGrade>
             <Type>STRING</Type>
             <Flags>ALL_CLIENTS</Flags>

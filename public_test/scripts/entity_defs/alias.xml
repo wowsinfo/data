@@ -1994,8 +1994,8 @@
 			<paramsId><Type>GAMEPARAMS_ID</Type></paramsId>
 			<entitySubtypeId><Type>UINT8</Type></entitySubtypeId>
 			<level><Type>INT8</Type></level>
-			<endTime><Type>INT16</Type></endTime>
-			<startTime><Type>INT16</Type></startTime>
+			<startTime><Type>FLOAT</Type></startTime>
+			<duration><Type>FLOAT</Type></duration>
 			<source><Type>UINT8</Type></source>
 		</Properties>
 		<implementedBy>BuffDef.converter</implementedBy>
