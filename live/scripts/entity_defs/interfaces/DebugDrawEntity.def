@@ -6,6 +6,9 @@
 				<methodName> STRING </methodName>
 				<pickledArgs> BLOB </pickledArgs>
 			</Args>
+			<VariableLengthHeaderSize>
+				<WarnLevel>none</WarnLevel>
+			</VariableLengthHeaderSize>
 		</debugExec>
 
 		<drawDebugLines>

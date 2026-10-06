@@ -889,6 +889,14 @@
             <Arg>ENTITY_ID</Arg>
             <Arg>NAVIGATION_DEBUG_DATA</Arg>
         </dev_receiveNavigationDebugData>
+        <dev_receiveDebugModifiers>
+            <Args>
+                <modifierInfo>BLOB</modifierInfo>
+            </Args>
+            <VariableLengthHeaderSize>
+                <WarnLevel>none</WarnLevel>
+            </VariableLengthHeaderSize>
+        </dev_receiveDebugModifiers>
         <updateBuoyancyRudderCruise>
             <Arg>FLOAT</Arg>
         </updateBuoyancyRudderCruise>

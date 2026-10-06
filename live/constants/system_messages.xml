@@ -67,6 +67,7 @@
 		<const name="CLANSTARS"		value="clanstars"	/>
 		<const name="ADVENT"		value="advent"		/>
 		<const name="MERCATOR"		value="mercator"	/>
+		<const name="ADECK_2"		value="adeck"		/>
 	</enum>
 	
 	<enum name="SYS_MESSAGE_BEHAVIOUR" type="Integer">

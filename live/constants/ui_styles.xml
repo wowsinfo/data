@@ -79,6 +79,7 @@
 		<const name="CREW_NATIONLESS"		value="crew_nationless" />
 
 		<const name="DECAL"					value="decal" />
+		<const name="KILL_TAG"				value="kill_tag" />
 		<const name="NARRATIVE_CAMPAIGN_REWARD"	value="narrative_campaign_reward" />
 
 		<const name="RARITY_COMMON"			value="rarity_common" />

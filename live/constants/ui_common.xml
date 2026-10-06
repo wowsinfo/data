@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <constants>
 	<enum name="HINT_TYPE" type="Integer">
-		<const name="OLD_STYLE"	value="0"/>
-		<const name="WASD" 		value="1"/>
+		<const name="OLD_STYLE"		value="0"/>
+		<const name="WASD" 			value="1"/>
+		<const name="NO_FEEDBACK"	value="2"/>
 
 	</enum>
 
@@ -178,6 +179,7 @@
 		<const name="UNINSTALL" 					value="uninstallExterior"			/>
 		<const name="INSTALL" 						value="installExterior"				/>
 		<const name="CHANGE_COLOR" 					value="changeCamouflageColor"		/>
+		<const name="CHANGE_KILL_TAG_ENABLED"		value="changeKillTagEnabled"		/>
 		<const name="PREVIEW" 						value="previewExterior"				/>
 		<const name="DISABLE_PREVIEW" 				value="disableExteriorPreview"		/>
 		<const name="INSTALL_SIGNALS_BY_GROUP" 		value="installFlagsByGroup"			/>
@@ -372,6 +374,7 @@
 	<enum name="STATISTICS_EXPORTER_PROJECTS" type="String">
 		<const name="PORT_LOGS"			value="port_logs"/>
 		<const name="HUB2D_LOGS"		value="hub2d_logs"/>
+		<const name="LOBBY_AFK_LOGS"	value="lobby_afk_logs"/>
 	</enum>
 
 	<enum name="PORT_LOGS_EVENTS" type="String">
@@ -394,6 +397,11 @@
 		<const name="HUB2D_BANNER_CLICKED"	value="hub2D_banner_clicked"/>
 		<const name="HUB2D_TOOLTIP_SHOWN"	value="hub2D_tooltip_shown"/>
 		<const name="HUB2D_TOOLTIP_HIDDEN"	value="hub2D_tooltip_hidden"/>
+	</enum>
+
+	<enum name="LOBBY_AFK_LOGS_EVENTS" type="String">
+		<const name="AFK_STARTED"		value="afk_started"/>
+		<const name="AFK_ENDED"			value="afk_ended"/>
 	</enum>
 
 </constants>
