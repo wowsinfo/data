@@ -59,6 +59,10 @@
             <Type>SHIP_CONFIG</Type>
             <Flags>ALL_CLIENTS</Flags>
         </shipConfig>
+        <crewConfig>
+            <Type>CREW_CONFIG</Type>
+            <Flags>ALL_CLIENTS</Flags>
+        </crewConfig>
         <crewModifiersCompactParams>
             <Type>CREW_MODIFIERS_COMPACT_PARAMS</Type>
             <Flags>ALL_CLIENTS</Flags>
@@ -264,6 +268,8 @@
         <bodySinkPartLurched>
             <Arg>FLOAT</Arg>
         </bodySinkPartLurched>
+        <shieldRegen></shieldRegen>
+        <shieldHit></shieldHit>
         <shootATBAGuns>
             <Arg>UINT32</Arg>
         </shootATBAGuns>
@@ -328,20 +334,31 @@
             <Arg>BLOB</Arg>
             <VariableLengthHeaderSize>2</VariableLengthHeaderSize>
         </syncShipPhysics>
-        <setReloadingStateForWeapon>
-            <Arg>WEAPON_TYPE</Arg>
-            <Arg>BLOB</Arg>
+        <syncWeaponState>
+            <Args>
+                <weaponType>WEAPON_TYPE</weaponType>
+                <dumpStates>BLOB</dumpStates>
+            </Args>
             <VariableLengthHeaderSize>2</VariableLengthHeaderSize>
-        </setReloadingStateForWeapon>
+        </syncWeaponState>
+        <setGunOverheated>
+            <Args>
+                <weaponType>WEAPON_TYPE</weaponType>
+                <gunID>UINT8</gunID>
+                <isOverheated>BOOL</isOverheated>
+            </Args>
+        </setGunOverheated>
         <setUniqueSkills>
             <Arg>BLOB</Arg>
         </setUniqueSkills>
         <setConsumables>
             <Arg>BLOB</Arg>
+            <VariableLengthHeaderSize>2</VariableLengthHeaderSize>
         </setConsumables>
         <setSqsConsumables>
             <Arg>PLANE_ID</Arg>
             <Arg>BLOB</Arg>
+            <VariableLengthHeaderSize>2</VariableLengthHeaderSize>
         </setSqsConsumables>
         <stopVarys></stopVarys>
         <receiveMirrorDamage>
@@ -559,6 +576,29 @@
             </Args>
             <Flags>OWN_CLIENT</Flags>
         </dev_requestDebugModifiers>
+        <dev_applyShieldDamage>
+            <Exposed></Exposed>
+            <Args>
+                <damage>FLOAT32</damage>
+            </Args>
+        </dev_applyShieldDamage>
+        <dev_healShield>
+            <Exposed></Exposed>
+            <Args>
+                <hp>FLOAT32</hp>
+            </Args>
+        </dev_healShield>
+        <dev_addGunHeat>
+            <Exposed></Exposed>
+            <Args>
+                <weaponType>WEAPON_TYPE</weaponType>
+                <gunIds>ARRAY
+                    <of>GUN_ID</of>
+                </gunIds>
+                <heatDelta>FLOAT32</heatDelta>
+            </Args>
+            <Flags>OWN_CLIENT</Flags>
+        </dev_addGunHeat>
         <dev_flight>
             <Exposed></Exposed>
             <Flags>OWN_CLIENT</Flags>

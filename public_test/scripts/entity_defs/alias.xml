@@ -49,6 +49,15 @@
 	<CUSTOMIZATION_ID>UINT32</CUSTOMIZATION_ID>
 	<BATTLE_TYPE_ID>UINT32</BATTLE_TYPE_ID>
 
+	<OPTIONAL_STRING>
+		FIXED_DICT
+		<Properties>
+			<value><Type>STRING</Type></value>
+		</Properties>
+		<implementedBy>OptionalString.converter</implementedBy>
+		<AllowNone> true </AllowNone>
+	</OPTIONAL_STRING>
+
 	<ZIPPED_BLOB>
 		USER_TYPE
 		<Type>BLOB</Type>
@@ -153,6 +162,24 @@
 		</Properties>
 	</WEAPON_LOCK_STATE>
 
+	<TASK_REWARD>
+		FIXED_DICT
+		<Properties>
+			<currency><Type>STRING</Type></currency>
+			<amount><Type>UINT32</Type></amount>
+		</Properties>
+		<AllowNone>true</AllowNone>
+	</TASK_REWARD>
+
+	<TASK_REWARDS>
+		FIXED_DICT
+		<Properties>
+			<primary><Type>TASK_REWARD</Type></primary>
+			<secondary><Type>TASK_REWARD</Type></secondary>
+		</Properties>
+		<AllowNone>true</AllowNone>
+	</TASK_REWARDS>
+
 	<BATTLE_DEF>
 		FIXED_DICT
 		<Properties>
@@ -166,6 +193,7 @@
 			<realms><Type>ARRAY<of>STRING</of></Type></realms>
 			<holderTeams><Type>ARRAY<of>TEAM_ID</of></Type></holderTeams>
 			<operationID><Type>GAMEPARAMS_ID</Type></operationID>
+			<taskRewards><Type>TASK_REWARDS</Type></taskRewards>
 		</Properties>
 		<implementedBy>BattleDef.converter</implementedBy>
 	</BATTLE_DEF>
@@ -192,6 +220,11 @@
 		USER_TYPE
 		<implementedBy>ShipConfig.converter</implementedBy>
 	</SHIP_CONFIG>
+
+	<CREW_CONFIG>
+		USER_TYPE
+		<implementedBy>CrewConfig.converter</implementedBy>
+	</CREW_CONFIG>
 
 	<SHIP_STATE>
 		FIXED_DICT
@@ -301,6 +334,7 @@
 			<name><Type>STRING</Type></name>
 			<dogTag><Type>ARRAY<of>GAMEPARAMS_ID</of></Type></dogTag>
 			<shipConfig><Type>SHIP_CONFIG</Type></shipConfig>
+			<crewConfig><Type>CREW_CONFIG</Type></crewConfig>
 			<compactCrewModifiers><Type>CREW_MODIFIERS_COMPACT_PARAMS</Type></compactCrewModifiers>
 			<aiConfig><Type>AI_CONFIG</Type></aiConfig>
 			<dbid><Type>DB_ID</Type></dbid>
@@ -576,7 +610,7 @@
 			<pitch>				<Type>FLOAT</Type>			</pitch>
 			<yaw>				<Type>FLOAT</Type>			</yaw>
 			<shotID>			<Type>INT64</Type>			</shotID>
-			<tarPos>			<Type>VECTOR3</Type>		</tarPos>
+			<launchAimPosition>	<Type>VECTOR3</Type>		</launchAimPosition>
 			<currentStateId>	<Type>INT32</Type>			</currentStateId>
 			<currentHealth>		<Type>INT32</Type>			</currentHealth>
 		</Properties>
@@ -1003,6 +1037,14 @@
 		</Properties>
 	</WORLD_CLIENT_ACTION_STATE>
 
+	<ARMS_RACE_MISSION_STATE>
+		FIXED_DICT
+		<Properties>
+			<reward><Type>INT16</Type></reward>
+			<penalty><Type>INT16</Type></penalty>
+		</Properties>
+	</ARMS_RACE_MISSION_STATE>
+
 	<KILL_SPECIFIC_SHIP_MISSION_STATE>
 		FIXED_DICT
 		<Properties>
@@ -1097,6 +1139,7 @@
 			<reachDestination><Type>ARRAY<of>REACH_DESTINATION_MISSION_STATE</of></Type></reachDestination>
 			<pullTargets><Type>ARRAY<of>PULL_TARGETS_MISSION_STATE</of></Type></pullTargets>
 			<protect><Type>ARRAY<of>PROTECT_MISSION_STATE</of></Type></protect>
+			<armsRace><Type>ARRAY<of>ARMS_RACE_MISSION_STATE</of></Type></armsRace>
 			<teamsScore><Type>ARRAY<of>TEAM_SCORE</of></Type></teamsScore>
 			<teamWinScore><Type>INT16</Type></teamWinScore>
 			<teamLoseScore><Type>INT16</Type></teamLoseScore>
@@ -1669,6 +1712,16 @@
 		<AllowNone>true</AllowNone>
 	</VCL_SHOTS_ENTITY_STATS>
 
+	<VCL_SHOTS_HEAT_STATS>
+		FIXED_DICT
+		<Properties>
+			<gunId><Type>UINT8</Type></gunId>
+			<heatBefore><Type>UINT8</Type></heatBefore>
+			<heatAfter><Type>UINT8</Type></heatAfter>
+		</Properties>
+		<AllowNone>true</AllowNone>
+	</VCL_SHOTS_HEAT_STATS>
+
 	<REPLAY_METADATA_STATS>
 		FIXED_DICT
 		<Properties>
@@ -2033,10 +2086,12 @@
 	<MISSILES_STATE>
 		FIXED_DICT
 		<Properties>
-			<shotsCount><Type>INT8</Type></shotsCount>
-			<tubesLoadState><Type>ARRAY<of>INT8</of></Type></tubesLoadState>
+			<shotsCount><Type>INT16</Type></shotsCount>
+			<tubesLoadState><Type>ARRAY<of>INT16</of></Type></tubesLoadState>
+			<reloadingState><Type>ARRAY<of>INT8</of></Type></reloadingState>
 			<nextShootingGunId><Type>INT8</Type></nextShootingGunId>
 			<nextShootingTubeId><Type>INT8</Type></nextShootingTubeId>
+			<launchMode><Type>INT8</Type></launchMode>
 		</Properties>
 		<AllowNone> true </AllowNone>
 	</MISSILES_STATE>
@@ -2048,6 +2103,15 @@
 		</Properties>
 		<AllowNone> true </AllowNone>
 	</AIR_DEFENSE_STATE>
+
+	<SHIELD_STATE>
+		FIXED_DICT
+		<Properties>
+			<maxHp><Type>UINT32</Type></maxHp>
+			<remainingHP><Type>UINT32</Type></remainingHP>
+		</Properties>
+		<AllowNone> true </AllowNone>
+	</SHIELD_STATE>
 
 	<DECALS_STATE>
 		FIXED_DICT
@@ -2078,6 +2142,7 @@
 			<battery><Type>BATTERY_STATE</Type></battery>
 			<buffs><Type>BUFFS_STATE</Type></buffs>
 			<vehicleVisualState><Type>VEHICLE_VISUAL_STATE</Type></vehicleVisualState>
+			<shield><Type>SHIELD_STATE</Type></shield>
 			<decals><Type>DECALS_STATE</Type></decals>
 			<atba><Type>ATBA_STATE</Type></atba>
 		</Properties>
@@ -2215,6 +2280,21 @@
 		<implementedBy>MinefieldStatistics.converter</implementedBy>
 	</MINEFIELD_HEAT_MAP_EVENT_DATA>
 
+	<SHIELD_HEAT_MAP_EVENT_DATA>
+		FIXED_DICT
+		<Properties>
+			<ownerId><Type>ENTITY_ID</Type></ownerId>
+			<startShieldHp><Type>UINT32</Type></startShieldHp>
+			<regeneratedHp><Type>UINT32</Type></regeneratedHp>
+			<withShieldTime><Type>FLOAT</Type></withShieldTime>
+			<withoutShieldTime><Type>FLOAT</Type></withoutShieldTime>
+			<receivedDamageShield><Type>UINT32</Type></receivedDamageShield>
+			<shieldUnarmedCounter><Type>UINT16</Type></shieldUnarmedCounter>
+		</Properties>
+		<AllowNone>false</AllowNone>
+		<implementedBy>ShieldStatistics.converter</implementedBy>
+	</SHIELD_HEAT_MAP_EVENT_DATA>
+
 	<FLAGSHIP_HEAT_MAP_EVENT_DATA>
 		FIXED_DICT
 		<Properties>
@@ -2337,6 +2417,7 @@
 			<isTextSettingsBlocked><Type>BOOL</Type></isTextSettingsBlocked>
 			<isVoiceChatCommunicationBlocked><Type>BOOL</Type></isVoiceChatCommunicationBlocked>
 			<isPaymentBlocked><Type>BOOL</Type></isPaymentBlocked>
+			<isLootboxPurchaseDenied><Type>BOOL</Type></isLootboxPurchaseDenied>
 		</Properties>
 		<implementedBy>RestrictionsDef.converter</implementedBy>
 	</RESTRICTIONS_INFO>

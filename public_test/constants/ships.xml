@@ -192,11 +192,12 @@
 
 		<const name="SQUADRON" 			value="100" />  <!-- plane rockets, bombs, torpedoes -->
 
-		<range name="SHOW_SHIP_DOLL"	values="ARTILLERY, TORPEDO, CHARGE_LASER, IMPULSE_LASER, WAVES"/>
+		<range name="SHOW_SHIP_DOLL"	values="ARTILLERY, TORPEDO, CHARGE_LASER, IMPULSE_LASER, WAVES, PHASER_LASER"/>
 		<range name="HIDE_RELOAD_BARS"	values="DEPTH_CHARGES"/>
 
 		<range name="PARAMS_BY_AMMO_TYPE"		values="ARTILLERY, TORPEDO, AIR_SUPPORT, SQUADRON"/>
 		<range name="PARAMS_BY_SQUADRON_TYPE"	values="AIRPLANES"/>
+		<value_to_name/>
 	</enum>
 
 	<enum name="SHIP_MODULE_TYPES" type="Integer">
@@ -232,11 +233,13 @@
 		<const name="SECONDARY_WEAPONS"	value="_SecondaryWeapons"	/>
 		<const name="ABILITIES"			value="_Abilities"		/>
 		<const name="SONAR"				value="_Sonar"			/>
+		<const name="SHIELD"			value="_Shield"			/>
 
-		<range name="UI_RANGE"				values="ARTILLERY, PRIMARY_WEAPONS, HULL, SONAR, SECONDARY_WEAPONS, TORPEDOES, SUO, FIGHTER, TORPEDO_BOMBER, DIVE_BOMBER, SKIP_BOMBER, ENGINE, ABILITIES"/>
+		<range name="UI_RANGE"				values="ARTILLERY, PRIMARY_WEAPONS, HULL, SONAR, SECONDARY_WEAPONS, TORPEDOES, SUO, FIGHTER, TORPEDO_BOMBER, DIVE_BOMBER, SKIP_BOMBER, ENGINE, ABILITIES, SHIELD"/>
 		<range name="PLANES_COMPONENTS"		values="FIGHTER, TORPEDO_BOMBER, DIVE_BOMBER, SKIP_BOMBER"/>
 
 		<range name="WITH_COMBINED_NAMES"		values="TORPEDOES, FIGHTER, TORPEDO_BOMBER, DIVE_BOMBER, SKIP_BOMBER"/>
+		<range name="WITH_EXTENDED_INFO"		values="HULL, ABILITIES, SHIELD, PRIMARY_WEAPONS, SECONDARY_WEAPONS"/>
 	</enum>
 
 	<enum name="SHIP_SLOT_TYPES" type="Integer">

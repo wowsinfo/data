@@ -12,9 +12,12 @@
 		<const name="SWITCHING_CRITICAL" value="9" /> <!-- Орудие меняет тип снаряда во время повреждения -->
 		<const name="DISABLED" 			value="10" /> <!-- Орудие READY, но не может быть использовано из-за ограничений -->
 		<const name="BROKEN" 			value="11" />
+		<const name="OVERHEATED" 		value="12" />
 
-		<range name="WITH_PROGRESS" values="WORK, RELOAD, CHARGE, SWITCHING_AMMO, SWITCHING_CRITICAL"/>
+		<range name="WITH_PROGRESS" values="WORK, RELOAD, CHARGE, SWITCHING_AMMO, SWITCHING_CRITICAL, OVERHEATED"/>
 		<range name="REPAIRABLE" values="CRITICAL, BROKEN"/>
+		<range name="ALIVE" values="READY, WORK, RELOAD, SWITCHING_AMMO, RELOAD_STOPPED, CHARGE, OVERHEATED"/> <!-- Орудие не повреждено и не уничтожено -->
+
 	</enum>
 
 	<enum name="BARREL_FIRE_MODE" type="Integer" >
@@ -33,6 +36,7 @@
 		<const name="TORPEDO_DAMAGE_BY_DIST_INCREASE"		value="0" />
 		<const name="TORPEDO_DAMAGE_BY_DIST_DECREASE"		value="1" />
 		<const name="SKIP_BOMB"								value="3" />
+		<const name="GUN_HEATING"							value="4" />
 		<value_to_name/>
 	</enum>
 
