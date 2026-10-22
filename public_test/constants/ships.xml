@@ -113,6 +113,7 @@
 		<const name="FR_DD_TORP"		/>
 
 		<const name="EU_BB"				/>
+		<const name="EU_CL"				/>
 		<const name="EU_DD"				/>
 		<const name="EU_DD_DALARNA"		/>
 		<const name="EU_DD_GUN"			/>
