@@ -98,7 +98,7 @@
 		<range name="ORDERED" values="PATHS, SCENARIO_TAGS, RANGES, CAPTURE_POINTS, SHIPS, BUILDINGS, SQUADRONS, NAVPOINTS, AIM"/>
 	</enum>
 
-	<enum name="CAMERA_MODE" type="Integer">  <!-- Keep in sync with Camera.CameraMode from /client/Camera/__init__.py -->
+	<enum name="CAMERA_MODE" type="Integer">  <!-- Keep in sync with CameraMode from /common/CameraConstants.py -->
 		<const name="AIRPLANES"				value="1" />
 		<const name="DOCK"					value="2" />
 		<const name="TACTICALMAP"			value="3" />
@@ -337,6 +337,7 @@
 		<const name="FLAGSHIP"					value="28"	/>
 		<const name="MIGNON"					value="29"	/>
 		<const name="REPAIR_SHIP"				value="30"	/>
+		<const name="KILLER_STORM"				value="31"	/>
 
 		<!-- Fake states for UI. Due to packing of view values max state now is 127, see ScenarioView for more info -->
 		<const name="AA_AIMED_FIRE"									value="99"	/>
@@ -388,18 +389,18 @@
 			SHIP_PARAMS_CHANGE_BY_BUFFS, SHIP_PARAMS_CHANGE_BY_INTERACTIVE_ZONE, SHIP_PARAMS_CHANGE_BY_WEATHER, SHIP_PARAMS_CHANGE_BY_CRIT_MODULES, SHIP_PARAMS_CHANGE_BY_BROKEN_MODULES,
 			SHIP_PARAMS_CHANGE_BY_SPECIAL_MODULES, SHIP_PARAMS_CHANGE_BY_RAGE_MODE, SHIP_PARAMS_CHANGE_BY_CONSUMABLES,
 			SHIP_PARAMS_CHANGE_BY_MODIFIERS, SHIP_PARAMS_CHANGE_BY_DEPTH, SHIP_PARAMS_CHANGE_BY_BATTERY_STATE, REPAIR, EMERGENCY_SURFACING, SHIP_PARAMS_CHANGE_BY_ARTILLERY_FIRE_MODE,
-			SHIP_PARAMS_CHANGE_BY_NOT_SPECIAL_MODULES, ILLUMINATED, BY_NIGHT, SHIP_PARAMS_CHANGE_BY_ANTI_ABUSE_SYSTEM, BATTLE_CARD_SELECTOR_AVAILABLE, SHIP_PARAMS_CHANGE_BY_INNATE_SKILLS, AA_AIMED_FIRE"/>
+			SHIP_PARAMS_CHANGE_BY_NOT_SPECIAL_MODULES, ILLUMINATED, BY_NIGHT, SHIP_PARAMS_CHANGE_BY_ANTI_ABUSE_SYSTEM, BATTLE_CARD_SELECTOR_AVAILABLE, SHIP_PARAMS_CHANGE_BY_INNATE_SKILLS, AA_AIMED_FIRE, KILLER_STORM"/>
 
 		<range name="SHIP_PARAMS_STATES_FOR_EVENT_BLOCK" values="SHIP_PARAMS_CHANGE_BY_TALENTS, SHIP_PARAMS_CHANGE_BY_PERKS, SHIP_PARAMS_CHANGE_BY_ATBA_ACCURACY_PERK,
 			SHIP_PARAMS_CHANGE_BY_BUFFS, SHIP_PARAMS_CHANGE_BY_INTERACTIVE_ZONE, SHIP_PARAMS_CHANGE_BY_WEATHER, SHIP_PARAMS_CHANGE_BY_CRIT_MODULES, SHIP_PARAMS_CHANGE_BY_BROKEN_MODULES,
 			SHIP_PARAMS_CHANGE_BY_SPECIAL_MODULES, SHIP_PARAMS_CHANGE_BY_RAGE_MODE, SHIP_PARAMS_CHANGE_BY_CONSUMABLES, REPAIR,
 			SHIP_PARAMS_CHANGE_BY_BATTERY_STATE, EMERGENCY_SURFACING, SHIP_PARAMS_CHANGE_BY_DEPTH, SHIP_PARAMS_CHANGE_BY_ARTILLERY_FIRE_MODE,
-			SHIP_PARAMS_CHANGE_BY_NOT_SPECIAL_MODULES, ILLUMINATED, BY_NIGHT, SHIP_PARAMS_CHANGE_BY_ANTI_ABUSE_SYSTEM, SHIP_PARAMS_CHANGE_BY_INNATE_SKILLS, AA_AIMED_FIRE"/>
+			SHIP_PARAMS_CHANGE_BY_NOT_SPECIAL_MODULES, ILLUMINATED, BY_NIGHT, SHIP_PARAMS_CHANGE_BY_ANTI_ABUSE_SYSTEM, SHIP_PARAMS_CHANGE_BY_INNATE_SKILLS, AA_AIMED_FIRE, KILLER_STORM"/>
 
 		<range name="SHIP_PARAMS_STATES_FOR_STATUS_PANEL" values="SHIP_PARAMS_CHANGE_BY_DEPTH, SHIP_PARAMS_CHANGE_BY_TALENTS, SHIP_PARAMS_CHANGE_BY_PERKS, SHIP_PARAMS_CHANGE_BY_ATBA_ACCURACY_PERK,
 			SHIP_PARAMS_CHANGE_BY_BUFFS, SHIP_PARAMS_CHANGE_BY_MODIFIERS, SHIP_PARAMS_CHANGE_BY_CRIT_MODULES, SHIP_PARAMS_CHANGE_BY_BROKEN_MODULES,
 			SHIP_PARAMS_CHANGE_BY_SPECIAL_MODULES, EMERGENCY_SURFACING, SHIP_PARAMS_CHANGE_BY_NOT_SPECIAL_MODULES, REPAIR,
-			BATTLE_CARD_SELECTOR_AVAILABLE, SHIP_PARAMS_CHANGE_BY_INNATE_SKILLS, ILLUMINATED, AA_AIMED_FIRE"/>
+			BATTLE_CARD_SELECTOR_AVAILABLE, SHIP_PARAMS_CHANGE_BY_INNATE_SKILLS, ILLUMINATED, AA_AIMED_FIRE, KILLER_STORM"/>
 
 		<range name="SHIP_STATE_AND_EQUIPMENT_TYPES" values="SHIP_PARAMS_CHANGE_BY_CONSUMABLES,
 			SHIP_PARAMS_CHANGE_BY_CRIT_MODULES, SHIP_PARAMS_CHANGE_BY_BROKEN_MODULES, SHIP_PARAMS_CHANGE_BY_SPECIAL_MODULES, SHIP_PARAMS_CHANGE_BY_BATTERY_STATE, EMERGENCY_SURFACING, SHIP_PARAMS_CHANGE_BY_DEPTH,
@@ -442,6 +443,7 @@
 			<const name="FLAGSHIP"					value="flagship"/>
 			<const name="MIGNON"					value="mignon"/>
 			<const name="REPAIR_SHIP"				value="repairShip"/>
+			<const name="KILLER_STORM"				value="killer_storm"/>
 		</enum>
 	</enum>
 
@@ -689,6 +691,7 @@
 		<const name="visibilityByPlaneRangeFire"/>
 		<const name="guaranteedVisibilityRange"/>
 		<const name="visibilityInSmokeRangeGK"/>
+		<const name="visibilityInSmokeRangePhasers"/>
 		<const name="visibilityBySubmarineRangeBase"/>
 		<const name="health"/>
 
@@ -732,6 +735,10 @@
 		<const name="atbaDamageGun2"/>
 		<const name="atbaDamageGun3"/>
 		<const name="atbaMaxDist"/>
+		<const name="atbaShieldDamageGun0"/>
+		<const name="atbaShieldDamageGun1"/>
+		<const name="atbaShieldDamageGun2"/>
+		<const name="atbaShieldDamageGun3"/>
 
 		<const name="artilleryReloadTime"/>
 		<const name="artilleryMinSwitchTime"/>
@@ -740,6 +747,8 @@
 		<const name="damageAP"/>
 		<const name="damageAPBurn"/>
 		<const name="damageCS"/>
+		<const name="damagePhaserLaser"/>
+		<const name="shieldDamagePhaserLaser"/>
 		<const name="currentSecondaryAmmoCountHE"/>
 		<const name="currentSecondaryAmmoCountAP"/>
 		<const name="currentSecondaryAmmoCountCS"/>
@@ -820,6 +829,8 @@
 		<const name="impulse_laserReloadTime"/>
 		<const name="impulse_laserMaxDist"/>
 		<const name="axis_laserReloadTime"/>
+		<const name="phaser_laserReloadTime"/>
+		<const name="phaser_laserMaxDist"/>
 		<const name="axis_laserMaxDist"/>
 		<const name="wavesReloadTime"/>
 		<const name="wavesMaxDist"/>
@@ -919,18 +930,19 @@
 			visibilityByShipRangeFire, currentVisibilityPlaneRange, visibilityAfterPingByShipRange, atbaMaxDist, aaRangeMax,
 			guaranteedVisibilityRange, visionRangeAtDepth, submarineLocatorRange, charge_laserMaxDist, shootRangesSummary,
 			rlsShipRange, aaRangeMid, impulse_laserMaxDist, sonarTorpedoRange, torpedoDetection, aaRangeFar,
-			visibilityByPlaneRangeBase, visibilityByPlaneRangeFire, visibilityPlaneRangeAlt, artilleryMaxDist, airplanesMaxDist, antiMissileMaxDist, missilesMaxDist
+			visibilityByPlaneRangeBase, visibilityByPlaneRangeFire, visibilityPlaneRangeAlt, artilleryMaxDist, airplanesMaxDist, antiMissileMaxDist, missilesMaxDist,
+			phaser_laserMaxDist, visibilityInSmokeRangePhasers
 		"/>
 
 		<range name="MINIMAP_RANGES" values="artilleryMaxDist, torpedoMaxDist, atbaMaxDist, pingerMaxDist,
-			charge_laserMaxDist, impulse_laserMaxDist, axis_laserMaxDist, wavesMaxDist, air_supportMaxDist, aaRangeMax,
+			charge_laserMaxDist, impulse_laserMaxDist, axis_laserMaxDist, phaser_laserMaxDist, wavesMaxDist, air_supportMaxDist, aaRangeMax,
 			visibilityRange, visibilityPlaneRange, visibilityRangeAlt, visibilityPlaneRangeAlt, visibilityAfterPingByShipRange,
 			sonarShipRange, rlsShipRange, sonarTorpedoRange, hydrophoneRange, submarineLocatorRange, antiMissileMaxDist, missilesMaxDist"/>
 
 		<range name="WITH_MINIMAP_OPTION" values="currentVisibilityRange, currentVisibilityPlaneRange, visibilityAfterPingByShipRange,
 			atbaMaxDist, aaRangeMax, sonarShipRange, rlsShipRange, hydrophoneRange, submarineLocatorRange,
 			artilleryMaxDist, currentShootTARange, pingerMaxDist, charge_laserMaxDist, impulse_laserMaxDist,
-			axis_laserMaxDist, wavesMaxDist, air_supportMaxDist, antiMissileMaxDist, missilesMaxDist"/>
+			axis_laserMaxDist, phaser_laserMaxDist, wavesMaxDist, air_supportMaxDist, antiMissileMaxDist, missilesMaxDist"/>
 	</enum>
 
 	<enum name="MINIMAP_OPTION_CATEGORY" type="Integer">
@@ -955,6 +967,9 @@
 
 		<!--Weapons Ranges-->
 		<const name="shootMGRangeEnabled"/>
+		<!--Phaser lasers are presented to the player as the main battery, so this option is kept next to it.
+			Order here defines MINIMAP_OPTION.ALL, which MINIMAP_OPTION_SORTING uses to sort the options panel.-->
+		<const name="shootPhaserLaserRangeEnabled"/>
 		<const name="shootTARangeEnabled"/>
 		<const name="shootPingerRangeEnabled"/>
 		<const name="shootChargeLaserRangeEnabled"/>
@@ -983,7 +998,7 @@
 
 		<range name="PER_SHIP" values="sonarRangeEnabled, rlsRangeEnabled, hydrophoneRangeEnabled,
 			submarineLocatorRangeEnabled, visibilityRangeEnabled, visibilityPlaneRangeEnabled,
-			atbaRangeEnabled, aaRangeMaxEnabled, shootMGRangeEnabled, shootTARangeEnabled,
+			atbaRangeEnabled, aaRangeMaxEnabled, shootMGRangeEnabled, shootPhaserLaserRangeEnabled, shootTARangeEnabled,
 			shootPingerRangeEnabled, shootChargeLaserRangeEnabled, shootImpulseLaserRangeEnabled,
 			shootAxisLaserRangeEnabled, shootWaveGunRangeEnabled, shootAirSupportRangeEnabled,
 			shootAntiMissileSystemRangeEnabled, shootMissilesRangeEnabled"/>
@@ -1197,6 +1212,44 @@
 		<const name="READY"				value="ready"/>
 		<const name="ACTIVE"			value="progress"/>
 		<const name="COOLDOWN"			value="cooldown"/>
+	</enum>
+
+	<enum name="BATTLE_MECHANIC_TYPE" type="Integer">
+		<const name="UPGRADES_ARMS_RACE"	value="0"/>
+		<const name="UPGRADES_DROP"			value="1"/>
+		<const name="THUNDERSTORM"			value="2"/>
+		<const name="SNOWSTORM"				value="3"/>
+		<const name="CYCLONE"				value="4"/>
+		<const name="NIGHT"					value="5"/>
+		<const name="ILLUMINATED_ZONES"		value="6"/>
+		<const name="MINES"					value="7"/>
+		<const name="ENEMY_FLAGSHIPS"		value="8"/>
+		<const name="BASES"					value="9"/>
+		<const name="KEY_AREAS"				value="10"/>
+		<!-- every key area is hidden at loading and shown by a scenario trigger (Arms Race) -->
+		<const name="KEY_AREAS_APPEARING"	value="11"/>
+
+		<value_to_name/>
+	</enum>
+
+	<!-- Value order is the details-page category order: refreshHints sorts by value. -->
+	<enum name="BATTLE_HINT_CATEGORY" type="Integer">
+		<const name="BASIC"				value="0"/>
+		<const name="SHIP_CLASSES"		value="1"/>
+		<const name="EQUIPMENT"			value="2"/>
+		<const name="CAPTURE_POINTS"	value="3"/>
+		<const name="UPGRADES"			value="4"/>
+		<const name="WEATHER"			value="5"/>
+		<const name="TIME_OF_DAY"		value="6"/>
+		<const name="MINES"				value="7"/>
+
+		<value_to_name/>
+	</enum>
+
+	<!-- Top-level pages of the battle-statistics shell (loading screen and in-battle TAB). -->
+	<enum name="BATTLE_STATISTICS_PAGE" type="Integer">
+		<const name="MAIN"		value="0"/>
+		<const name="DETAILS"	value="1"/>
 	</enum>
 
 </constants>

@@ -30,6 +30,7 @@
 				<squadronPurpose>	UINT8	</squadronPurpose>
 				<spawnPosition>		VECTOR3	</spawnPosition>
 				<spawnYaw>			FLOAT	</spawnYaw>
+				<name>				OPTIONAL_STRING	</name>
 			</Args>
 		</spawnSquadron>
 	</CellMethods>

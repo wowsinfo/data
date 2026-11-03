@@ -61,7 +61,8 @@
 		<const name="CALENDAR_ATTENTION"	value="calendar_attention" />
 		<const name="BURST_FIRE"			value="burst_fire" />
 		<const name="NO_ICON"				value="no_icon" />
-		<const name="PVE_MODIFIER"			value="pve_modifier" />
+		<const name="SSE_MODIFIER_POSITIVE"	value="sse_modifier_positive" />
+		<const name="SSE_MODIFIER_NEGATIVE"	value="sse_modifier_negative" />
 		<const name="NOTIFICATION"			value="notification" />
 
 		<const name="TIME_BASED"			value="time_based" />

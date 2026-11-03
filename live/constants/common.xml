@@ -142,6 +142,7 @@
 		<const name="NARRATIVE_CAMPAIGN_CHAPTER"	value="48" />
 		<const name="NARRATIVE_CAMPAIGN_LEVEL"		value="49" />
 		<const name="NARRATIVE_CAMPAIGN_NARRATIVE"	value="50" />
+		<const name="MODULE"						value="51" />
 	</enum>
 
 	<enum name="UBSCOPE_EVENT_DIRECTIONS" type="Integer">
@@ -216,6 +217,7 @@
 		<const name="ADD_MODIFIERS"						value="21" />
 		<const name="MANUAL_SECONDARIES_RELOAD_BOOSTER"	value="22" />
 		<const name="ADD_CONSUMABLES_RELOAD_MODIFIERS"	value="23" />
+		<const name="ADD_BUFF"							value="24" />
 		<value_to_name/>
 	</enum>
 
@@ -571,6 +573,16 @@
 		<const name="LOOK_BACKWARD" 	value="1" 	/>
 	</enum>
 
+	<!-- Declared torpedo TTX group types: values match `groupsDirection` strings in ship params
+	     and drive the IDS key lookup in the port TTX panel -->
+	<enum name="TORPEDO_TTX_GROUP_TYPE" type="String">
+		<const name="FORWARD"			value="forward"	/>
+		<const name="REAR"				value="rear"	/>
+		<const name="ROTATING"			value="rotating"	/>
+
+		<range name="DIRECTED" values="FORWARD, REAR"/>
+	</enum>
+
 	<enum name="HIGHLIGHT"  type="Integer">
 		<const name="HIDDEN"					value="0"/>
 		<const name="DEFAULT"					value="1"/>
@@ -838,8 +850,9 @@
 	</enum>
 
 	<enum name="MODERNIZATION_AVAILABILITY" type="Integer">
-		<const name="AVAILABLE_ON_STORAGE_OR_COMMON"		value="0"/>
+		<const name="COMMON"								value="0"/>
 		<const name="NEED_TO_BE_PURCHASED_IN_METASHOP"		value="1"/>
+		<const name="NOT_AVAILABLE_OR_LOCKED"				value="2"/>
 	</enum>
 
 	<enum name="ENTITY_AFFILIATION" type="String">
@@ -978,6 +991,7 @@
 		<const name="MYSTERY_REWARD"				value="MysteryReward"/>
 		<const name="BATTLE_CARD"					value="BattleCard"/>
 		<const name="MINI_DOCKYARD_SHIPCOMPONENT"	value="MiniDockyardShipComponent"/>
+		<const name="LEVEL_UP_CATEGORY"				value="LevelUpCategory"/>
 
 		<range name="HAS_ID" values="EXTERIOR, SHIP, MODERNIZATION, ABILITY, CREW,
 									LOOTBOX, DOGTAG"/>
@@ -1016,6 +1030,8 @@
 		<const name="CAMOBOOST"			value="Camoboost"/>
 		<const name="GLOBALBOOST"		value="Globalboost"/>
 		<const name="CLANRESOURCE"		value="clanResource"/>
+		<const name="CREW_SLOT"			value="crewSlot"/>
+		<const name="UNIQUE_SKILLS"		value="UniqueSkills"/>
 
 		<range name="IS_RESOURCES"		values="WOWS_PREMIUM, SLOTS"/>
 	</enum>
@@ -1221,8 +1237,10 @@
 		<const name="REMAINING_HEALTH"				value="RemainingHealthActivator" />
 		<const name="POTENTIAL_DAMAGE_DEALT"		value="PotentialDamageDealtActivator" />
 		<const name="CONSUMABLE_USE"				value="ConsumableUseActivator" />
+		<const name="FIRES_BURNING"					value="FiresBurningActivator" />
+		<const name="SHIELD_DAMAGED"				value="ShieldDamagedActivator" />
 
-		<range name="DAMAGE_INCREMENT_TYPES" values="DAMAGE_DONE, RECEIVED_DAMAGE, DAMAGE_TO_PLANE, DAMAGE_SPOTTED, CONSUMABLE_USE"/>
+		<range name="DAMAGE_INCREMENT_TYPES" values="DAMAGE_DONE, RECEIVED_DAMAGE, DAMAGE_TO_PLANE, DAMAGE_SPOTTED, CONSUMABLE_USE, SHIELD_DAMAGED"/>
 	</enum>
 
 	<enum name="GAME_LOGIC_ACTION" type="String">
@@ -1473,34 +1491,6 @@
 		<const name="LEGENDARY_UNSELECTED"		value="ub1:ship_filter_rarity_legendary_unselected"/>
 	</enum>
 
-	<enum name="BATTLE_TABS_STATISTICS" type="String">
-		<const name="TASKS_TAB_DISPLAYED"				value="ub1:battle_tabs_statistics_tasks_tab_displayed"/>
-		<const name="TEAMS_TAB_DISPLAYED"				value="ub1:battle_tabs_statistics_teams_tab_displayed"/>
-		<const name="DIVISIONS_TAB_DISPLAYED"			value="ub1:battle_tabs_statistics_divisions_tab_displayed"/>
-		<const name="TASKS_TAB_SELECTED"				value="ub2:battle_tabs_statistics_tasks_tab_selected"/>
-		<const name="TEAMS_TAB_SELECTED"				value="ub2:battle_tabs_statistics_teams_tab_selected"/>
-		<const name="DIVISIONS_TAB_SELECTED"			value="ub2:battle_tabs_statistics_divisions_tab_selected"/>
-		<const name="JOIN_DIVISION_CLICKED"				value="ub1:battle_tabs_statistics_join_division_clicked"/>
-		<const name="JOIN_NEW_DIVISION_CLICKED"			value="ub1:battle_tabs_statistics_join_new_division_clicked"/>
-		<const name="RESTRICT_JOIN_ENABLED"				value="ub1:battle_tabs_statistics_restrict_join_enabled"/>
-		<const name="RESTRICT_JOIN_DISABLED"			value="ub1:battle_tabs_statistics_restrict_join_disabled"/>
-	</enum>
-
-	<enum name="LOADING_SCREEN_BATTLE_TABS_STATISTICS" type="String">
-		<const name="TASKS_TAB_DISPLAYED"			value="ub1:loading_screen_battle_tabs_tasks_tab_displayed"/>
-		<const name="TEAMS_TAB_DISPLAYED"			value="ub1:loading_screen_battle_tabs_teams_tab_displayed"/>
-		<const name="TIPS_TAB_DISPLAYED"			value="ub1:loading_screen_battle_tabs_tips_tab_displayed"/>
-		<const name="DIVISIONS_TAB_DISPLAYED"		value="ub1:loading_screen_battle_tabs_divisions_tab_displayed"/>
-		<const name="TASKS_TAB_SELECTED"			value="ub2:loading_screen_battle_tabs_tasks_tab_selected"/>
-		<const name="TEAMS_TAB_SELECTED"			value="ub2:loading_screen_battle_tabs_teams_tab_selected"/>
-		<const name="TIPS_TAB_SELECTED"				value="ub2:loading_screen_battle_tabs_tips_tab_selected"/>
-		<const name="DIVISIONS_TAB_SELECTED"		value="ub2:loading_screen_battle_tabs_divisions_tab_selected"/>
-		<const name="JOIN_DIVISION_CLICKED"			value="ub1:loading_screen_battle_tabs_join_division_clicked"/>
-		<const name="JOIN_NEW_DIVISION_CLICKED"		value="ub1:loading_screen_battle_tabs_join_new_division_clicked"/>
-		<const name="RESTRICT_JOIN_ENABLED"			value="ub1:loading_screen_battle_tabs_restrict_join_enabled"/>
-		<const name="RESTRICT_JOIN_DISABLED"		value="ub1:loading_screen_battle_tabs_restrict_join_disabled"/>
-	</enum>
-
 	<enum name="ACCOUNT_LEVEL_UP_STATISTICS" type="String">
 		<const name="PVP_CARD_HOVERED"				value="ub1:account_level_up_pvp_card_hovered"/>
 		<const name="PVE_CARD_HOVERED"				value="ub1:account_level_up_pve_card_hovered"/>
@@ -1700,17 +1690,6 @@
 		<const name="WITHOUT_COMMANDER"			value="ub1:ship_filter_special_without_commander"/>
 	</enum>
 
-	<enum name="MODERN_ERA_EVENT_ITEM_TYPES" type="String">
-		<const name="SHIP"		value="ship"/>
-		<const name="UPGRADE"	value="upgrade"/>
-	</enum>
-
-	<enum name="MODERN_ERA_UPGRADE_GROUPS" type="String">
-		<const name="GUNNERS"						value="upgrades_gunners"/>
-		<const name="SURVIVABILITY"					value="upgrades_survivability"/>
-		<const name="MANEUVERABILITY_AND_READINESS"	value="upgrades_maneuverability"/>
-	</enum>
-
 	<!-- Used as an array index -->
 	<enum name="MAP_SECTOR_ALPHA" type="Integer">
 		<const name="BORDER_FILL"	value="0"/>
@@ -1777,5 +1756,38 @@
 	<enum name="GRAND_STRATEGY_PASS_CLAIM_TYPE" type="String">
 		<const name="FREE"	value="free"/>
 		<const name="PAID"	value="paid"/>
+	</enum>
+
+	<enum name="BERMUDA_TECHNOLOGIES_WINDOW_TABS" type="String">
+		<const name="PRIMARY_WEAPONS"	value="_PrimaryWeapons"/>
+		<const name="HULL"				value="_Hull"/>
+		<const name="SECONDARY_WEAPONS"	value="_SecondaryWeapons"/>
+		<const name="ABILITIES"			value="_Abilities"/>
+		<const name="SHIELD"			value="_Shield"/>
+		<const name="TALENTS"			value="Talents"/>
+		<value_to_name/>
+	</enum>
+
+	<enum name="BERMUDA_TECHNOLOGIES_WINDOW_STATISTICS" type="String">
+		<const name="OPEN_BERMUDA_TECHNOLOGIES_MODAL_PRIMARY_WEAPON_TAB"	value="ub2:open_bermuda_technologies_modal:primary_weapon_tab"/>
+		<const name="BERMUDA_TECHNOLOGIES_MODAL_DURATION"					value="ub2:open_bermuda_technologies_modal_duration"/>
+	</enum>
+
+	<enum name="BERMUDA_TECHNOLOGIES_WINDOW_TABS_STATISTICS" type="String">
+		<const name="PRIMARY_WEAPONS"	value="ub2:bermuda_technologies_primary_weapon_tab"/>
+		<const name="HULL"				value="ub2:bermuda_technologies_hull_tab"/>
+		<const name="SECONDARY_WEAPONS"	value="ub2:bermuda_technologies_secondary_weapon_tab"/>
+		<const name="ABILITIES"			value="ub2:bermuda_technologies_consumables_tab"/>
+		<const name="SHIELD"			value="ub2:bermuda_technologies_shield_tab"/>
+		<const name="TALENTS"			value="ub2:bermuda_technologies_talents_tab"/>
+	</enum>
+
+	<enum name="BERMUDA_TECHNOLOGIES_WINDOW_ADDITIONAL_TABS" type="String">
+		<const name="TALENTS"	value="Talents"/>
+	</enum>
+
+	<enum name="BERMUDA_TECHNOLOGIES_WINDOW_TOOLTIP_STATISTICS" type="String">
+		<const name="MODULE_TOOLTIP"			value="ub2:bermuda_technologies_module_tooltip"/>
+		<const name="MODERNIZATION_TOOLTIP"		value="ub2:bermuda_technologies_modernization_tooltip"/>
 	</enum>
 </constants>

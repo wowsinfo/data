@@ -35,6 +35,7 @@
 		<const name="NEW_YEAR_TREE"			value="7"/>
 		<const name="SSE"					value="8"/>
 		<const name="BATTLE"				value="9"/>
+		<const name="ADECK_2"				value="10"/>
 
 		<value_to_name/>
 		<name_to_value/>
@@ -49,6 +50,7 @@
 		<const name="SSE"								value="SseBannerTooltip"/>
 		<const name="RECRUITMENT"						value="RecruitmentBannerTooltip"/>
 		<const name="ALL_NEWS"							value="IngameNewsTooltip"/>
+		<const name="ADECK_2"							value="ADeck2BannerTooltip"/>
 
 		<value_to_name/>
 		<name_to_value/>

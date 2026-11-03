@@ -45,4 +45,7 @@
 	<ClientPCStatsComponent/>
 	<ExteriorComponent/>
 	<NarrativeCampaignComponent/>
+	<SSEProgressModifiersComponent/>
+	<RunProgressionComponent/>
+	<CrewSlotUnlocksComponent/>
 </root>

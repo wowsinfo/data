@@ -135,6 +135,14 @@
                 </weaponLocks>
             </Args>
         </onConnected>
+        <receiveShieldDamageInfo>
+            <Args>
+                <victimId>ENTITY_ID</victimId>
+                <hitOwnerId>ENTITY_ID</hitOwnerId>
+                <shieldDamage>UINT32</shieldDamage>
+                <hitYaw>UINT8</hitYaw>
+            </Args>
+        </receiveShieldDamageInfo>
         <receiveShellInfo>
             <Arg>GAMEPARAMS_ID</Arg>
             <Arg>UINT32</Arg>
@@ -1067,6 +1075,12 @@
         <forceTorpedoesReload>
             <Exposed>OWN_CLIENT</Exposed>
         </forceTorpedoesReload>
+        <forceMissilesReload>
+            <Exposed>OWN_CLIENT</Exposed>
+        </forceMissilesReload>
+        <selectNextMissileLauncher>
+            <Exposed>OWN_CLIENT</Exposed>
+        </selectNextMissileLauncher>
         <moveTo>
             <Exposed>OWN_CLIENT</Exposed>
             <Arg>VECTOR3</Arg>

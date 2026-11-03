@@ -4,33 +4,60 @@
 
 		<itemPurchase>
 			<Exposed/>
-			<Arg> STRING </Arg>
+			<Args>
+				<itemId> STRING </itemId>
+			</Args>
+
+			<ReturnValues>
+				<result> UINT8 </result>
+				<changedItems> MSGPACK_BLOB </changedItems>
+			</ReturnValues>
 		</itemPurchase>
 
         <itemUnpurchase>
 			<Exposed/>
-			<Arg> STRING </Arg>
+			<Args>
+				<itemId> STRING </itemId>
+			</Args>
+
+			<ReturnValues>
+				<result> UINT8 </result>
+				<changedItems> MSGPACK_BLOB </changedItems>
+			</ReturnValues>
 		</itemUnpurchase>
+
+		<requestEventShopItem>
+			<Exposed/>
+			<Args>
+				<itemId> STRING </itemId>
+			</Args>
+
+			<ReturnValues>
+				<items> MSGPACK_BLOB </items>
+			</ReturnValues>
+		</requestEventShopItem>
 
 	</BaseMethods>
 
 	<ClientMethods>
 
 		<syncEventShop>
-			<Arg> MSGPACK_BLOB </Arg>
+			<Args>
+				<shop> MSGPACK_BLOB </shop>
+			</Args>
 		</syncEventShop>
 
-        <updateEventShopItems>
-			<Arg> MSGPACK_BLOB </Arg>
-		</updateEventShopItems>
+        <dev_itemPurchase>
+			<Args>
+				<itemId> STRING </itemId>
+			</Args>
+		</dev_itemPurchase>
 
-        <devItemPurchase>
-			<Arg> STRING </Arg>
-		</devItemPurchase>
-
-        <devItemUnpurchase>
-			<Arg> STRING </Arg>
-		</devItemUnpurchase>
+        <dev_itemUnpurchase>
+			<Args>
+				<itemId> STRING </itemId>
+			</Args>
+		</dev_itemUnpurchase>
 
 	</ClientMethods>
 
@@ -38,4 +65,3 @@
 		<Account/>
 	</ofEntity>
 </root>
-
