@@ -29,6 +29,12 @@
 			<Exposed/>
 		</dev_addAllDecorations>
 
+		<dev_addUpdateDecorationAmount>
+			<Exposed/>
+			<Arg> UINT8 </Arg>
+			<Arg> INT8 </Arg>
+		</dev_addUpdateDecorationAmount>
+
 	</BaseMethods>
 
 	<ClientMethods>
@@ -45,6 +51,7 @@
 			 <Arg> BOOL </Arg>
 			 <Arg> UINT32 </Arg>
 			 <Arg> UINT32 </Arg>
+			 <Arg> STRING </Arg>
 		</syncShipToken>
 
 		<syncClientChristmasTime>

@@ -72,7 +72,8 @@
 		<const name="NATIONS"					value="nations"			/>
 		<const name="ARTS"						value="arts"			/>
 		<const name="QUOTES"					value="quotes"			/>
+		<const name="RECTANGLE_ARTS"			value="rectangle_arts"	/>
 
-		<range name="SORT_ORDER"	values="NATIONS, ARTS, QUOTES"/>
+		<range name="SORT_ORDER"	values="NATIONS, ARTS, QUOTES, RECTANGLE_ARTS"/>
 	</enum>
 </constants>

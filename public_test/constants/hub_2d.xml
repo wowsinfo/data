@@ -36,6 +36,7 @@
 		<const name="SSE"					value="8"/>
 		<const name="BATTLE"				value="9"/>
 		<const name="ADECK_2"				value="10"/>
+		<const name="PEARL_HARBOR"			value="11"/>
 
 		<value_to_name/>
 		<name_to_value/>

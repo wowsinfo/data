@@ -403,6 +403,13 @@
 		<const name="PORT_SET_DEFAULT"	value="port_set_default"/>
 	</enum>
 
+	<enum name="EVENT_PASS_CHAPTERS" type="Integer">
+		<const name="CHAPTER_1" 			value="15111"	/>
+		<const name="CHAPTER_2" 			value="15112"	/>
+
+		<value_to_name/>
+	</enum>
+
 	<enum name="SCORE_TIMER_SPECIAL_VALUES" type="Integer">
 		<const name="INFINITE_TIME"		value="999999999"/>
 	</enum>

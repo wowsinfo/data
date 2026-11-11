@@ -8,6 +8,7 @@
 		<const name="PROMO_SCREEN"			value="gf_ub2_promoscreen"/>
 		<const name="NARRATIVE_CAMPAIGN"	value="gf_ub2_port_narrative_campaign_2026"/>
 		<const name="WAREHOUSE"				value="gf_ub2_warehouse" />
+		<const name="NEW_YEAR_GIFT"			value="gf_ub2_port_new_year_gift" />
 	</enum>
 	<enum name="WAREHOUSE_EVENTS_SERVICE" type="String">
 		<const name="EVENT_INVENTORY_CHANGED"	value="inventory_changed"/>

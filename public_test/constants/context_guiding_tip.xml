@@ -326,6 +326,9 @@
 		<const name="EVENT_HUB_BATTLE_CARD_BLOCKED_WRONG_SHIP"	value="293"	/>
 		<const name="EVENT_HUB_BATTLE_CARD_BLOCKED_MAINTENANCE"	value="294"	/>
 
+		<const name="BATTLEPASS_EVENT_CHAPTER_1_START"				value="295" />
+		<const name="BATTLEPASS_EVENT_CHAPTER_2_START"				value="296" />
+
 		<const name="CHRISTMAS_TREE_DECORATION_INSTALL"			value="297"	/>
 
 		<const name="GRAND_STRATEGY_PASS_INTRO"					value="301"	/>

@@ -1542,9 +1542,9 @@
 	</enum>
 
 	<enum name="NY_DECORATION_SLOT_POSITION" type="String">
-		<const name="TOP" 			value="top"		/>
+		<const name="LEFT" 			value="left"		/>
 		<const name="CENTER" 		value="center"	/>
-		<const name="BOTTOM" 		value="bottom"	/>
+		<const name="RIGHT" 		value="right"	/>
 	</enum>
 
 	<enum name="NY_MARKER_STATE" type="Integer">
@@ -1565,6 +1565,7 @@
 		<const name="CHRISTMAS_TREE" 	value="christmas_tree"	/>
 		<const name="GIFT" 				value="gift"			/>
 		<const name="DOCKYARD" 			value="dockyard"		/>
+		<const name="PEARL_HARBOR" 		value="pearl_harbor"	/>
 
 		<range name="SOUND_SET_RANGE" values="SHIP, ADVENT_CALENDAR, EVENT_PASS, CHRISTMAS_TREE, GIFT"/>
 		<value_to_name/>
@@ -1790,4 +1791,10 @@
 		<const name="MODULE_TOOLTIP"			value="ub2:bermuda_technologies_module_tooltip"/>
 		<const name="MODERNIZATION_TOOLTIP"		value="ub2:bermuda_technologies_modernization_tooltip"/>
 	</enum>
+
+    <enum name="NEW_YEAR_STATISTICS_EVENTS" type="String">
+        <const name="CHRISTMAS_TREE_DECORATION_SLOT" value="ub2:ny_tree_slot_" />
+        <const name="CHRISTMAS_TREE_REWARD_TOOLTIP" value="ub2:ny_tree_reward_tooltip_" />
+        <const name="SHIP_TOKEN_CLAIM_BUTTON" value="gf:ny_gift_claim_button_clicked" />
+    </enum>
 </constants>
